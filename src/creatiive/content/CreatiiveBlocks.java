@@ -96,7 +96,7 @@ public class CreatiiveBlocks implements ContentList {
 				new ItemStack(Items.metaglass, 2)
 			);
 			consumes.power(2f);
-			outputItem = new ItemStack(CreatiiveItems.fabric);
+			outputItem = new ItemStack(CreatiiveItems.fabric, 1);
 		}};
 		ionizerPress = new GenericCrafter("ionizer-press") {{
 			requirements(Category.crafting, with(
@@ -116,7 +116,7 @@ public class CreatiiveBlocks implements ContentList {
 				new ItemStack(Items.titanium, 2)
 			);
 			consumes.power(1.5f);
-			outputItem = new ItemStack(CreatiiveItems.cesium);
+			outputItem = new ItemStack(CreatiiveItems.cesium, 2);
 		}};
 		chlorophiteCultivator = new AttributeCrafter("chlorophite-cultivator") {{
 			requirements(Category.production, with(
@@ -136,9 +136,9 @@ public class CreatiiveBlocks implements ContentList {
 			consumes.items(
 				new ItemStack(Items.titanium, 1)
 			);
-			consumes.liquid(Liqids.water, 0.5f);
+			consumes.liquid(Liquids.water, 0.5f);
 			consumes.power(0.5f);
-			outputItem = new ItemStack(CreatiiveItems.chlorophite);
+			outputItem = new ItemStack(CreatiiveItems.chlorophite, 1);
 		}};
 	}
 }
