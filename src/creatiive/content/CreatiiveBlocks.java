@@ -88,7 +88,7 @@ public class CreatiiveBlocks implements ContentList {
 			size = 2;
 			health = 160;
 			hasItems = true;
-			drawer = DrawWeave();
+			drawer = new DrawWeave();
 			craftTime = 120;
 			craftEffect = Fx.smelt;
 			consumes.items(
