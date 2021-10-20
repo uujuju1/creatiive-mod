@@ -31,7 +31,7 @@ public class CreatiiveBlocks implements ContentList {
 
 	@Override
 	public void load() {
-		refractoryKiln = new GenericCrafter("refractor-kiln") {{
+		refractoryKiln = new GenericCrafter("refractory-kiln") {{
 			requirements(Category.crafting, with(
 				Items.metaglass, 50,
 				Items.graphite, 35,
@@ -64,7 +64,7 @@ public class CreatiiveBlocks implements ContentList {
 				Items.copper, 60
 			));
 			localizedName = "Carbonized Furnace";
-			size = 3;
+			size = 2;
 			health = 160;
 			hasItems = true;
 			drawer = new DrawSmelter(Color.valueOf("F2FF7D"));
@@ -74,7 +74,71 @@ public class CreatiiveBlocks implements ContentList {
 				new ItemStack(Items.lead, 1),
 				new ItemStack(Items.coal, 2)
 			);
+			consumes.power(1f);
 			outputItem = new ItemStack(CreatiiveItems.highCarbonSteel, 1);
+		}};
+		fabricWeaver = new GenericCrafter("fabric-weaver") {{
+			requirements(Category.crafting, with(
+				Items.phaseFabric, 69, // nice
+				Items.silicon, 55,
+				Items.thorium, 32,
+				Items.titanium, 25 
+			));
+			localizedName = "Fabric Weaver";
+			size = 2;
+			health = 160;
+			hasItems = true;
+			drawer = DrawWeave();
+			craftTime = 120;
+			craftEffect = Fx.smelt;
+			consumes.items(
+				new ItemStack(Items.phaseFabric, 1),
+				new ItemStack(Items.metaglass, 2)
+			);
+			consumes.power(2f);
+			outputItem = new ItemStack(CreatiiveItems.fabric);
+		}};
+		ionizerPress = new GenericCrafter("ionizer-press") {{
+			requirements(Category.crafting, with(
+				Items.silicon, 55,
+				Items.lead, 85,
+				Items.graphite, 44,
+				Items.copper, 125
+			));
+			localizedName = "Ionizer Press";
+			size = 2;
+			health = 160;
+			hasItems = true;
+			craftTime = 45;
+			craftEffect = Fx.smelt;
+			consumes.items(
+				new ItemStack(Items.thorium, 1),
+				new ItemStack(Items.titanium, 2)
+			);
+			consumes.power(1.5f);
+			outputItem = new ItemStack(CreatiiveItems.cesium);
+		}};
+		chlorophiteCultivator = new AttributeCrafter("chlorophite-cultivator") {{
+			requirements(Category.production, with(
+				Items.silicon, 25,
+				Items.titanium, 10,
+				Items.metaglass, 30
+			));
+			localizedName = "Chlorophite Cultivator";
+			size = 2;
+			health = 160;
+			hasItems = true;
+			hasLiquids = true;
+			liquidCapacity = 60;
+			drawer = new DrawCultivator();
+			craftTime = 80;
+			craftEffect = Fx.none;
+			consumes.items(
+				new ItemStack(Items.titanium, 1)
+			);
+			consumes.liquid(Liqids.water, 0.5f);
+			consumes.power(0.5f);
+			outputItem = new ItemStack(CreatiiveItems.chlorophite);
 		}};
 	}
 }
