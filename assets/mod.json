@@ -1,0 +1,12 @@
+{
+  "name": "creatiive",
+  "displayName": "[red]cr[orange]ea[yellow]ti[green]iv[cyan]e [white]mod.",
+  "author": "Uujuju",
+  "description": "creative stuff",
+  "version": "0.1",
+  "main": "creatiive",
+  "minGameVersion": "130",
+  "dependencies": [],
+  "hidden": false,
+  "java": true
+}
