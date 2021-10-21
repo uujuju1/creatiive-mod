@@ -131,7 +131,7 @@ public class CreatiiveBlocks implements ContentList {
 			hasLiquids = true;
 			liquidCapacity = 60;
 			drawer = new DrawCultivator();
-			attrebute = Attribute.spores;
+			attribute = Attribute.spores;
 			craftTime = 80;
 			craftEffect = Fx.none;
 			consumes.items(

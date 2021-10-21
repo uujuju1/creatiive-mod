@@ -35,12 +35,12 @@ public class CreatiiveUnitTypes implements ContentList {
 			range = 25 * tilesize;
 			maxRange = range;
 			rotors.add(
-				new Rotor(name + "-ARotor") {{
+				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
 					y = 5.25f;
 					rotorSpeed = 10;
 				}},
-				new Rotor(name + "-BRotor") {{
+				new DrawRotor(name + "-BRotor") {{
 					x = 0f;
 					y = -10f;
 					rotorSpeed = 11;
@@ -59,11 +59,11 @@ public class CreatiiveUnitTypes implements ContentList {
 			range = 30 * tilesize;
 			maxRange = range;
 			rotors.add(
-				new Rotor(name + "-ARotor") {{
+				new DrawRotor(name + "-ARotor") {{
 					x = y = 0f;
 					rotorSpeed = 11;
 				}},
-				new Rotor(name + "-BRotor") {{
+				new DrawRotor(name + "-BRotor") {{
 					x = y = 0f;
 					rotorSpeed = 12;
 				}}
@@ -81,11 +81,11 @@ public class CreatiiveUnitTypes implements ContentList {
 			range = 30 * tilesize;
 			maxRange = range;
 			rotors.add(
-				new Rotor(name + "-ARotor") {{
+				new DrawRotor(name + "-ARotor") {{
 					x = y = 0f;
 					rotorSpeed = 12;
 				}},
-				new Rotor(name + "-BRotor") {{
+				new DrawRotor(name + "-BRotor") {{
 					x = y = 0;
 					rotorSpeed = 13;
 				}}
@@ -103,11 +103,11 @@ public class CreatiiveUnitTypes implements ContentList {
 			range = 35 * tilesize;
 			maxRange = range;
 			rotors.add(
-				new Rotor(name + "-ARotor") {{
+				new DrawRotor(name + "-ARotor") {{
 					x = y = 0f;
 					rotorSpeed = 13;
 				}},
-				new Rotor(name + "-BRotor") {{
+				new DrawRotor(name + "-BRotor") {{
 					x = y = 0f;
 					rotorSpeed = 14;
 				}}
@@ -125,11 +125,11 @@ public class CreatiiveUnitTypes implements ContentList {
 			range = 40 * tilesize;
 			maxRange = range;
 			rotors.add(
-				new Rotor(name + "-ARotor") {{
+				new DrawRotor(name + "-ARotor") {{
 					x = y = 0f;
 					rotorSpeed = 14;
 				}},
-				new Rotor(name + "-BRotor") {{
+				new DrawRotor(name + "-BRotor") {{
 					x = y = 0f;
 					rotorSpeed = 15;
 				}}

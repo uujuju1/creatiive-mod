@@ -17,5 +17,6 @@ public class Creatiive extends Mod{
     public void loadContent(){
     	new CreatiiveItems().load();
     	new CreatiiveBlocks().load();
+    	new CreatiiveUnitTypes().load();
     }
 }
