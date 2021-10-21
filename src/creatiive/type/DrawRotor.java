@@ -15,12 +15,11 @@ public class DrawRotor {
 	public float rotorSpeed = 15;
 
 	public DrawRotor(String name) {
-		this.name = rotorName;
 	}
 
 	public void load() {
-		rotorRegion = Core.atlas.find(rotorName);
-		rotorRegion = Core.atlas.find(rotorName + "-top");
+		rotorRegion = Core.atlas.find(name);
+		rotorRegion = Core.atlas.find(name + "-top");
 	}
 
 	public void draw(Unit unit) {

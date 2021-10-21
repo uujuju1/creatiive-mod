@@ -13,7 +13,7 @@ public class RotorUnitType extends UnitType {
 	public RotorUnitType(String name) {
 		super(name);
 		flying = lowAltitude = true;
-		constutructor = UnitEntity::create;
+		constructor = UnitEntity::create;
 		engineSize = 0f;
 		fallSpeed = 0.007f;
 	}
@@ -30,7 +30,6 @@ public class RotorUnitType extends UnitType {
 	@Override
 	public void draw(Unit unit) {
 		super.draw(unit);
-        drawRotor(unit);
         applyColor(unit);
         rotors.each(DrawRotor -> DrawRotor.draw(unit));
         Draw.reset();
