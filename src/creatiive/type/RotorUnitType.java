@@ -13,7 +13,7 @@ public class RotorUnitType extends UnitType {
 	public RotorUnitType(String name) {
 		super(name);
 		flying = lowAltitude = true;
-		consutructor = UnitEntity::create;
+		constutructor = UnitEntity::create;
 		engineSize = 0f;
 		fallSpeed = 0.007f;
 	}
@@ -21,7 +21,7 @@ public class RotorUnitType extends UnitType {
 	@Override
 	public void update(Unit unit) {
 		if (spinDeath) {
-			if (unit.health = 0 || unit.dead) {
+			if (unit.health <= 0 || unit.dead) {
 				unit.rotation += Time.delta * (fallSpeed * 1000);
 			}
 		}
@@ -32,7 +32,7 @@ public class RotorUnitType extends UnitType {
 		super.draw(unit);
         drawRotor(unit);
         applyColor(unit);
-        rotors.each(drawRotor -> DrawRotor.draw(unit));
+        rotors.each(DrawRotor -> DrawRotor.draw(unit));
         Draw.reset();
 	}
 

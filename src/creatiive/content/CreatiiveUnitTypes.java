@@ -18,7 +18,7 @@ import static mindustry.Vars.tilesize;
 import static mindustry.content.Bullets.*;
 
 public class CreatiiveUnitTypes implements ContentList {
-	public final UnitType
+	public static UnitType
 	// copters
 	ACopter, BCopter, CCopter, DCopter, ECopter;
 
