@@ -133,7 +133,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
-					y = 32f;
+					y = 22f;
 					rotorSpeed = 14;
 				}},
 				new DrawRotor(name + "-BRotor") {{
