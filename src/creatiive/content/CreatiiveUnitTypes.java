@@ -20,7 +20,7 @@ import static mindustry.content.Bullets.*;
 public class CreatiiveUnitTypes implements ContentList {
 	public final UnitType
 	// copters
-	ACopter, BCopter, CCopter, DCopter ECopter;
+	ACopter, BCopter, CCopter, DCopter, ECopter;
 
 	public void load() {
 		ACopter = new RotorUnitType("ACopter") {{
@@ -134,6 +134,6 @@ public class CreatiiveUnitTypes implements ContentList {
 					rotorSpeed = 15;
 				}}
 			);
-		}}
+		}};
 	}
 }

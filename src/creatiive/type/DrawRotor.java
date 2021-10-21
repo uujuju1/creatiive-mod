@@ -20,7 +20,7 @@ public class DrawRotor {
 
 	public void load() {
 		rotorRegion = Core.atlas.find(rotorName);
-		rotorRegion = Core.atlas.find(rotorName + "-top")
+		rotorRegion = Core.atlas.find(rotorName + "-top");
 	}
 
 	public void draw(Unit unit) {
