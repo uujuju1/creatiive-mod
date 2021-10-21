@@ -60,11 +60,13 @@ public class CreatiiveUnitTypes implements ContentList {
 			maxRange = range;
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
-					x = y = 0f;
+					x = 0f
+					y = 3.25f;
 					rotorSpeed = 11;
 				}},
 				new DrawRotor(name + "-BRotor") {{
-					x = y = 0f;
+					x = 0f;
+					y = -9.5f;
 					rotorSpeed = 12;
 				}}
 			);

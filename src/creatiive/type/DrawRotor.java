@@ -8,7 +8,7 @@ import mindustry.gen.Unit;
 
 public class DrawRotor {
 	public final String name;
-	public TextureRegion rotorRegion, topRegion;
+	public TextureRegion rotorRegion, jointRegion;
 
 	public float x = 0;
 	public float y = 0;
@@ -20,7 +20,7 @@ public class DrawRotor {
 
 	public void load() {
 		rotorRegion = Core.atlas.find(name);
-		rotorRegion = Core.atlas.find(name + "-top");
+		jointRegion = Core.atlas.find(name + "-joint");
 	}
 
 	public void draw(Unit unit) {
