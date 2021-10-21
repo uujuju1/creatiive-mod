@@ -7,7 +7,7 @@ import arc.util.Time;
 import mindustry.gen.Unit;
 
 public class DrawRotor {
-	public final String rotorName;
+	public final String name;
 	public TextureRegion rotorRegion, topRegion;
 
 	public float x = 0;
@@ -15,11 +15,12 @@ public class DrawRotor {
 	public float rotorSpeed = 15;
 
 	public DrawRotor(String name) {
+		this.name = name;
 	}
 
 	public void load() {
-		rotorRegion = Core.atlas.find(rotorName);
-		rotorRegion = Core.atlas.find(rotorName + "-top");
+		rotorRegion = Core.atlas.find(name);
+		rotorRegion = Core.atlas.find(name + "-top");
 	}
 
 	public void draw(Unit unit) {
