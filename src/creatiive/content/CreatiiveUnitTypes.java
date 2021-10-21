@@ -140,8 +140,7 @@ public class CreatiiveUnitTypes implements ContentList {
 					x = 0f;
 					y = -20f;
 					rotorSpeed = 15;
-				}},
-
+				}}
 			);
 		}};
 	}
