@@ -51,7 +51,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			localizedName = "Blunderbuss";
 			details = "Name by SimpyTav";
 			health = 630;
-			hitSize = 24;
+			hitSize = 20;
 			speed = 2.3f;
 			accel = 0.06f;
 			drag = 0.024f;
@@ -84,11 +84,13 @@ public class CreatiiveUnitTypes implements ContentList {
 			maxRange = range;
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
-					x = y = 0f;
+					x = 0f;
+					y = 7.5f;
 					rotorSpeed = 12;
 				}},
 				new DrawRotor(name + "-BRotor") {{
-					x = y = 0;
+					x = 0f;
+					y = -18f;
 					rotorSpeed = 13;
 				}}
 			);
@@ -97,7 +99,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			localizedName = "Derringer";
 			details = "Name by SimpyTav";
 			health = 7250;
-			hitSize = 35;
+			hitSize = 39;
 			speed = 1.7f;
 			accel = 0.1f;
 			drag = 0.040f;
@@ -106,11 +108,13 @@ public class CreatiiveUnitTypes implements ContentList {
 			maxRange = range;
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
-					x = y = 0f;
+					x = 0f;
+					y = 10f;
 					rotorSpeed = 13;
 				}},
 				new DrawRotor(name + "-BRotor") {{
-					x = y = 0f;
+					x = 0f;
+					y = -16f;
 					rotorSpeed = 14;
 				}}
 			);
@@ -119,7 +123,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			localizedName = "Breechloader";
 			details = "Name by SimpyTav";
 			health = 13650;
-			hitSize = 41;
+			hitSize = 44;
 			speed = 1.5f;
 			accel = 0.12f;
 			drag = 0.048f;
