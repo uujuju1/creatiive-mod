@@ -187,26 +187,34 @@ public class CreatiiveUnitTypes implements ContentList {
 			);
 
 			weapons.add(
-				new Weapon("weapon-copter-artillery-basic") {{
+				new Weapon("weapon-copter-artilleryB") {{
 					x = 8f;
 					y = 8f;
 					mirror = true;
 					reload = 15f;
 					recoil = 1f;
 					bullet = new ArtilleryBulletType(8f, 78) {{
-						width = height = 14;
+						width = 11f;
+						height = 15f;
 						lifetime = range/speed;
+						splashDamageRadius = 25f;
+	            		splashDamage = 33f;
 					}};
 				}},
-				new Weapon("weapon-copter-artillery-missile") {{
+				new Weapon("weapon-copter-artilleryM") {{
 					x = 6.75f;
 					y = -4f;
 					mirror = true;
 					reload = 20f;
 					recoil = 1f;
 					bullet = new ArtilleryBulletType(8f, 80) {{
-						width = height = 13f;
+						width = 11f;
+						height = 15f;
 						lifetime = range/speed;
+						splashDamageRadius = 25f;
+	            		splashDamage = 33f;
+    	    	    	homingPower = 2f;
+        		    	homingRange = 50f;
 					}};
 				}}
 			);
@@ -224,6 +232,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			faceTarget = flying = true;
 			range = 35 * tilesize;
 			maxRange = range;
+
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
@@ -236,7 +245,25 @@ public class CreatiiveUnitTypes implements ContentList {
 					rotorSpeed = 14;
 				}}
 			);
+
+			weapons.add(
+				new Weapon("creatiive-weapon-copter-basicP") {{
+					x = 11f;
+					y = -11f;
+					reload = 10f;
+					recoil = 2f;
+					bullet = BasicBulletType(6, 120) {{
+						width = 12f;
+						height = 16f;
+						lifetime = range/speed;
+						pierce = true;
+						pierceCap = 10;
+					}};
+				}}
+			);
 		}};
+
+		
 		ECopter = new RotorUnitType("ECopter") {{
 			localizedName = "Breechloader";
 			details = "Name by SimpyTav";
@@ -248,6 +275,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			faceTarget = flying = true;
 			range = 40 * tilesize;
 			maxRange = range;
+
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
@@ -258,6 +286,22 @@ public class CreatiiveUnitTypes implements ContentList {
 					x = 0f;
 					y = -20f;
 					rotorSpeed = 15;
+				}}
+			);
+
+			weapons.add(
+				new Weapon("creatiive-weapon-copter-missileP") {{
+					x = 14f;
+					y = -12f;
+					reload = 10f;
+					recoil = 2f;
+					bullet = BasicBulletType(6, 120) {{
+						width = 12f;
+						height = 16f;
+						lifetime = range/speed;
+						pierce = true;
+						pierceCap = 10;
+					}};
 				}}
 			);
 		}};
