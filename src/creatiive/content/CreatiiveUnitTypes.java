@@ -252,7 +252,7 @@ public class CreatiiveUnitTypes implements ContentList {
 					y = -11f;
 					reload = 10f;
 					recoil = 2f;
-					bullet = BasicBulletType(6, 120) {{
+					bullet = new BasicBulletType(6f, 120) {{
 						width = 12f;
 						height = 16f;
 						lifetime = range/speed;
