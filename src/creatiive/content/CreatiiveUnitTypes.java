@@ -10,6 +10,7 @@ import mindustry.entities.effect.MultiEffect;
 import mindustry.gen.*;
 import mindustry.graphics.Pal;
 import mindustry.type.*;
+import mindustry.type.weapons.*;
 import mindustry.type.ammo.ItemAmmoType;
 import mindustry.type.weapons.PointDefenseWeapon;
 import mindustry.world.meta.BlockFlag;
@@ -34,6 +35,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			faceTarget = flying = true;
 			range = 25 * tilesize;
 			maxRange = range;
+
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
@@ -46,7 +48,50 @@ public class CreatiiveUnitTypes implements ContentList {
 					rotorSpeed = 11;
 				}}
 			);
+
+			weapons.add(
+				new Weapon("weapon-copter-basic") {{
+					x = 5f;
+					y = 6f;
+					reload = 10f;
+					mirror = true;
+					recoil = 1f;
+					maxRange = range;
+					bullet = new BasicBulletType(6f, 15) {{
+						width = 7f;
+						height = 12f;
+						lifetime = range/speed;
+					}};
+				}},
+				new Weapon("weapon-copter-basic") {{
+					x = 3f;
+					y = 8f;
+					reload = 10f;
+					mirror = true;
+					recoil = 1f;
+					bullet = new BasicBulletType(6f, 15) {{
+						width = 7f;
+						height = 12f;
+						lifetime = range/speed;
+					}};
+				}},
+				new Weapon("weapon-copter-missile") {{
+					x = 5f;
+					y = -1f;
+					reload = 30f;
+					mirror = true;
+					recoil = 1.5f;
+					maxRange = range + 16f;
+					bullet = new MissileBulletType(4f, 35) {{
+						width = 8f;
+						height = 13f;
+						lifetime range/speed + 16f;
+					}};
+				}}
+			);
 		}};
+
+
 		BCopter = new RotorUnitType("BCopter") {{
 			localizedName = "Blunderbuss";
 			details = "Name by SimpyTav";
@@ -58,6 +103,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			faceTarget = flying = true;
 			range = 30 * tilesize;
 			maxRange = range;
+
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
@@ -70,7 +116,51 @@ public class CreatiiveUnitTypes implements ContentList {
 					rotorSpeed = 12;
 				}}
 			);
+
+			weapons.add(
+				new Weapon("weapon-copter-missile") {{
+					x = 6f;
+					y = 8f;
+					reload = 30f;
+					mirror = true;
+					recoil = 1.5f;
+					maxRange = range + 16f;
+					bullet = new MissileBulletType(4f, 57) {{
+						width = 8f;
+						height = 13f;
+						lifetime range/speed + 16f;
+					}};
+				}},
+				new Weapon("weapon-copter-missile") {{
+					x = 4f;
+					y = 4f;
+					reload = 30f;
+					mirror = true;
+					recoil = 1.5f;
+					maxRange = range + 16f;
+					bullet = new MissileBulletType(4f, 57) {{
+						width = 8f;
+						height = 13f;
+						lifetime range/speed + 16f;
+					}};
+				}},
+				new Weapon("weapon-copter-basic") {{
+					x = 6f;
+					y = -1f;
+					reload = 10f;
+					mirror = true;
+					recoil = 1f;
+					maxRange = range;
+					bullet = new BasicBulletType(6f, 30) {{
+						width = 7f;
+						height = 12f;
+						lifetime = range/speed;
+					}};
+				}}
+			);
 		}};
+
+
 		CCopter = new RotorUnitType("CCopter") {{
 			localizedName = "Culverin";
 			details = "Name by SimpyTav";
@@ -82,6 +172,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			faceTarget = flying = true;
 			range = 30 * tilesize;
 			maxRange = range;
+
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
@@ -94,7 +185,34 @@ public class CreatiiveUnitTypes implements ContentList {
 					rotorSpeed = 13;
 				}}
 			);
+
+			weapons.add(
+				new Weapon("weapon-copter-artillery-basic") {{
+					x = 8f;
+					y = 8f;
+					mirror = true;
+					reload = 15f;
+					recoil = 1f;
+					bullet = new ArtilleryBulletType(8f, 78) {{
+						width = height = 14;
+						lifetime = range/speed;
+					}};
+				}},
+				new Weapon("weapon-copter-artillery-missile") {{
+					x = 6.75f;
+					y = -4f;
+					mirror = true;
+					reload = 20f;
+					recoil = 1f;
+					bullet = new ArtilleryBulletType(8f, 80) {{
+						width = height = 13f;
+						lifetime = range/speed;
+					}};
+				}}
+			);
 		}};
+
+
 		DCopter = new RotorUnitType("DCopter") {{
 			localizedName = "Derringer";
 			details = "Name by SimpyTav";
