@@ -85,7 +85,7 @@ public class CreatiiveUnitTypes implements ContentList {
 					bullet = new MissileBulletType(4f, 35) {{
 						width = 8f;
 						height = 13f;
-						lifetime range/speed + 16f;
+						lifetime = range/speed + 16f;
 					}};
 				}}
 			);
@@ -128,7 +128,7 @@ public class CreatiiveUnitTypes implements ContentList {
 					bullet = new MissileBulletType(4f, 57) {{
 						width = 8f;
 						height = 13f;
-						lifetime range/speed + 16f;
+						lifetime = range/speed + 16f;
 					}};
 				}},
 				new Weapon("weapon-copter-missile") {{
@@ -141,7 +141,7 @@ public class CreatiiveUnitTypes implements ContentList {
 					bullet = new MissileBulletType(4f, 57) {{
 						width = 8f;
 						height = 13f;
-						lifetime range/speed + 16f;
+						lifetime = range/speed + 16f;
 					}};
 				}},
 				new Weapon("weapon-copter-basic") {{
