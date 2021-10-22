@@ -187,7 +187,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			);
 
 			weapons.add(
-				new Weapon("weapon-copter-artilleryB") {{
+				new Weapon("creatiive-weapon-copter-artilleryB") {{
 					x = 8f;
 					y = 8f;
 					mirror = true;
@@ -201,7 +201,7 @@ public class CreatiiveUnitTypes implements ContentList {
 	            		splashDamage = 33f;
 					}};
 				}},
-				new Weapon("weapon-copter-artilleryM") {{
+				new Weapon("creatiive-weapon-copter-artilleryM") {{
 					x = 6.75f;
 					y = -4f;
 					mirror = true;
@@ -212,8 +212,8 @@ public class CreatiiveUnitTypes implements ContentList {
 						height = 15f;
 						lifetime = range/speed;
 						splashDamageRadius = 25f;
-	            		splashDamage = 33f;
-    	    	    	homingPower = 2f;
+	            		splashDamage = 80f;
+    	    	    	homingPower = 0.02f;
         		    	homingRange = 50f;
 					}};
 				}}
@@ -279,7 +279,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
-					y = 22f;
+					y = 18f;
 					rotorSpeed = 14;
 				}},
 				new DrawRotor(name + "-BRotor") {{
@@ -295,7 +295,7 @@ public class CreatiiveUnitTypes implements ContentList {
 					y = -12f;
 					reload = 10f;
 					recoil = 2f;
-					bullet = new BasicBulletType(6f, 195) {{
+					bullet = new MissileBulletType(6f, 195) {{
 						width = 12f;
 						height = 16f;
 						lifetime = range/speed;
