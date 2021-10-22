@@ -10,6 +10,7 @@ import mindustry.entities.effect.MultiEffect;
 import mindustry.gen.*;
 import mindustry.graphics.Pal;
 import mindustry.type.*;
+import mindustry.type.weapons.*;
 import mindustry.type.ammo.ItemAmmoType;
 import mindustry.type.weapons.PointDefenseWeapon;
 import mindustry.world.meta.BlockFlag;
@@ -34,6 +35,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			faceTarget = flying = true;
 			range = 25 * tilesize;
 			maxRange = range;
+
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
@@ -46,18 +48,62 @@ public class CreatiiveUnitTypes implements ContentList {
 					rotorSpeed = 11;
 				}}
 			);
+
+			weapons.add(
+				new Weapon("creatiive-weapon-copter-basic") {{
+					x = 5f;
+					y = 6f;
+					reload = 10f;
+					mirror = true;
+					recoil = 1f;
+					maxRange = range;
+					bullet = new BasicBulletType(6f, 15) {{
+						width = 7f;
+						height = 12f;
+						lifetime = range/speed;
+					}};
+				}},
+				new Weapon("creatiive-weapon-copter-basic") {{
+					x = 3f;
+					y = 8f;
+					reload = 10f;
+					mirror = true;
+					recoil = 1f;
+					bullet = new BasicBulletType(6f, 15) {{
+						width = 7f;
+						height = 12f;
+						lifetime = range/speed;
+					}};
+				}},
+				new Weapon("creatiive-weapon-copter-missile") {{
+					x = 5f;
+					y = -1f;
+					reload = 30f;
+					mirror = true;
+					recoil = 1.5f;
+					maxRange = range + 16f;
+					bullet = new MissileBulletType(4f, 35) {{
+						width = 8f;
+						height = 13f;
+						lifetime = range/speed + 16f;
+					}};
+				}}
+			);
 		}};
+
+
 		BCopter = new RotorUnitType("BCopter") {{
 			localizedName = "Blunderbuss";
 			details = "Name by SimpyTav";
 			health = 630;
-			hitSize = 24;
+			hitSize = 20;
 			speed = 2.3f;
 			accel = 0.06f;
 			drag = 0.024f;
 			faceTarget = flying = true;
 			range = 30 * tilesize;
 			maxRange = range;
+
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
@@ -70,7 +116,51 @@ public class CreatiiveUnitTypes implements ContentList {
 					rotorSpeed = 12;
 				}}
 			);
+
+			weapons.add(
+				new Weapon("creatiive-weapon-copter-missile") {{
+					x = 6f;
+					y = 8f;
+					reload = 30f;
+					mirror = true;
+					recoil = 1.5f;
+					maxRange = range + 16f;
+					bullet = new MissileBulletType(4f, 57) {{
+						width = 8f;
+						height = 13f;
+						lifetime = range/speed + 16f;
+					}};
+				}},
+				new Weapon("creatiive-weapon-copter-missile") {{
+					x = 4f;
+					y = 4f;
+					reload = 30f;
+					mirror = true;
+					recoil = 1.5f;
+					maxRange = range + 16f;
+					bullet = new MissileBulletType(4f, 57) {{
+						width = 8f;
+						height = 13f;
+						lifetime = range/speed + 16f;
+					}};
+				}},
+				new Weapon("creatiive-weapon-copter-basic") {{
+					x = 6f;
+					y = -1f;
+					reload = 10f;
+					mirror = true;
+					recoil = 1f;
+					maxRange = range;
+					bullet = new BasicBulletType(6f, 30) {{
+						width = 7f;
+						height = 12f;
+						lifetime = range/speed;
+					}};
+				}}
+			);
 		}};
+
+
 		CCopter = new RotorUnitType("CCopter") {{
 			localizedName = "Culverin";
 			details = "Name by SimpyTav";
@@ -82,58 +172,136 @@ public class CreatiiveUnitTypes implements ContentList {
 			faceTarget = flying = true;
 			range = 30 * tilesize;
 			maxRange = range;
+
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
-					x = y = 0f;
+					x = 0f;
+					y = 7.5f;
 					rotorSpeed = 12;
 				}},
 				new DrawRotor(name + "-BRotor") {{
-					x = y = 0;
+					x = 0f;
+					y = -18f;
 					rotorSpeed = 13;
 				}}
 			);
+
+			weapons.add(
+				new Weapon("weapon-copter-artilleryB") {{
+					x = 8f;
+					y = 8f;
+					mirror = true;
+					reload = 15f;
+					recoil = 1f;
+					bullet = new ArtilleryBulletType(8f, 78) {{
+						width = 11f;
+						height = 15f;
+						lifetime = range/speed;
+						splashDamageRadius = 25f;
+	            		splashDamage = 33f;
+					}};
+				}},
+				new Weapon("weapon-copter-artilleryM") {{
+					x = 6.75f;
+					y = -4f;
+					mirror = true;
+					reload = 20f;
+					recoil = 1f;
+					bullet = new ArtilleryBulletType(8f, 80) {{
+						width = 11f;
+						height = 15f;
+						lifetime = range/speed;
+						splashDamageRadius = 25f;
+	            		splashDamage = 33f;
+    	    	    	homingPower = 2f;
+        		    	homingRange = 50f;
+					}};
+				}}
+			);
 		}};
+
+
 		DCopter = new RotorUnitType("DCopter") {{
 			localizedName = "Derringer";
 			details = "Name by SimpyTav";
 			health = 7250;
-			hitSize = 35;
+			hitSize = 39;
 			speed = 1.7f;
 			accel = 0.1f;
 			drag = 0.040f;
 			faceTarget = flying = true;
 			range = 35 * tilesize;
 			maxRange = range;
+
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
-					x = y = 0f;
+					x = 0f;
+					y = 10f;
 					rotorSpeed = 13;
 				}},
 				new DrawRotor(name + "-BRotor") {{
-					x = y = 0f;
+					x = 0f;
+					y = -16f;
 					rotorSpeed = 14;
 				}}
 			);
+
+			weapons.add(
+				new Weapon("creatiive-weapon-copter-basicP") {{
+					x = 11f;
+					y = -11f;
+					reload = 10f;
+					recoil = 2f;
+					bullet = new BasicBulletType(6f, 120) {{
+						width = 12f;
+						height = 16f;
+						lifetime = range/speed;
+						pierce = true;
+						pierceCap = 10;
+					}};
+				}}
+			);
 		}};
+
+		
 		ECopter = new RotorUnitType("ECopter") {{
 			localizedName = "Breechloader";
 			details = "Name by SimpyTav";
 			health = 13650;
-			hitSize = 41;
+			hitSize = 44;
 			speed = 1.5f;
 			accel = 0.12f;
 			drag = 0.048f;
 			faceTarget = flying = true;
 			range = 40 * tilesize;
 			maxRange = range;
+
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
-					x = y = 0f;
+					x = 0f;
+					y = 22f;
 					rotorSpeed = 14;
 				}},
 				new DrawRotor(name + "-BRotor") {{
-					x = y = 0f;
+					x = 0f;
+					y = -20f;
 					rotorSpeed = 15;
+				}}
+			);
+
+			weapons.add(
+				new Weapon("creatiive-weapon-copter-missileP") {{
+					x = 14f;
+					y = -12f;
+					reload = 10f;
+					recoil = 2f;
+					bullet = new BasicBulletType(6f, 195) {{
+						width = 12f;
+						height = 16f;
+						lifetime = range/speed;
+						pierce = true;
+						pierceCap = 10;
+					}};
 				}}
 			);
 		}};
