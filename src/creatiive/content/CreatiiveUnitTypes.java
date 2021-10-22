@@ -50,7 +50,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			);
 
 			weapons.add(
-				new Weapon("weapon-copter-basic") {{
+				new Weapon("creatiive-weapon-copter-basic") {{
 					x = 5f;
 					y = 6f;
 					reload = 10f;
@@ -63,7 +63,7 @@ public class CreatiiveUnitTypes implements ContentList {
 						lifetime = range/speed;
 					}};
 				}},
-				new Weapon("weapon-copter-basic") {{
+				new Weapon("creatiive-weapon-copter-basic") {{
 					x = 3f;
 					y = 8f;
 					reload = 10f;
@@ -75,7 +75,7 @@ public class CreatiiveUnitTypes implements ContentList {
 						lifetime = range/speed;
 					}};
 				}},
-				new Weapon("weapon-copter-missile") {{
+				new Weapon("creatiive-weapon-copter-missile") {{
 					x = 5f;
 					y = -1f;
 					reload = 30f;
@@ -118,7 +118,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			);
 
 			weapons.add(
-				new Weapon("weapon-copter-missile") {{
+				new Weapon("creatiive-weapon-copter-missile") {{
 					x = 6f;
 					y = 8f;
 					reload = 30f;
@@ -131,7 +131,7 @@ public class CreatiiveUnitTypes implements ContentList {
 						lifetime = range/speed + 16f;
 					}};
 				}},
-				new Weapon("weapon-copter-missile") {{
+				new Weapon("creatiive-weapon-copter-missile") {{
 					x = 4f;
 					y = 4f;
 					reload = 30f;
@@ -144,7 +144,7 @@ public class CreatiiveUnitTypes implements ContentList {
 						lifetime = range/speed + 16f;
 					}};
 				}},
-				new Weapon("weapon-copter-basic") {{
+				new Weapon("creatiive-weapon-copter-basic") {{
 					x = 6f;
 					y = -1f;
 					reload = 10f;
