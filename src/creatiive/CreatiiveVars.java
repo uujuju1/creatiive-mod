@@ -32,5 +32,5 @@ import mindustry.world.*;
 import creatiive.world;
 
 public class CreatiiveVars implements Loadable{
-	public static nukes = 0;
+	public static int nukes = 0;
 }

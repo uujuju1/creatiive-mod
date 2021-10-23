@@ -47,7 +47,7 @@ public class NukeLauncher extends Block {
             table.table(tex.clear, t -> {
             	tt.table().size(40);
                 addConfigButton(t, 1).align(Align.center);
-            })
+            });
         }
 
         public Cell<Table> addConfigButton(Table table, int index) {

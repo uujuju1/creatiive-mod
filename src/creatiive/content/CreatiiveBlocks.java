@@ -160,6 +160,6 @@ public class CreatiiveBlocks implements ContentList {
 			localizedName = "Nuke Caller";
 			health = 160;
 			size = 2;
-		}}
+		}};
 	}
 }
