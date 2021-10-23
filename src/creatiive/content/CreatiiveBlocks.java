@@ -22,12 +22,17 @@ import mindustry.world.blocks.storage.*;
 import mindustry.world.meta.*;
 import mindustry.world.draw.*;
 
+import creatiive.world.blocks.*;
+
 import static mindustry.type.ItemStack.with;
 
 public class CreatiiveBlocks implements ContentList {
 	public static Block
 	// production
-	refractoryKiln, ionizerPress, chlorophiteCultivator, carbonizedFurnace, fabricWeaver;
+	refractoryKiln, ionizerPress, chlorophiteCultivator, carbonizedFurnace, fabricWeaver,
+
+	// misc
+	launchPost, icbmFlare;
 
 	@Override
 	public void load() {
@@ -141,5 +146,20 @@ public class CreatiiveBlocks implements ContentList {
 			consumes.power(0.5f);
 			outputItem = new ItemStack(CreatiiveItems.chlorophite, 1);
 		}};
+
+		// misc
+
+		launchPost = new NukeLauncher("nuke-launcher") {{
+			localizedName = "Nuke Launcher";
+			health = 160;
+			size = 2;
+			hasItems = true;
+		}};
+
+		icbmFlare = new NukeCaller("nuke-caller") {{
+			localizedName = "Nuke Caller";
+			health = 160;
+			size = 2;
+		}}
 	}
 }
