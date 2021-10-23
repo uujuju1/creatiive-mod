@@ -1,6 +1,10 @@
 # Creatiive
 indev and will stay indev(probably)
 
+## Credits
+credit to simpyTav for creating the black copter's names
+
 ## Content
-some stuff such as the copters was named by HallowedTav#7664
-<br> such as copter units
+<br>`Blocks`: 5;
+<br>`Items`: 5;
+<br>`Units`: 5;
