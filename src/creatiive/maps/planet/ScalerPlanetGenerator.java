@@ -15,13 +15,12 @@ import mindustry.type.Sector;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.Floor;
 
-import static mindustry.Vars;
+import static mindustry.Vars.*;
 
 public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
 	public ScalerPlanetGenerator() {
 	}
 
-	public SimplexRepacementv6 replacesSim = new SimplexRepacementv6();
 	public int seed = 96;
 	BaseGenerator basegen = new BaseGenerator();
 	float scl = 6f;
@@ -405,27 +404,25 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
         return Tmp.c1.set(block.mapColor).a(1f - block.albedo);
     }
 
-    float rawHeight(Vec3 position){
-        position = Tmp.v33.set(position).scl(scl);
-        return (Mathf.pow(SimplexReplacementv7.noise3d(seed, 7, 0.5f, 1f/3f, position.x, position.y, position.z), 2.3f) + waterOffset) / (1f + waterOffset);
-    }
-
     public Block getBlock(Vec3 position){
-
         float height = rawHeight(position);
         Tmp.v31.set(position);
-
-        Vec3 pos = Tmp.v33.set(position).scl(scl);
-        float rad = this.scl;
-        float temp = Mathf.clamp(Math.abs(position.y * 2) / rad);
-        float tnoise = (float) replacementSim.octaveNoise3D(7, 0.46, 1 / 8, pos.x, pos.y + 999, pos.z);
-
+        position = Tmp.v33.set(position).scl(scl);
+        float rad = scl;
+        float temp = Mathf.clamp(Math.abs(position.y * 2f) / (rad));
+        float tnoise = (float)Simplex.noise3d(seed, 7, 0.56, 1f/3f, position.x, position.y + 999f, position.z);
         temp = Mathf.lerp(temp, tnoise, 0.5f);
-        height *= 1.2;
+        height *= 1.2f;
         height = Mathf.clamp(height);
 
-        Block res = arr[(int) Mathf.clamp(Math.floor(temp * arr.length), 0, arr[0].length - 1)][(int) Mathf.clamp(Math.floor(height * arr[0].length), 0, arr[0].length - 1)];
-        return res;
+        float tar = (float)Simplex.noise3d(seed, 4, 0.55f, 1f/2f, position.x, position.y + 999f, position.z) * 0.3f + Tmp.v31.dst(0, 0, 1f) * 0.2f;
+
+        Block res = arr[Mathf.clamp((int)(temp * arr.length), 0, arr[0].length - 1)][Mathf.clamp((int)(height * arr[0].length), 0, arr[0].length - 1)];
+        if(tar > 0.5f){
+            return tars.get(res, res);
+        }else{
+            return res;
+        }
     }
 
     @Override
