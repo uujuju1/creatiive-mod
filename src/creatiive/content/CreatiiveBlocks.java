@@ -27,7 +27,7 @@ import static mindustry.type.ItemStack.with;
 public class CreatiiveBlocks implements ContentList {
 	public static Block
 	// production
-	refractoryKiln, ionizerPress, chlorophiteCultivator, carbonizedFurnace, fabricWeaver,
+	refractoryKiln, ionizerPress, chlorophiteCultivator, carbonizedFurnace, fabricWeaver;
 
 	@Override
 	public void load() {
