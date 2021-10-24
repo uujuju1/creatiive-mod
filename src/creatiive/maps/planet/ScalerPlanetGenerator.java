@@ -24,6 +24,8 @@ import mindustry.graphics.g3d.PlanetGrid.*;
 import mindustry.maps.generators.*;
 import mindustry.type.*;
 
+import creatiive.content.CreatiiveBlocks;
+
 import static mindustry.Vars.*;
 
 public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
@@ -36,26 +38,26 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
 	float waterOffset = 0.050f;
 
 	Block[][] arr = {
-    	{Blocks.water, Blocks.darksandWater, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.darksandTaintedWater, Blocks.stone, Blocks.stone},
-    	{Blocks.water, Blocks.darksandWater, Blocks.darksand, Blocks.darksand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.darksandTaintedWater, Blocks.stone, Blocks.stone, Blocks.stone},
-    	{Blocks.water, Blocks.darksandWater, Blocks.darksand, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.darksandTaintedWater, Blocks.stone, Blocks.stone, Blocks.stone},
-    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.stone, Blocks.stone, Blocks.stone, Blocks.snow, Blocks.iceSnow, Blocks.ice},
-    	{Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.basalt, Blocks.snow, Blocks.snow, Blocks.snow, Blocks.snow, Blocks.ice},
-    	{Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.iceSnow, Blocks.snow, Blocks.snow, Blocks.ice, Blocks.snow, Blocks.ice},
-    	{Blocks.deepwater, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.moss, Blocks.snow, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.ice, Blocks.snow, Blocks.ice},
-    	{Blocks.taintedWater, Blocks.darksandTaintedWater, Blocks.darksand, Blocks.darksand, Blocks.basalt, Blocks.moss, Blocks.basalt, Blocks.hotrock, Blocks.basalt, Blocks.ice, Blocks.snow, Blocks.ice, Blocks.ice},
-    	{Blocks.darksandWater, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.moss, Blocks.sporeMoss, Blocks.snow, Blocks.basalt, Blocks.basalt, Blocks.ice, Blocks.snow, Blocks.ice, Blocks.ice},
-    	{Blocks.darksandWater, Blocks.darksand, Blocks.darksand, Blocks.sporeMoss, Blocks.ice, Blocks.ice, Blocks.snow, Blocks.snow, Blocks.snow, Blocks.snow, Blocks.ice, Blocks.ice, Blocks.ice},
-    	{Blocks.taintedWater, Blocks.darksandTaintedWater, Blocks.darksand, Blocks.sporeMoss, Blocks.sporeMoss, Blocks.ice, Blocks.ice, Blocks.snow, Blocks.snow, Blocks.ice, Blocks.ice, Blocks.ice, Blocks.ice},
-    	{Blocks.darksandTaintedWater, Blocks.darksandTaintedWater, Blocks.darksand, Blocks.sporeMoss, Blocks.moss, Blocks.sporeMoss, Blocks.iceSnow, Blocks.snow, Blocks.ice, Blocks.ice, Blocks.ice, Blocks.ice, Blocks.ice},
-    	{Blocks.darksandWater, Blocks.darksand, Blocks.snow, Blocks.ice, Blocks.iceSnow, Blocks.snow, Blocks.snow, Blocks.snow, Blocks.ice, Blocks.ice, Blocks.ice, Blocks.ice, Blocks.ice}
+    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sandWater, Blocks.stone, Blocks.stone},
+    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sandWater, Blocks.stone, Blocks.stone, Blocks.stone},
+    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sandWater, Blocks.stone, Blocks.stone, Blocks.stone},
+    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.stone, Blocks.stone, Blocks.stone, Blocks.grass, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.basalt, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.sandWater},
+    	{Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.grass, Blocks.sandWater},
+    	{Blocks.deepwater, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.moss, Blocks.grass, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.sandWater, Blocks.grass, Blocks.sandWater},
+    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.basalt, Blocks.moss, Blocks.basalt, Blocks.hotrock, Blocks.basalt, Blocks.sandWater, Blocks.grass, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.sporeMoss, Blocks.grass, Blocks.basalt, Blocks.basalt, Blocks.sandWater, Blocks.grass, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sporeMoss, Blocks.sandWater, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sporeMoss, Blocks.sporeMoss, Blocks.sandWater, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.sandWater, Blocks.sandWater, Blocks.sand, Blocks.sporeMoss, Blocks.moss, Blocks.sporeMoss, Blocks.sandWater, Blocks.grass, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.sandWater, Blocks.sand, Blocks.grass, Blocks.sandWater, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater}
     };
 
     ObjectMap<Block, Block> dec = ObjectMap.of(
         Blocks.sporeMoss, Blocks.sporeCluster,
         Blocks.moss, Blocks.sporeCluster,
-        Blocks.taintedWater, Blocks.water,
-        Blocks.darksandTaintedWater, Blocks.darksandWater
+        Blocks.water, Blocks.water,
+        Blocks.sandWater, Blocks.sandWater
     );
 
     ObjectMap<Block, Block> tars = ObjectMap.of(
@@ -223,7 +225,7 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
             }
 
             if (ore == Blocks.oreScrap && rand.chance(0.33)) {
-                floor = Blocks.metalFloorDamaged;
+                floor = CreatiiveBlocks.sandDamagedMetalFloor;
             }
         });
 
@@ -242,7 +244,7 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
             }
 
             //tar
-            if (floor == Blocks.darksand) {
+            if (floor == Blocks.sand) {
                 if (Math.abs(0.5f - noise(x - 40, y, 2, 0.7, 80)) > 0.25f &&
                         Math.abs(0.5f - noise(x, y + sector.id * 10, 1, 1, 60)) > 0.41f && !(roomseq.contains(r -> Mathf.within(x, y, r.x, r.y, 15)))) {
                     floor = Blocks.tar;
@@ -267,13 +269,13 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
                         floor = Blocks.magmarock;
                     }
                 }
-            } else if (floor != Blocks.basalt && floor != Blocks.ice && floor.asFloor().hasSurface()) {
+            } else if (floor != Blocks.basalt && floor != Blocks.sandWater && floor.asFloor().hasSurface()) {
                 float noise = noise(x + 782, y, 5, 0.75f, 260f, 1f);
                 if (noise > 0.67f && !roomseq.contains(e -> Mathf.within(x, y, e.x, e.y, 14))) {
                     if (noise > 0.72f) {
-                        floor = noise > 0.78f ? Blocks.water : (floor == Blocks.basalt ? Blocks.darksandWater : Blocks.water);
+                        floor = noise > 0.78f ? Blocks.water : (floor == Blocks.basalt ? Blocks.sandWater : Blocks.water);
                     } else {
-                        floor = (floor == Blocks.basalt ? floor : Blocks.darksand);
+                        floor = (floor == Blocks.basalt ? floor : Blocks.sand);
                     }
                     ore = Blocks.air;
                 }

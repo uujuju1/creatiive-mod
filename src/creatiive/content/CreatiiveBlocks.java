@@ -27,7 +27,11 @@ import static mindustry.type.ItemStack.with;
 public class CreatiiveBlocks implements ContentList {
 	public static Block
 	// production
-	refractoryKiln, ionizerPress, chlorophiteCultivator, carbonizedFurnace, fabricWeaver;
+	refractoryKiln, ionizerPress, chlorophiteCultivator, carbonizedFurnace, fabricWeaver,
+
+	// enviromnent
+	sandMetalFloor, sandMetalFloor2, sandMetalFloor3, sandMetalFloor4, sandMetalFloor5,
+	sandDamagedMetalFloor;
 
 	@Override
 	public void load() {
@@ -142,6 +146,13 @@ public class CreatiiveBlocks implements ContentList {
 			outputItem = new ItemStack(CreatiiveItems.chlorophite, 1);
 		}};
 
-		// misc
+		// env
+		sandMetalFloor = new Floor("sand-metal-floor", 0);
+		sandMetalFloor2 = new Floor("sand-metal-floor2", 0);
+		sandMetalFloor3 = new Floor("sand-metal-floor3", 0);
+		sandMetalFloor4 = new Floor("sand-metal-floor4", 0);
+		sandMetalFloor5 = new Floor("sand-metal-floor5", 0);
+
+		sandDamagedMetalFloor = new Floor("sand-damaged-metal-floor", 3)
 	}
 }
