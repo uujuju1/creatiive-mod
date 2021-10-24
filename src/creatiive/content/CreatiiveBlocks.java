@@ -153,6 +153,6 @@ public class CreatiiveBlocks implements ContentList {
 		sandMetalFloor4 = new Floor("sand-metal-floor4", 0);
 		sandMetalFloor5 = new Floor("sand-metal-floor5", 0);
 
-		sandDamagedMetalFloor = new Floor("sand-damaged-metal-floor", 3)
+		sandDamagedMetalFloor = new Floor("sand-damaged-metal-floor", 3);
 	}
 }
