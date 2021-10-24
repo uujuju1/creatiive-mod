@@ -18,6 +18,6 @@ public class Creatiive extends Mod{
     	new CreatiiveItems().load();
     	new CreatiiveBlocks().load();
     	new CreatiiveUnitTypes().load();
-    	new CreatiivePlanets().load()
+    	new CreatiivePlanets().load();
     }
 }
