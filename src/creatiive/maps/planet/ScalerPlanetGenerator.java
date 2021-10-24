@@ -14,6 +14,15 @@ import mindustry.maps.planet.SerpuloPlanetGenerator;
 import mindustry.type.Sector;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.Floor;
+import arc.graphics.*;
+import arc.util.*;
+import arc.util.noise.*;
+import mindustry.ai.*;
+import mindustry.ai.BaseRegistry.*;
+import mindustry.content.*;
+import mindustry.graphics.g3d.PlanetGrid.*;
+import mindustry.maps.generators.*;
+import mindustry.type.*;
 
 import static mindustry.Vars.*;
 
