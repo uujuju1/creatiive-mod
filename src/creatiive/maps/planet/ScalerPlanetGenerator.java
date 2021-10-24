@@ -102,7 +102,7 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
                 connected.add(to);
                 float nscl = rand.random(20f, 60f);
                 int stroke = rand.random(4, 12);
-                brush(pathfind(x, y, to.x, to.y, tile -> (tile.solid() ? 5f : 0f) + noiseOct(tile.x, tile.y, 1, 1, 1f / nscl) * 60, Astar.manhattan), stroke);
+                brush(pathfind(x, y, to.x, to.y, tile -> (tile.solid() ? 5f : 0f) + noise(tile.x, tile.y, 1, 1, 1f / nscl) * 60, Astar.manhattan), stroke);
             }
         }
 
@@ -439,7 +439,7 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
         tile.floor = getBlock(position);
         tile.block = tile.floor.asFloor().wall;
 
-        if(RigidRepalcement.noise3d(1, position.x, position.y, position.z, 2, 22) > 0.31){
+        if(Ridged.noise3d(1, position.x, position.y, position.z, 2, 22) > 0.31){
             tile.block = Blocks.air;
         }
     }
