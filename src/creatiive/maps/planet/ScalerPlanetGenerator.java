@@ -23,7 +23,7 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
 
 	public SimplexRepacementv6 replacesSim = new SimplexRepacementv6();
 	public int seed = 96;
-	BaseGenerator = new BaseGenerator();
+	BaseGenerator basegen = new BaseGenerator();
 	float scl = 6f;
 	float waterOffset = 0.050f;
 
@@ -62,7 +62,7 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
     }
 
     @Override
-    public generateSector(Sector sector) {
+    public void generateSector(Sector sector) {
     	super.generateSector(sector);
     	sector.generateEnemyBase = false;
     }
