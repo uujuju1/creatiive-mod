@@ -21,6 +21,6 @@ public class CreatiivePlanets implements ContentList {
             atmosphereRadOut = 0.3f;
             startSector = 15;
             alwaysUnlocked = true;
-		}}
+		}};
 	}
 }

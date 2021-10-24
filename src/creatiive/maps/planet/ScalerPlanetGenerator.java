@@ -17,7 +17,7 @@ import mindustry.world.blocks.environment.Floor;
 
 import static mindustry.Vars;
 
-public class ScalerPlanetGenerator extends PlanetGenerator {
+public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
 	public ScalerPlanetGenerator() {
 	}
 
@@ -62,8 +62,8 @@ public class ScalerPlanetGenerator extends PlanetGenerator {
     }
 
     @Override
-    public GenerateSector(Sector sector) {
-    	super.GenerateSector(sector);
+    public generateSector(Sector sector) {
+    	super.generateSector(sector);
     	sector.generateEnemyBase = false;
     }
 
