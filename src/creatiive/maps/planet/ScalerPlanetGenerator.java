@@ -41,27 +41,27 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
     	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sandWater, Blocks.stone, Blocks.stone},
     	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sandWater, Blocks.stone, Blocks.stone, Blocks.stone},
     	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sandWater, Blocks.stone, Blocks.stone, Blocks.stone},
-    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.stone, Blocks.stone, Blocks.stone, Blocks.grass, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.basalt, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.sandWater},
-    	{Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.grass, Blocks.sandWater},
-    	{Blocks.deepwater, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.moss, Blocks.grass, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.sandWater, Blocks.grass, Blocks.sandWater},
-    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.basalt, Blocks.moss, Blocks.basalt, Blocks.hotrock, Blocks.basalt, Blocks.sandWater, Blocks.grass, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.sporeMoss, Blocks.grass, Blocks.basalt, Blocks.basalt, Blocks.sandWater, Blocks.grass, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sporeMoss, Blocks.sandWater, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sporeMoss, Blocks.sporeMoss, Blocks.sandWater, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.sandWater, Blocks.sandWater, Blocks.sand, Blocks.sporeMoss, Blocks.moss, Blocks.sporeMoss, Blocks.sandWater, Blocks.grass, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.sandWater, Blocks.sand, Blocks.grass, Blocks.sandWater, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater}
+    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.stone, Blocks.stone, Blocks.stone, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.grass, Blocks.bbasalt, Blocks.bbasalt, Blocks.bbasalt, Blocks.bbasalt, Blocks.sandWater},
+    	{Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.sandWater, Blocks.bbasalt, Blocks.bbasalt, Blocks.sandWater, Blocks.bbasalt, Blocks.sandWater},
+    	{Blocks.deepwater, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.moss, Blocks.bbasalt, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.bbasalt, Blocks.sandWater},
+    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.grass, Blocks.moss, Blocks.grass, Blocks.hotrock, Blocks.grass, Blocks.sandWater, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.dirt, Blocks.bbasalt, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.dirt, Blocks.sandWater, Blocks.sandWater, Blocks.bbasalt, Blocks.bbasalt, Blocks.bbasalt, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.dirt, Blocks.dirt, Blocks.sandWater, Blocks.sandWater, Blocks.bbasalt, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.sandWater, Blocks.sandWater, Blocks.sand, Blocks.dirt, Blocks.moss, Blocks.dirt, Blocks.sandWater, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
+    	{Blocks.sandWater, Blocks.sand, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater, Blocks.bbasalt, Blocks.bbasalt, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater}
     };
 
     ObjectMap<Block, Block> dec = ObjectMap.of(
-        Blocks.sporeMoss, Blocks.sporeCluster,
+        Blocks.dirt, Blocks.sporeCluster,
         Blocks.moss, Blocks.sporeCluster,
         Blocks.water, Blocks.water,
         Blocks.sandWater, Blocks.sandWater
     );
 
     ObjectMap<Block, Block> tars = ObjectMap.of(
-        Blocks.sporeMoss, Blocks.shale,
+        Blocks.dirt, Blocks.shale,
         Blocks.moss, Blocks.shale
     );
 
@@ -237,7 +237,7 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
 
         pass((x, y) -> {
             //random moss
-            if (floor == Blocks.sporeMoss) {
+            if (floor == Blocks.dirt) {
                 if (Math.abs(0.5f - noise(x - 90, y, 4, 0.8, 65)) > 0.02) {
                     floor = Blocks.moss;
                 }
