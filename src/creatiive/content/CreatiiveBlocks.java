@@ -30,6 +30,9 @@ public class CreatiiveBlocks implements ContentList {
 	sandMetalFloor, sandMetalFloor2, sandMetalFloor3, sandMetalFloor4, sandMetalFloor5,
 	sandDamagedMetalFloor,
 
+	// ores
+	oreDusterite,
+
 	// defense
 	dusteriteWall, dusteriteWallLarge;
 
@@ -79,5 +82,12 @@ public class CreatiiveBlocks implements ContentList {
 			health = 350 * 4;
 			size = 2;
 		}};
+
+		// ores
+		oreDusterite = new OreBlock(CreatiiveItems.dusterite) {{
+			oreDefault = true;
+            oreThreshold = 0.846f;
+            oreScale = 24.428572f;
+        }};
 	}
 }

@@ -24,7 +24,7 @@ import mindustry.graphics.g3d.PlanetGrid.*;
 import mindustry.maps.generators.*;
 import mindustry.type.*;
 
-import creatiive.content.CreatiiveBlocks;
+import creatiive.content.*;
 
 import static mindustry.Vars.*;
 
@@ -184,7 +184,7 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
 
         inverseFloodFill(tiles.getn(spawn.x, spawn.y));
 
-        Seq<Block> ores = Seq.with(Blocks.oreCopper, Blocks.oreLead);
+        Seq<Block> ores = Seq.with(Blocks.oreCopper, Blocks.oreLead, CreatiiveBlocks.oreDusterite);
         float poles = Math.abs(sector.tile.v.y);
         float nmag = 0.5f;
         float scl = 1f;
