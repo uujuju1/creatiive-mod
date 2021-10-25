@@ -37,20 +37,21 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
 	float scl = 6f;
 	float waterOffset = 0.050f;
 
-	Block[][] arr = {
-    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sandWater, Blocks.stone, Blocks.stone},
-    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sandWater, Blocks.stone, Blocks.stone, Blocks.stone},
-    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sandWater, Blocks.stone, Blocks.stone, Blocks.stone},
-    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.stone, Blocks.stone, Blocks.stone, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.grass, Blocks.bbasalt, Blocks.bbasalt, Blocks.bbasalt, Blocks.bbasalt, Blocks.sandWater},
-    	{Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.sandWater, Blocks.bbasalt, Blocks.bbasalt, Blocks.sandWater, Blocks.bbasalt, Blocks.sandWater},
-    	{Blocks.deepwater, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.moss, Blocks.bbasalt, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.bbasalt, Blocks.sandWater},
-    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.grass, Blocks.moss, Blocks.grass, Blocks.hotrock, Blocks.grass, Blocks.sandWater, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.dirt, Blocks.bbasalt, Blocks.grass, Blocks.grass, Blocks.sandWater, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.dirt, Blocks.sandWater, Blocks.sandWater, Blocks.bbasalt, Blocks.bbasalt, Blocks.bbasalt, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.dirt, Blocks.dirt, Blocks.sandWater, Blocks.sandWater, Blocks.bbasalt, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.sandWater, Blocks.sandWater, Blocks.sand, Blocks.dirt, Blocks.moss, Blocks.dirt, Blocks.sandWater, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater},
-    	{Blocks.sandWater, Blocks.sand, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater, Blocks.bbasalt, Blocks.bbasalt, Blocks.bbasalt, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater, Blocks.sandWater}
+	Block[][] arr =
+    {
+    {Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water},
+    {Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand},
+    {Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water},
+    {Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand},
+    {Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water},
+    {Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand},
+    {Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water},
+    {Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand},
+    {Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water},
+    {Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand},
+    {Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water},
+    {Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand},
+    {Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water, Blocks.sand, Blocks.water},
     };
 
     ObjectMap<Block, Block> dec = ObjectMap.of(
