@@ -14,7 +14,8 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.*;
 import mindustry.world.blocks.production.*;
-import mindustry.world.blocks.enviromnent.*;
+import mindustry.world.blocks.environment.*;
+import mindustry.world.blocks.defense.*;
 import mindustry.world.meta.*;
 import mindustry.world.draw.*;
 
