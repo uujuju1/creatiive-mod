@@ -14,7 +14,7 @@ import mindustry.world.*;
 public class CreatiiveBullets implements ContentList {
 	public static BulletType 
 		// pull default
-		pullSmall, pullMedium, PullLarge
+		pullSmall, pullMedium, PullLarge,
 
 		// pull home
 		pullHomeSmall, pullHomeMedium, pullHomeLarge;
