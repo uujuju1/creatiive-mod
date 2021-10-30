@@ -5,6 +5,6 @@ indev and will stay indev(probably)
 credit to simpyTav for creating the black copter's names
 
 ## Content
-<br>`Blocks`: 5;
-<br>`Items`: 5;
+<br>`Blocks`: 8;
+<br>`Items`: 2;
 <br>`Units`: 5;
