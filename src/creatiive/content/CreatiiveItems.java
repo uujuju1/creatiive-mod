@@ -16,7 +16,7 @@ public class CreatiiveItems implements ContentList {
 		}};
 		dusterite = new Item("dusterite", Color.valueOf("8F7956")) {{
 			localizedName = "Dusterite";
-			cost = 3;
+			hardness = 1;
 		}};
 	}
 }
