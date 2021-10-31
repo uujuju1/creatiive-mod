@@ -43,7 +43,7 @@ public class CreatiiveBlocks implements ContentList {
 	dusteriteWall, dusteriteWallLarge, dusteriteWallHuge, dusteriteWallGigantic,
 
 	// turrets
-	pull /*, attract, implode */;
+	pull, attract, implode;
 
 	@Override
 	public void load() {
@@ -150,42 +150,58 @@ public class CreatiiveBlocks implements ContentList {
         	restitution = 0.05f;
         }};
 
-        // attract = new ItemTurret("attract") {{
-        // 	requirements(Category.turret, with(CreatiiveItems.dusterite, 120, Items.silicon, 80, Items.titanium, 75));
-        // 	ammo(
-        // 		CreatiiveItems.dusterite, CreatiiveBullets.pullMedium,
-        // 		Items.silicon, CreatiiveBullets.pullHomeMedium
-        // 	);
-        // 	localizedName = "Attract";
-        // 	health = 240 * 2 * 2;
-        // 	size = 2;
-        // 	reloadTime = 60f;
-        // 	recoilAmount = -1.5f;
-        // 	range = 200f;
-        // 	inaccuracy = 1.5f;
-        // 	rotateSpeed = 7.5f;
-        // 	maxAmmo = 100;
-        // 	restitution = 0.05f;
-        // }};
+        attract = new ItemTurret("attract") {{
+        	requirements(Category.turret, with(CreatiiveItems.dusterite, 120, Items.silicon, 80, Items.titanium, 75));
+        	ammo(
+        		CreatiiveItems.dusterite, new BasicBulletType(4f, 50) {{
+        			lifetime = range/speed;
+        			width = 9;
+        			height = 11;
+        		}},
+        		Items.silicon, new MissileBulletType(4f, 75) {{
+        			lifetime = range/speed;
+        			width = 9;
+        			height = 11;
+        		}}
+        	);
+        	localizedName = "Attract";
+        	health = 240 * 2 * 2;
+        	size = 2;
+        	reloadTime = 60f;
+        	recoilAmount = -1.5f;
+        	range = 200f;
+        	inaccuracy = 1.5f;
+        	rotateSpeed = 7.5f;
+        	maxAmmo = 100;
+        	restitution = 0.05f;
+        }};
 
-        // implode = new ItemTurret("implode") {{
-        // 	requirements(Category.turret, with(CreatiiveItems.dusterite, 250, Items.silicon, 150, Items.thorium, 100));
-        // 	ammo(
-        // 		CreatiiveItems.dusterite, CreatiiveBullets.pullLarge,
-        // 		Items.silicon, CreatiiveBullets.pullHomeLarge
-        // 	);
-        // 	localizedName = "Implode";
-        // 	health = 260 * 3 * 3;
-        // 	size = 3;
-        // 	reloadTime = 30f;
-        // 	recoilAmount = -1f;
-        // 	range = 240f;
-        // 	inaccuracy = 2f;
-        // 	rotateSpeed = 5f;
-        // 	shots = 4;
-        // 	burstSpacing = 4f;
-        // 	maxAmmo = 100;
-        // 	restitution = 0.05f;
-        // }};
+        implode = new ItemTurret("implode") {{
+        	requirements(Category.turret, with(CreatiiveItems.dusterite, 250, Items.silicon, 150, Items.thorium, 100));
+        	ammo(
+        		CreatiiveItems.dusterite, new BasicBulletType(4f, 50) {{
+        			lifetime = range/speed;
+        			width = 11;
+        			height = 13;
+        		}},
+        		Items.silicon, new MissileBulletType(4f, 75) {{
+        			lifetime = range/speed;
+        			width = 11;
+        			height = 13;
+        		}}
+        	);
+        	localizedName = "Implode";
+        	health = 260 * 3 * 3;
+        	size = 3;
+        	reloadTime = 30f;
+        	recoilAmount = -1f;
+        	range = 240f;
+        	inaccuracy = 2f;
+        	rotateSpeed = 5f;
+        	shots = 4;
+        	burstSpacing = 4f;
+        	maxAmmo = 100;
+        	restitution = 0.05f;
+        }};
 	}
 }
