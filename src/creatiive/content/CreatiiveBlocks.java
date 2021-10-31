@@ -126,8 +126,16 @@ public class CreatiiveBlocks implements ContentList {
         pull = new ItemTurret("pull") {{
         	requirements(Category.turret, with(CreatiiveItems.dusterite, 15, Items.lead, 20));
         	ammo(
-        		CreatiiveItems.dusterite, CreatiiveBullets.pullSmall,
-        		Items.silicon, CreatiiveBullets.pullHomeSmall
+        		CreatiiveItems.dusterite, new BasicBulletType(4f, 15) {{
+        			lifetime = range/speed;
+        			width = 7;
+        			height = 9;
+        		}},
+        		Items.silicon, new MissileBulletType(4f, 17) {{
+        			lifetime = range/speed;
+        			width = 7;
+        			height = 9;
+        		}}
         	);
         	localizedName = "Pull";
         	health = 230;
@@ -137,7 +145,7 @@ public class CreatiiveBlocks implements ContentList {
         	range = 120f;
         	inaccuracy = 1f;
         	rotateSpeed = 10f;
-        	maxAmmo = 100;
+        	maxAmmo = 30;
         	restitution = 0.05f;
         }};
 
