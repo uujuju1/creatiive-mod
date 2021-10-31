@@ -128,14 +128,14 @@ public class CreatiiveBlocks implements ContentList {
         	requirements(Category.turret, with(CreatiiveItems.dusterite, 15, Items.lead, 20));
         	ammo(
         		CreatiiveItems.dusterite, new BasicBulletType(4f, 15) {{
-        			lifetime = range/speed;
-        			width = 7;
-        			height = 9;
+        			lifetime = 30f;
+        			width = 7f;
+        			height = 9f;
         		}},
         		Items.silicon, new MissileBulletType(4f, 17) {{
-        			lifetime = range/speed;
-        			width = 7;
-        			height = 9;
+        			lifetime = 30f;
+        			width = 7f;
+        			height = 9f;
         		}}
         	);
         	localizedName = "Pull";
@@ -154,14 +154,14 @@ public class CreatiiveBlocks implements ContentList {
         	requirements(Category.turret, with(CreatiiveItems.dusterite, 120, Items.silicon, 80, Items.titanium, 75));
         	ammo(
         		CreatiiveItems.dusterite, new BasicBulletType(4f, 50) {{
-        			lifetime = range/speed;
-        			width = 9;
-        			height = 11;
+        			lifetime = 50f;
+        			width = 9f;
+        			height = 11f;
         		}},
         		Items.silicon, new MissileBulletType(4f, 75) {{
-        			lifetime = range/speed;
-        			width = 9;
-        			height = 11;
+        			lifetime = 50f;
+        			width = 9f;
+        			height = 11f;
         		}}
         	);
         	localizedName = "Attract";
@@ -180,12 +180,12 @@ public class CreatiiveBlocks implements ContentList {
         	requirements(Category.turret, with(CreatiiveItems.dusterite, 250, Items.silicon, 150, Items.thorium, 100));
         	ammo(
         		CreatiiveItems.dusterite, new BasicBulletType(4f, 50) {{
-        			lifetime = range/speed;
+        			lifetime = 60f;
         			width = 11;
         			height = 13;
         		}},
         		Items.silicon, new MissileBulletType(4f, 75) {{
-        			lifetime = range/speed;
+        			lifetime = 60f;
         			width = 11;
         			height = 13;
         		}}
