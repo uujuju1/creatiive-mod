@@ -116,7 +116,7 @@ public class CreatiiveBlocks implements ContentList {
         // distribution
         // bridges
         dusteriteBridge = new BufferedItemBridge("dusterite-bridge") {{
-        	requirements(Category.defense, with(CreatiiveItems.dusterite, 12, Items.lead, 6));
+        	requirements(Category.distribution, with(CreatiiveItems.dusterite, 12, Items.lead, 6));
         	range = 4;
         	speed = 74f;
         	bufferCapacity = 14;
@@ -137,6 +137,7 @@ public class CreatiiveBlocks implements ContentList {
         	range = 120f;
         	inaccuracy = 1f;
         	rotateSpeed = 10f;
+        	maxAmmo = 30;
         }};
 
         attract = new ItemTurret("attract") {{
@@ -153,6 +154,7 @@ public class CreatiiveBlocks implements ContentList {
         	range = 200f;
         	inaccuracy = 1.5f;
         	rotateSpeed = 7.5f;
+        	maxAmmo = 30;
         }};
 
         implode = new ItemTurret("implode") {{
@@ -171,6 +173,7 @@ public class CreatiiveBlocks implements ContentList {
         	rotateSpeed = 5f;
         	shots = 4;
         	burstSpacing = 4f;
+        	maxAmmo = 30;
         }};
 	}
 }
