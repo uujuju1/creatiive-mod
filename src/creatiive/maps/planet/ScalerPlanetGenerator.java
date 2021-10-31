@@ -274,7 +274,7 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
                 float noise = noise(x + 782, y, 5, 0.75f, 260f, 1f);
                 if (noise > 0.67f && !roomseq.contains(e -> Mathf.within(x, y, e.x, e.y, 14))) {
                     if (noise > 0.72f) {
-                        floor = noise > 0.78f ? Blocks.water : (floor == Blocks.basalt ? Blocks.sandWater : Blocks.water);
+                        floor = noise > 0.78f ? Blocks.salt : (floor == Blocks.basalt ? Blocks.sandWater : Blocks.salt);
                     } else {
                         floor = (floor == Blocks.basalt ? floor : Blocks.sand);
                     }

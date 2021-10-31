@@ -137,7 +137,7 @@ public class CreatiiveBlocks implements ContentList {
         	range = 120f;
         	inaccuracy = 1f;
         	rotateSpeed = 10f;
-        	maxAmmo = 30;
+        	maxAmmo = 100;
         }};
 
         attract = new ItemTurret("attract") {{
@@ -154,7 +154,7 @@ public class CreatiiveBlocks implements ContentList {
         	range = 200f;
         	inaccuracy = 1.5f;
         	rotateSpeed = 7.5f;
-        	maxAmmo = 30;
+        	maxAmmo = 100;
         }};
 
         implode = new ItemTurret("implode") {{
@@ -164,7 +164,7 @@ public class CreatiiveBlocks implements ContentList {
         		Items.silicon, CreatiiveBullets.pullHomeLarge
         	);
         	localizedName = "Implode";
-        	health = 260 * 2 * 2;
+        	health = 260 * 3 * 3;
         	size = 3;
         	reloadTime = 30f;
         	recoilAmount = -1f;
@@ -173,7 +173,7 @@ public class CreatiiveBlocks implements ContentList {
         	rotateSpeed = 5f;
         	shots = 4;
         	burstSpacing = 4f;
-        	maxAmmo = 30;
+        	maxAmmo = 100;
         }};
 	}
 }
