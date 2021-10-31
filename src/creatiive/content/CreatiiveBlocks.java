@@ -138,6 +138,7 @@ public class CreatiiveBlocks implements ContentList {
         	inaccuracy = 1f;
         	rotateSpeed = 10f;
         	maxAmmo = 100;
+        	restitution = 0.05f;
         }};
 
         attract = new ItemTurret("attract") {{
@@ -155,6 +156,7 @@ public class CreatiiveBlocks implements ContentList {
         	inaccuracy = 1.5f;
         	rotateSpeed = 7.5f;
         	maxAmmo = 100;
+        	restitution = 0.05f;
         }};
 
         implode = new ItemTurret("implode") {{
@@ -174,6 +176,7 @@ public class CreatiiveBlocks implements ContentList {
         	shots = 4;
         	burstSpacing = 4f;
         	maxAmmo = 100;
+        	restitution = 0.05f;
         }};
 	}
 }
