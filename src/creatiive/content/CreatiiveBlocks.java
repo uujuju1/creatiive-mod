@@ -43,7 +43,7 @@ public class CreatiiveBlocks implements ContentList {
 	dusteriteWall, dusteriteWallLarge, dusteriteWallHuge, dusteriteWallGigantic,
 
 	// turrets
-	pull, /* attract, implode */;
+	pull /*, attract, implode */;
 
 	@Override
 	public void load() {
