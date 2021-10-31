@@ -124,7 +124,7 @@ public class CreatiiveBlocks implements ContentList {
 
         // turrets
         pull = new ItemTurret("pull") {{
-        	requirements(Category.turret, with(Items.dusterite, 15, Items.lead, 20));
+        	requirements(Category.turret, with(CreatiiveItems.dusterite, 15, Items.lead, 20));
         	ammo(
         		CreatiiveItems.dusterite, CreatiiveBullets.pullSmall,
         		Items.silicon, CreatiiveBullets.pullHomeSmall
@@ -133,7 +133,7 @@ public class CreatiiveBlocks implements ContentList {
         	health = 230;
         	size = 1;
         	reloadTime = 30f;
-        	recoil = -1f;
+        	recoilAmount = -1f;
         	range = 120f;
         	inaccuracy = 1f;
         	rotateSpeed = 10f;
@@ -149,7 +149,7 @@ public class CreatiiveBlocks implements ContentList {
         	health = 240 * 2 * 2;
         	size = 2;
         	reloadTime = 60f;
-        	recoil = -1.5f;
+        	recoilAmount = -1.5f;
         	range = 200f;
         	inaccuracy = 1.5f;
         	rotateSpeed = 7.5f;
@@ -165,7 +165,7 @@ public class CreatiiveBlocks implements ContentList {
         	health = 260 * 2 * 2;
         	size = 3;
         	reloadTime = 30f;
-        	recoil = -1f;
+        	recoilAmount = -1f;
         	range = 240f;
         	inaccuracy = 2f;
         	rotateSpeed = 5f;
