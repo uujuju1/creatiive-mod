@@ -94,7 +94,7 @@ public class CreatiiveBlocks implements ContentList {
 		dusteriteWallHuge = new Wall("dusterite-wall-huge") {{
 			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 9));
 			localizedName = "Huge Dusterite Wall";
-			detaits = "sus";
+			details = "sus";
 			health = 350 * 11;
 			size = 3;
 		}};

@@ -25,8 +25,6 @@ public class CreatiiveBullets implements ContentList {
 			lifetime = 30f;
 			width = 9f;
 			height = 11f;
-            shootEffect = Fx.shootSmall;
-            smokeEffect = Fx.shootSmallSmoke;
             pierce = true;
             pierceCap = 10;
             ammoMultiplier = 2;
@@ -36,8 +34,6 @@ public class CreatiiveBullets implements ContentList {
 			lifetime = 30f;
 			width = 9f;
 			height = 11f;
-            shootEffect = Fx.shootSmall;
-            smokeEffect = Fx.shootSmallSmoke;
             pierce = true;
             pierceCap = 15;
             ammoMultiplier = 2;
@@ -47,8 +43,6 @@ public class CreatiiveBullets implements ContentList {
 			lifetime = 30f;
 			width = 9f;
 			height = 11f;
-            shootEffect = Fx.shootSmall;
-            smokeEffect = Fx.shootSmallSmoke;
             pierce = true;
             pierceCap = 15;
             ammoMultiplier = 2;
@@ -59,8 +53,6 @@ public class CreatiiveBullets implements ContentList {
 			lifetime = 30f;
 			width = 9f;
 			height = 11f;
-            shootEffect = Fx.shootSmall;
-            smokeEffect = Fx.shootSmallSmoke;
             pierce = true;
             pierceCap = 10;
             ammoMultiplier = 2;
@@ -70,8 +62,6 @@ public class CreatiiveBullets implements ContentList {
 			lifetime = 30f;
 			width = 9f;
 			height = 11f;
-            shootEffect = Fx.shootSmall;
-            smokeEffect = Fx.shootSmallSmoke;
             pierce = true;
             pierceCap = 15;
             ammoMultiplier = 2;
@@ -81,8 +71,6 @@ public class CreatiiveBullets implements ContentList {
 			lifetime = 30f;
 			width = 9f;
 			height = 11f;
-            shootEffect = Fx.shootSmall;
-            smokeEffect = Fx.shootSmallSmoke;
             pierce = true;
             pierceCap = 15;
             ammoMultiplier = 2;
