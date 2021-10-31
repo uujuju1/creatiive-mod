@@ -14,6 +14,7 @@ public class CreatiivePlanets implements ContentList {
 	@Override
 	public void load() {
 		scaler = new Planet("scaler", Planets.sun, 2, 0.87f) {{
+			localizedName = "Scaler";
 			generator = new ScalerPlanetGenerator();
             meshLoader = () -> new HexMesh(this, 6);
             atmosphereColor = Color.valueOf("ff7a38");

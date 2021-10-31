@@ -6,7 +6,7 @@ import mindustry.type.Item;
 
 public class CreatiiveItems implements ContentList {
 	public static Item 
-	highCarbonSteel, fabric, chlorophite, refractoryGlass, cesium;
+	highCarbonSteel, dusterite;
 
 	@Override
 	public void load(){
@@ -14,22 +14,9 @@ public class CreatiiveItems implements ContentList {
 			localizedName = "High Carbon Steel";
 			cost = 5;
 		}};
-		fabric = new Item("fabric", Color.valueOf("BFBFBF")) {{
-			localizedName = "Fabric";
-			cost = 3;
-		}};
-		chlorophite = new Item("chlorophite", Color.valueOf("17851C")) {{
-			localizedName = "Chlorophite";
-			cost = 4;
-			flammability = 0.3f;
-		}};
-		refractoryGlass = new Item("refractory-glass", Color.valueOf("9DA8DC")) {{
-			localizedName = "refractory Glass";
-			cost = 7;
-		}};
-		cesium = new Item("cesium", Color.valueOf("A4A498")) {{
-			localizedName = "Cesium";
-			cost = 6;
+		dusterite = new Item("dusterite", Color.valueOf("8F7956")) {{
+			localizedName = "Dusterite";
+			hardness = 1;
 		}};
 	}
 }
