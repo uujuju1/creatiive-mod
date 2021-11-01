@@ -21,7 +21,9 @@ import static mindustry.content.Bullets.*;
 public class CreatiiveUnitTypes implements ContentList {
 	public static UnitType
 	// copters
-	ACopter, BCopter, CCopter, DCopter, ECopter;
+	ACopter, BCopter, CCopter, DCopter, ECopter,
+	// dust navals
+	silver, gold, platinum;
 
 	public void load() {
 		ACopter = new RotorUnitType("ACopter") {{
@@ -304,6 +306,17 @@ public class CreatiiveUnitTypes implements ContentList {
 					}};
 				}}
 			);
+		}};
+
+		silver = new HydroNavalUnitType("silver") {{
+			speed = 1.1f;
+            drag = 0.13f;
+            hitSize = 10f;
+            health = 280;
+            accel = 0.4f;
+            rotateSpeed = 3.3f;
+            trailLength = 20;
+            rotateShooting = false;
 		}};
 	}
 }

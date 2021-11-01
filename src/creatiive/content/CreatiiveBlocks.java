@@ -131,11 +131,15 @@ public class CreatiiveBlocks implements ContentList {
         			lifetime = 30f;
         			width = 7f;
         			height = 9f;
+        			pierce = true;
+        			pierceCap = 10;
         		}},
         		Items.silicon, new MissileBulletType(4f, 17) {{
         			lifetime = 30f;
         			width = 7f;
         			height = 9f;
+        			pierce = true;
+        			pierceCap = 10;
         		}}
         	);
         	localizedName = "Pull";
@@ -157,11 +161,15 @@ public class CreatiiveBlocks implements ContentList {
         			lifetime = 50f;
         			width = 9f;
         			height = 11f;
+        			pierce = true;
+        			pierceCap = 10;
         		}},
         		Items.silicon, new MissileBulletType(4f, 75) {{
         			lifetime = 50f;
         			width = 9f;
         			height = 11f;
+        			pierce = true;
+        			pierceCap = 10;
         		}}
         	);
         	localizedName = "Attract";
@@ -183,11 +191,15 @@ public class CreatiiveBlocks implements ContentList {
         			lifetime = 60f;
         			width = 11;
         			height = 13;
+        			pierce = true;
+        			pierceCap = 10;
         		}},
         		Items.silicon, new MissileBulletType(4f, 75) {{
         			lifetime = 60f;
         			width = 11;
         			height = 13;
+        			pierce = true;
+        			pierceCap = 10;
         		}}
         	);
         	localizedName = "Implode";
