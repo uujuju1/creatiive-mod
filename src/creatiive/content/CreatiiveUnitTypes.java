@@ -8,7 +8,6 @@ import arc.math.*;
 import arc.struct.*;
 import arc.graphics.Color;
 import mindustry.ai.types.*;
-import mindustry.annotations.Annotations.*;
 import mindustry.ctype.*;
 import mindustry.ctype.ContentList;
 import mindustry.content.*;
@@ -36,10 +35,10 @@ import static mindustry.content.Bullets.*;
 
 public class CreatiiveUnitTypes implements ContentList {
 	// flying
-	public static @EntityDef({Unitc.class}) UnitType ACopter, BCopter, CCopter, DCopter, ECopter;
+	public static UnitType ACopter, BCopter, CCopter, DCopter, ECopter,
 	
 	// dust navals
-	public static @EntityDef({Unitc.class, WaterMovec.class}) UnitType silver, gold, platinum;
+	silver, gold, platinum;
 
 	public void load() {
 		ACopter = new RotorUnitType("ACopter") {{
@@ -328,6 +327,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			localizedName = "Silver";
 			canBoost = true;
 			flying = false;
+			constructor = UnitWaterMove::create;
 			speed = 1.1f;
             drag = 0.13f;
             hitSize = 10f;
@@ -349,6 +349,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			localizedName = "Gold";
 			canBoost = false;
 			flying = false;
+			constructor = UnitWaterMove::create;
 			health = 560;
             speed = 0.83f;
             drag = 0.14f;
@@ -364,7 +365,7 @@ public class CreatiiveUnitTypes implements ContentList {
             trailScl = 1.9f;
 
             rotors.add(
-            	new DrawRotor(name = "-rotor") {{
+            	new DrawRotor(name + "-rotor") {{
             		x = y = 0f;
             		rotorSpeed = 15f;
             	}}
@@ -375,6 +376,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			localizedName = "Platinum";
 			canBoost = true;
 			flying = false;
+			constructor = UnitWaterMove::create;
 			health = 870;
             speed = 0.86f;
             accel = 0.22f;
