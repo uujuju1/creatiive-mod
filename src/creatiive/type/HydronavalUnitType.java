@@ -7,11 +7,11 @@ import mindustry.gen.*;
 import mindustry.type.UnitType;
 
 public class HydronavalUnitType extends UnitType {
-	public final Seq<DrawRotor> rotor = new Seq<>();
+	public final Seq<DrawRotor> rotors = new Seq<>();
 
 	public HydronavalUnitType(String name) {
 		super(name);
-		canBoost = lowAltitude = true;
+		canBoost = true;
 		constructor = UnitEntity::create;
 		engineSize = 0f;
 	}
@@ -20,12 +20,12 @@ public class HydronavalUnitType extends UnitType {
 	public void draw(Unit unit) {
 		super.draw(unit);
 		applyColor(unit);
-		rotor.each(DrawRotor -> DrawRotor.draw(unit));
+		rotors.each(DrawRotor -> DrawRotor.draw(unit));
 	}
 
 	@Override
 	public void load() {
 		super.load();
-		rotor.each(DrawRotor::load);
+		rotors.each(DrawRotor::load);
 	}
 }

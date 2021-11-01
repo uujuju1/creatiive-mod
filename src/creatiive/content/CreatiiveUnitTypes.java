@@ -308,7 +308,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			);
 		}};
 
-		silver = new HydroNavalUnitType("silver") {{
+		silver = new HydronavalUnitType("silver") {{
 			speed = 1.1f;
             drag = 0.13f;
             hitSize = 10f;
@@ -318,7 +318,7 @@ public class CreatiiveUnitTypes implements ContentList {
             trailLength = 20;
             rotateShooting = false;
 
-            rotor.add(
+            rotors.add(
             	new DrawRotor(name + "-rotor") {{
             		x = y = 0f;
             		rotorSpeed = 15f;

@@ -14,6 +14,8 @@ public class DrawRotor {
 	public float y = 0;
 	public float rotorSpeed = 15;
 
+	float speedMultiplier = 0f;
+
 	public DrawRotor(String name) {
 		this.name = name;
 	}
@@ -24,13 +26,16 @@ public class DrawRotor {
 	}
 
 	public void update(Unit unit) {
-		float speedMultiplier = 0f;
 		if (unit.isFlying()) {
 			speedMultiplier = 1f;
+		}
+		else {
+			speedMultiplier = 0f;
 		}
 	}
 
 	public void draw(Unit unit) {
+		
 		float speedScl = rotorSpeed * speedMultiplier;
 		float rotorX = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
 		float rotorY = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
