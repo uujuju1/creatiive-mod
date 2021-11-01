@@ -23,8 +23,15 @@ public class DrawRotor {
 		jointRegion = Core.atlas.find(name + "-joint");
 	}
 
+	public void update(Unit unit) {
+		float speedMultiplier = 0f;
+		if (unit.isFlying()) {
+			speedMultiplier = 1f
+		}
+	}
+
 	public void draw(Unit unit) {
-		float speedScl = rotorSpeed;
+		float speedScl = rotorSpeed * speedMultiplier;
 		float rotorX = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
 		float rotorY = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
 

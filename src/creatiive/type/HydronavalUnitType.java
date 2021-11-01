@@ -26,6 +26,6 @@ public class HydronavalUnitType extends UnitType {
 	@Override
 	public void load() {
 		super.load();
-		rotor.each(DrawRotor::load());
+		rotor.each(DrawRotor::load);
 	}
 }
