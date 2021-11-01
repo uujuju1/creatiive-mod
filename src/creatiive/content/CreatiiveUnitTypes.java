@@ -19,11 +19,11 @@ import static mindustry.Vars.tilesize;
 import static mindustry.content.Bullets.*;
 
 public class CreatiiveUnitTypes implements ContentList {
-	public static UnitType
-	// copters
-	ACopter, BCopter, CCopter, DCopter, ECopter,
+	// flying
+	public static @EntityDef({Unitc.class}) UnitType ACopter, BCopter, CCopter, DCopter, ECopter;
+	
 	// dust navals
-	silver, gold, platinum;
+	public static @EntityDef({Unitc.class, WaterMovec.class}) UnitType silver, gold, platinum;
 
 	public void load() {
 		ACopter = new RotorUnitType("ACopter") {{
@@ -308,7 +308,10 @@ public class CreatiiveUnitTypes implements ContentList {
 			);
 		}};
 
-		silver = new HydronavalUnitType("silver") {{
+		silver = new RotorUnitType("silver") {{
+			localizedName = "Silver";
+			canBoost = true;
+			flying = false;
 			speed = 1.1f;
             drag = 0.13f;
             hitSize = 10f;
@@ -317,6 +320,58 @@ public class CreatiiveUnitTypes implements ContentList {
             rotateSpeed = 3.3f;
             trailLength = 20;
             rotateShooting = false;
+
+            rotors.add(
+            	new DrawRotor(name + "-rotor") {{
+            		x = y = 0f;
+            		rotorSpeed = 15f;
+            	}}
+            );
+		}};
+
+		gold = new HydronavalUnitType("gold") {{
+			localizedName = "Gold";
+			canBoost = false;
+			flying = false;
+			health = 560;
+            speed = 0.83f;
+            drag = 0.14f;
+            hitSize = 14f;
+            armor = 4f;
+            accel = 0.4f;
+            rotateSpeed = 4f;
+            rotateShooting = false;
+
+            trailLength = 22;
+            trailX = 5.5f;
+            trailY = -4f;
+            trailScl = 1.9f;
+
+            rotors.add(
+            	new DrawRotor(name = "-rotor") {{
+            		x = y = 0f;
+            		rotorSpeed = 15f;
+            	}}
+            );
+		}};
+
+		platinum = new RotorUnitType("platinum") {{
+			localizedName = "Platinum";
+			canBoost = true;
+			flying = false;
+			health = 870;
+            speed = 0.86f;
+            accel = 0.22f;
+            rotateSpeed = 2.6f;
+            drag = 0.16f;
+            hitSize = 20f;
+            armor = 6f;
+            rotateShooting = false;
+
+            trailLength = 23;
+            trailX = 9f;
+            trailY = -9f;
+            trailScl = 2f;
 
             rotors.add(
             	new DrawRotor(name + "-rotor") {{
