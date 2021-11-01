@@ -26,7 +26,7 @@ public class DrawRotor {
 	public void update(Unit unit) {
 		float speedMultiplier = 0f;
 		if (unit.isFlying()) {
-			speedMultiplier = 1f
+			speedMultiplier = 1f;
 		}
 	}
 

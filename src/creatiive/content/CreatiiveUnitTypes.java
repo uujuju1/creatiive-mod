@@ -318,10 +318,12 @@ public class CreatiiveUnitTypes implements ContentList {
             trailLength = 20;
             rotateShooting = false;
 
-            rotor.add(name + "-rotor") {{
-            	x = y = 0f;
-            	rotorSpeed = 15f;
-            }};
+            rotor.add(
+            	new DrawRotor(name + "-rotor") {{
+            		x = y = 0f;
+            		rotorSpeed = 15f;
+            	}}
+            );
 		}};
 	}
 }
