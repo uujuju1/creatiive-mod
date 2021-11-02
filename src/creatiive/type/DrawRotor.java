@@ -14,7 +14,7 @@ public class DrawRotor {
 	public float y = 0;
 	public float rotorSpeed = 15;
 
-	float speedMultiplier = 0.5f;
+	float speedMultiplier = 0f;
 
 	public DrawRotor(String name) {
 		this.name = name;
@@ -30,7 +30,7 @@ public class DrawRotor {
 			speedMultiplier = 1f;
 		}
 		else {
-			speedMultiplier = 0.5f;
+			speedMultiplier = 0f;
 		}
 	}
 

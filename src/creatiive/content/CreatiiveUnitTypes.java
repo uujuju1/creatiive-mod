@@ -347,7 +347,7 @@ public class CreatiiveUnitTypes implements ContentList {
 
 		gold = new RotorUnitType("gold") {{
 			localizedName = "Gold";
-			canBoost = false;
+			canBoost = true;
 			flying = false;
 			constructor = UnitWaterMove::create;
 			health = 560;
