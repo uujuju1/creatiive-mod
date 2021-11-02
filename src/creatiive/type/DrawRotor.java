@@ -35,10 +35,17 @@ public class DrawRotor {
 	}
 
 	public void draw(Unit unit) {
-		
+		float speedMultiplier = 0f;
 		float speedScl = rotorSpeed * speedMultiplier;
 		float rotorX = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
 		float rotorY = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
+
+		if (unit.isFlying()) {
+			speedMultiplier = 1f;
+		}
+		else {
+			speedMultiplier = 0f;
+		}
 
 		if (unit.health <= 0 || unit.dead) {
 			speedScl = rotorSpeed/2;			
