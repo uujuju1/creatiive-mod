@@ -343,6 +343,36 @@ public class CreatiiveUnitTypes implements ContentList {
             		rotorSpeed = 15f;
             	}}
             );
+
+            weapons.add(
+            	new Weapon("weapon-dust-anti_air") {{
+            		x = 4.5f;
+            		y = 0f;
+            		reload = 10f;
+            		rotate = true;
+            		rotateSpeed = 5f;
+            		recoil = 1f;
+            		bullet = new BasicBulletType(4f, 15) {{
+            			lifetime = range/speed;
+            			width = 6f;
+            			height = 8f;
+            		}};
+            	}},
+
+            	new Weapon("weapon-dust-torpedo") {{
+            		x = 0f;
+            		y = -3f;
+            		reload = 60f;
+            		rotate = true;
+            		rotateSpeed = 4f;
+            		recoil = 2f;
+            		bullet = new WaterMissileBulletType(4f, 45) {{
+            			lifetime = range/speed;
+            			width = 6f;
+            			height = 8f;
+            		}}
+            	}}
+            );
 		}};
 
 		gold = new RotorUnitType("gold") {{

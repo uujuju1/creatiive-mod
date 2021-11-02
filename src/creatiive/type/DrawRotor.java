@@ -44,7 +44,7 @@ public class DrawRotor {
 			speedScl = rotorSpeed/2;			
 		}
 
-		Draw.rect(rotorRegion, rotorX, rotorY, Time.time * speedScl);
+		Draw.rect(rotorRegion, rotorX, rotorY, Time.time * speedScl + unit.rotation);
 		Draw.rect(jointRegion, rotorX, rotorY, unit.rotation);
 	}
 }
