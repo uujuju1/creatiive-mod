@@ -337,6 +337,8 @@ public class CreatiiveUnitTypes implements ContentList {
             rotateSpeed = 3.3f;
             trailLength = 20;
             rotateShooting = false;
+            range = 160f;
+            maxRange = range;
 
             rotors.add(
             	new DrawRotor(name + "-rotor") {{
@@ -369,8 +371,8 @@ public class CreatiiveUnitTypes implements ContentList {
             		recoil = 2f;
             		bullet = new WaterMissileBulletType(4f, 45) {{
             			lifetime = range/speed;
-            			// width = 6f;
-            			// height = 8f;
+            			width = 6f;
+            			height = 8f;
             		}};
             	}}
             );
