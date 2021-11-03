@@ -1,6 +1,7 @@
 package creatiive.content;
 
 import creatiive.type.*;
+import creatiive.entities.bullet.*;
 
 import arc.graphics.*;
 import arc.graphics.g2d.*;
