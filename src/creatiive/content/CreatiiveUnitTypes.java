@@ -371,7 +371,7 @@ public class CreatiiveUnitTypes implements ContentList {
             			lifetime = range/speed;
             			width = 6f;
             			height = 8f;
-            		}}
+            		}};
             	}}
             );
 		}};
