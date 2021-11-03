@@ -19,7 +19,7 @@ public class WaterMissileBulletType extends BulletType {
 	public float waterDrag = 0.015f;
 	public float deepDrag = -0.015f;
 
-	public WaterMissileBulletType(float speed float damage) {
+	public WaterMissileBulletType(float speed, float damage) {
 		super(speed, damage);
 		layer = Layer.scorch;
         homingPower = 0.035f;
