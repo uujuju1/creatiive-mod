@@ -359,6 +359,8 @@ public class CreatiiveUnitTypes implements ContentList {
             			lifetime = range/speed;
             			width = 6f;
             			height = 8f;
+            			collidesGround = false;
+            			collidesAir = true;
             		}};
             	}},
 
@@ -371,8 +373,6 @@ public class CreatiiveUnitTypes implements ContentList {
             		recoil = 2f;
             		bullet = new WaterMissileBulletType(4f, 45) {{
             			lifetime = range/speed;
-            			width = 6f;
-            			height = 8f;
             		}};
             	}}
             );
@@ -391,6 +391,8 @@ public class CreatiiveUnitTypes implements ContentList {
             accel = 0.4f;
             rotateSpeed = 4f;
             rotateShooting = false;
+            range = 240;
+            maxRange = range;
 
             trailLength = 22;
             trailX = 5.5f;
