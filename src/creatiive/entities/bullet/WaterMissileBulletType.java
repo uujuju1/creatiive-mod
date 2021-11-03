@@ -1,16 +1,16 @@
 package creatiive.entities.bullet;
 
-import arc.graphics.Color;
-import arc.graphics.g2d.Draw;
-import arc.util.Timee;
-import mindustry.Vars;
+import arc.graphics.*;
+import arc.graphics.g2d.*;
+import arc.math.*;
+import arc.util.*;
+import mindustry.*;
 import mindustry.content.*;
-import mindustry.entities.Effect;
-import mindustry.entities.bullet.BulletType;
-import mindustry.entities.effect.MultiEffect;
+import mindustry.entities.*;
+import mindustry.entities.bullet.*;
 import mindustry.gen.*;
-import mindustry.graphics.Layer;
-import mindustry.world.blocks.environment.Floor;
+import mindustry.graphics.*;
+import mindustry.world.blocks.environment.*;
 
 import static mindustry.Vars.tilesize;
 
