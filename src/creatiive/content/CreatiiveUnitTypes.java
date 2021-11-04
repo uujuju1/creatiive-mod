@@ -348,7 +348,7 @@ public class CreatiiveUnitTypes implements ContentList {
             );
 
             weapons.add(
-            	new Weapon("weapon-dust-anti_air") {{
+            	new Weapon("creatiive-weapon-dust-anti_air") {{
             		x = 4.5f;
             		y = 0f;
             		reload = 10f;
@@ -364,13 +364,14 @@ public class CreatiiveUnitTypes implements ContentList {
             		}};
             	}},
 
-            	new Weapon("weapon-dust-torpedo") {{
+            	new Weapon("creatiive-weapon-dust-torpedo") {{
             		x = 0f;
             		y = -3f;
             		reload = 60f;
             		rotate = true;
             		rotateSpeed = 4f;
             		recoil = 2f;
+            		mirror = true;
             		bullet = new WaterMissileBulletType(4f, 45) {{
             			lifetime = range/speed;
             		}};
@@ -403,6 +404,51 @@ public class CreatiiveUnitTypes implements ContentList {
             	new DrawRotor(name + "-rotor") {{
             		x = y = 0f;
             		rotorSpeed = 15f;
+            	}}
+            );
+
+            weapons.add(
+            	new Weapon("creatiive-weapon-dust-torpedobig") {{
+            		x = 4.5f;
+            		y = -3f;
+            		reload = 30f;
+            		mirror = true;
+            		recoil = 2f;
+            		rotate = true;
+            		rotateSpeed = 3.7f;
+            		bullet = new WaterMissileBulletType(4f, 150f) {{
+            			lifetime = range/speed + 80;
+            			size = 2f;
+            		}};
+            	}},
+            	new Weapon("creatiive-weapon-dust-machinegun") {{
+            		x = 7f;
+            		y = 2f;
+            		rotate = true;
+            		mirror = true;
+            		reload = 20f;
+            		recoil = 2f;
+            		rotateSpeed = 4f;
+            		bullet = new BasicBulletType(6f, 45f) {{
+            			lifetime = range/speed;
+            			width = 9f;
+            			height = 11f;
+            		}};
+            	}},
+            	new Weapon("creatiive-weapon-dust-anti_air") {{
+            		x = 2f;
+            		y = 5f;
+            		reload = 10f;
+            		rotate = true;
+            		rotateSpeed = 5f;
+            		recoil = 1f;
+            		bullet = new BasicBulletType(4f, 15) {{
+            			lifetime = range/speed;
+            			width = 6f;
+            			height = 8f;
+            			collidesGround = false;
+            			collidesAir = true;
+            		}};
             	}}
             );
 		}};
