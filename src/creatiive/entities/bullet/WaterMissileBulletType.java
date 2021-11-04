@@ -38,7 +38,7 @@ public class WaterMissileBulletType extends BulletType {
 			stroke(2 * e.fout());
 			color(floor.mapColor);
 			Lines.circle(e.x, e.y, 3 + e.finpow() * 8);
-        })
+        });
 	}
 
 	@Override
