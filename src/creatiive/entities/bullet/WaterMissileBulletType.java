@@ -34,7 +34,7 @@ public class WaterMissileBulletType extends BulletType {
         hitSoundVolume = 4f;
         hitSound = Sounds.explosionbig;
         trailEffect = new Effect(15f, e -> {
-        	let floor = Vars.world.floorWorld(e.x, e.y);
+        	Floor floor = Vars.world.floorWorld(e.x, e.y);
 			stroke(2 * e.fout());
 			color(floor.mapColor);
 			Lines.circle(e.x, e.y, 3 + e.finpow() * 8);
