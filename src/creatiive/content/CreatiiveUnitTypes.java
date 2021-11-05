@@ -483,8 +483,8 @@ public class CreatiiveUnitTypes implements ContentList {
 
             weapons.add(
             	new Weapon("creatiive-weapon-dust-torpedobig") {{
-            		x = 2f;
-            		y = 6f;
+            		x = 6f;
+            		y = -7f;
             		reload = 60f;
             		mirror = true;
             		recoil = 2f;
@@ -497,8 +497,8 @@ public class CreatiiveUnitTypes implements ContentList {
             	}},
 
             	new Weapon("creatiive-weapon-dust-torpedo") {{
-            		x = 8f;
-            		y = 11f;
+            		x = 7f;
+            		y = 1f;
             		reload = 60f;
             		rotate = true;
             		rotateSpeed = 4f;
@@ -510,8 +510,8 @@ public class CreatiiveUnitTypes implements ContentList {
             	}},
             	
             	new Weapon("creatiive-weapon-dust-anti_air") {{
-            		x = 2f;
-            		y = 4f;
+            		x = 8f;
+            		y = 8f;
             		reload = 10f;
             		rotate = true;
             		rotateSpeed = 5f;

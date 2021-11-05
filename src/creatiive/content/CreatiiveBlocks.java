@@ -270,8 +270,8 @@ public class CreatiiveBlocks implements ContentList {
         }};
         carbonMultiplicative = new Reconstructor("carbon-multiplicative-reconstructor") {{
             requirements(Category.units, with(
-                CreatiiveItems.highCarbonSteel, 55,
-                CreatiiveItems.dusterite, 125,
+                CreatiiveItems.highCarbonSteel, 420,
+                CreatiiveItems.dusterite, 650,
                 Items.lead, 650,
                 Items.silicon, 450,
                 Items.titanium, 350,
@@ -298,8 +298,8 @@ public class CreatiiveBlocks implements ContentList {
         }};
         carbonExponential = new Reconstructor("carbon-exponential-reconstructor") {{
             requirements(Category.units, with(
-                CreatiiveItems.highCarbonSteel, 55,
-                CreatiiveItems.dusterite, 125,
+                CreatiiveItems.highCarbonSteel, 750,
+                CreatiiveItems.dusterite, 1500,
                 Items.lead, 2000,
                 Items.silicon, 1000,
                 Items.titanium, 2000,
