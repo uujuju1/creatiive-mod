@@ -374,6 +374,7 @@ public class CreatiiveUnitTypes implements ContentList {
             		mirror = true;
             		bullet = new WaterMissileBulletType(4f, 45) {{
             			lifetime = range/speed;
+            			splashDamage = 35;
             		}};
             	}}
             );
@@ -411,7 +412,7 @@ public class CreatiiveUnitTypes implements ContentList {
             	new Weapon("creatiive-weapon-dust-torpedobig") {{
             		x = 4.5f;
             		y = -3f;
-            		reload = 30f;
+            		reload = 60f;
             		mirror = true;
             		recoil = 2f;
             		rotate = true;
@@ -419,6 +420,7 @@ public class CreatiiveUnitTypes implements ContentList {
             		bullet = new WaterMissileBulletType(4f, 150f) {{
             			lifetime = range/speed + 80;
             			size = 2f;
+            			splashDamage = 60;
             		}};
             	}},
             	new Weapon("creatiive-weapon-dust-machinegun") {{
@@ -476,6 +478,99 @@ public class CreatiiveUnitTypes implements ContentList {
             	new DrawRotor(name + "-rotor") {{
             		x = y = 0f;
             		rotorSpeed = 15f;
+            	}}
+            );
+
+            weapons.add(
+            	new Weapon("creatiive-weapon-dust-torpedobig") {{
+            		x = 2f;
+            		y = 6f;
+            		reload = 60f;
+            		mirror = true;
+            		recoil = 2f;
+            		rotate = true;
+            		rotateSpeed = 3.7f;
+            		bullet = new WaterMissileBulletType(4f, 150f) {{
+            			lifetime = range/speed + 80;
+            			size = 2f;
+            			splashDamage = 60;
+            		}};
+            	}},
+
+            	new Weapon("creatiive-weapon-dust-torpedo") {{
+            		x = 8f;
+            		y = 11f;
+            		reload = 60f;
+            		rotate = true;
+            		rotateSpeed = 4f;
+            		recoil = 2f;
+            		mirror = true;
+            		bullet = new WaterMissileBulletType(4f, 45) {{
+            			lifetime = range/speed;
+            			splashDamage = 35;
+            		}};
+            	}},
+
+            	new Weapon("creatiive-weapon-dust-machinegun") {{
+            		x = 8f;
+            		y = 1f;
+            		rotate = true;
+            		mirror = true;
+            		reload = 20f;
+            		recoil = 2f;
+            		rotateSpeed = 4f;
+            		bullet = new BasicBulletType(6f, 45f) {{
+            			lifetime = range/speed;
+            			width = 9f;
+            			height = 11f;
+            		}};
+            	}},
+
+            	new Weapon("creatiive-weapon-dust-machinegun") {{
+            		x = 9f;
+            		y = 9f;
+            		rotate = true;
+            		mirror = true;
+            		reload = 20f;
+            		recoil = 2f;
+            		rotateSpeed = 4f;
+            		bullet = new BasicBulletType(6f, 45f) {{
+            			lifetime = range/speed;
+            			width = 9f;
+            			height = 11f;
+            		}};
+            	}},
+            	
+            	new Weapon("creatiive-weapon-dust-anti_air") {{
+            		x = 2f;
+            		y = 4f;
+            		reload = 10f;
+            		rotate = true;
+            		rotateSpeed = 5f;
+            		recoil = 1f;
+            		bullet = new BasicBulletType(4f, 15) {{
+            			lifetime = range/speed;
+            			width = 6f;
+            			height = 8f;
+            			collidesGround = false;
+            			collidesAir = true;
+            		}};
+            	}},
+
+            	new Weapon("creatiive-weapon-dust-anti_air") {{
+            		x = 2f;
+            		y = 13f;
+            		reload = 10f;
+            		rotate = true;
+            		rotateSpeed = 5f;
+            		recoil = 1f;
+            		bullet = new BasicBulletType(4f, 15) {{
+            			lifetime = range/speed;
+            			width = 6f;
+            			height = 8f;
+            			collidesGround = false;
+            			collidesAir = true;
+            		}};
             	}}
             );
 		}};
