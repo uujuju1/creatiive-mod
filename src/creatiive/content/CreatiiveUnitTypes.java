@@ -372,9 +372,8 @@ public class CreatiiveUnitTypes implements ContentList {
             		rotateSpeed = 4f;
             		recoil = 2f;
             		mirror = true;
-            		bullet = new WaterMissileBulletType(4f, 45) {{
+            		bullet = new WaterMissileBulletType(4f, 45f) {{
             			lifetime = range/speed;
-            			splashDamage = 35;
             		}};
             	}}
             );
@@ -420,7 +419,6 @@ public class CreatiiveUnitTypes implements ContentList {
             		bullet = new WaterMissileBulletType(4f, 150f) {{
             			lifetime = range/speed + 80;
             			size = 2f;
-            			splashDamage = 60;
             		}};
             	}},
             	new Weapon("creatiive-weapon-dust-machinegun") {{
@@ -431,7 +429,7 @@ public class CreatiiveUnitTypes implements ContentList {
             		reload = 20f;
             		recoil = 2f;
             		rotateSpeed = 4f;
-            		bullet = new BasicBulletType(6f, 45f) {{
+            		bullet = new BasicBulletType(6f, 45) {{
             			lifetime = range/speed;
             			width = 9f;
             			height = 11f;
@@ -490,10 +488,9 @@ public class CreatiiveUnitTypes implements ContentList {
             		recoil = 2f;
             		rotate = true;
             		rotateSpeed = 3.7f;
-            		bullet = new WaterMissileBulletType(4f, 150f) {{
+            		bullet = new WaterMissileBulletType(4f, 250f) {{
             			lifetime = range/speed + 80;
             			size = 2f;
-            			splashDamage = 60;
             		}};
             	}},
 
@@ -505,39 +502,8 @@ public class CreatiiveUnitTypes implements ContentList {
             		rotateSpeed = 4f;
             		recoil = 2f;
             		mirror = true;
-            		bullet = new WaterMissileBulletType(4f, 45) {{
+            		bullet = new WaterMissileBulletType(4f, 125f) {{
             			lifetime = range/speed;
-            			splashDamage = 35;
-            		}};
-            	}},
-
-            	new Weapon("creatiive-weapon-dust-machinegun") {{
-            		x = 8f;
-            		y = 1f;
-            		rotate = true;
-            		mirror = true;
-            		reload = 20f;
-            		recoil = 2f;
-            		rotateSpeed = 4f;
-            		bullet = new BasicBulletType(6f, 45f) {{
-            			lifetime = range/speed;
-            			width = 9f;
-            			height = 11f;
-            		}};
-            	}},
-
-            	new Weapon("creatiive-weapon-dust-machinegun") {{
-            		x = 9f;
-            		y = 9f;
-            		rotate = true;
-            		mirror = true;
-            		reload = 20f;
-            		recoil = 2f;
-            		rotateSpeed = 4f;
-            		bullet = new BasicBulletType(6f, 45f) {{
-            			lifetime = range/speed;
-            			width = 9f;
-            			height = 11f;
             		}};
             	}},
             	
@@ -548,7 +514,7 @@ public class CreatiiveUnitTypes implements ContentList {
             		rotate = true;
             		rotateSpeed = 5f;
             		recoil = 1f;
-            		bullet = new BasicBulletType(4f, 15) {{
+            		bullet = new BasicBulletType(4f, 33) {{
             			lifetime = range/speed;
             			width = 6f;
             			height = 8f;
@@ -557,19 +523,17 @@ public class CreatiiveUnitTypes implements ContentList {
             		}};
             	}},
 
-            	new Weapon("creatiive-weapon-dust-anti_air") {{
+            	new Weapon("creatiive-weapon-dust-machinegun") {{
             		x = 2f;
             		y = 13f;
             		reload = 10f;
             		rotate = true;
             		rotateSpeed = 5f;
             		recoil = 1f;
-            		bullet = new BasicBulletType(4f, 15) {{
+            		bullet = new BasicBulletType(4f, 50) {{
             			lifetime = range/speed;
-            			width = 6f;
-            			height = 8f;
-            			collidesGround = false;
-            			collidesAir = true;
+            			width = 8f;
+            			height = 10f;
             		}};
             	}}
             );
