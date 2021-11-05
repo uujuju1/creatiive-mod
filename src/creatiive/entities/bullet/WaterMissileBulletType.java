@@ -40,7 +40,7 @@ public class WaterMissileBulletType extends BulletType {
 			Lines.circle(e.x, e.y, 3 + e.finpow() * 8);
         });
         trailInterval = 0.2f;
-        splashDamamgeRadius = size * 4
+        splashDamamgeRadius = size * 4;
 	}
 
 	@Override
