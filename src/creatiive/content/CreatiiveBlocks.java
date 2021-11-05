@@ -229,7 +229,7 @@ public class CreatiiveBlocks implements ContentList {
                 Items.graphite, 75,
                 CreatiiveItems.highCarbonSteel, 35
             ));
-            plans = seq.with(
+            plans = Seq.with(
                 new UnitPlan(CreatiiveUnitTypes.ACopter, 60f * 25, with(Items.silicon, 20, CreatiiveItems.highCarbonSteel, 25)),
                 new UnitPlan(CreatiiveUnitTypes.silver, 60f * 15, with(Items.silicon, 15, CreatiiveItems.dusterite, 20))
             );
@@ -254,7 +254,7 @@ public class CreatiiveBlocks implements ContentList {
             );
             localizedName = "Carbon Reconstructor(ADDITIVE)";
             size = 3;
-            health = 220f;
+            health = 220;
             consumes.power(3f);
             consumes.items(
                 with(
@@ -281,7 +281,7 @@ public class CreatiiveBlocks implements ContentList {
             );
             localizedName = "Carbon Reconstructor(MULTIPLICATIVE)";
             size = 5;
-            health = 450f;
+            health = 450;
             consumes.power(6f);
             consumes.items(
                 with(
@@ -310,7 +310,7 @@ public class CreatiiveBlocks implements ContentList {
             );
             localizedName = "Carbon Reconstructor(EXPONENTIAL)";
             size = 7;
-            health = 670f;
+            health = 670;
             consumes.power(13f);
             consumes.items(
                 with(
@@ -341,7 +341,7 @@ public class CreatiiveBlocks implements ContentList {
             );
             localizedName = "Carbon Reconstructor(TETRATIVE)";
             size = 9;
-            health = 820f;
+            health = 820;
             consumes.power(25f);
             consumes.items(
                 with(
