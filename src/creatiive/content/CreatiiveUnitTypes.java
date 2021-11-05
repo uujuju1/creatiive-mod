@@ -466,6 +466,8 @@ public class CreatiiveUnitTypes implements ContentList {
             hitSize = 20f;
             armor = 6f;
             rotateShooting = false;
+            range = 8f * 40f;
+            maxRange = range;
 
             trailLength = 23;
             trailX = 9f;

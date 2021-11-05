@@ -23,6 +23,8 @@ import mindustry.world.blocks.units.*;
 import mindustry.world.meta.*;
 import mindustry.world.draw.*;
 
+import creatiive.content.*;
+
 import static mindustry.type.ItemStack.with;
 
 public class CreatiiveBlocks implements ContentList {
