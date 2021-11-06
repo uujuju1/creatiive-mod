@@ -16,8 +16,8 @@ public class Creatiive extends Mod{
     @Override
     public void loadContent(){
     	new CreatiiveItems().load();
-    	new CreatiiveBlocks().load();
     	new CreatiiveUnitTypes().load();
+    	new CreatiiveBlocks().load();
     	new CreatiivePlanets().load();
     }
 }
