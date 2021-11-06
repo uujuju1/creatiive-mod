@@ -42,10 +42,10 @@ public class CreatiiveBlocks implements ContentList {
 	// ores
 	oreDusterite,
 
-  // unit factories
+    // unit factories
     rotorizedFactory,
     carbonAdditive, carbonMultiplicative, carbonExponential, carbonTetrative,
-  
+
 	// walls
 	dusteriteWall, dusteriteWallLarge, dusteriteWallHuge, dusteriteWallGigantic,
 
@@ -106,13 +106,6 @@ public class CreatiiveBlocks implements ContentList {
 			health = 350 * 11;
 			size = 3;
 		}};
-    
-		dusteriteWallGigantic = new Wall("dusterite-wall-gigantic") {{
-			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 16));
-			localizedName = "Gigantic Dusterite Wall";
-			health = 350 * 17;
-			size = 4;
-		}};
 
 		dusteriteWallGigantic = new Wall("dusterite-wall-gigantic") {{
 			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 16));
@@ -154,10 +147,7 @@ public class CreatiiveBlocks implements ContentList {
         			height = 9f;
         			pierce = true;
         			pierceCap = 10;
-        			lifetime = range/speed;
-        			width = 7;
-        			height = 9;
-        		}},
+        		}}
         	);
         	localizedName = "Pull";
         	health = 230;
@@ -232,6 +222,7 @@ public class CreatiiveBlocks implements ContentList {
         	maxAmmo = 100;
         	restitution = 0.05f;
         }};
+
         // factories
         rotorizedFactory = new UnitFactory("rotorized-factory") {{
             requirements(Category.units, with(
