@@ -39,7 +39,7 @@ public class CreatiiveUnitTypes implements ContentList {
 	public static UnitType ACopter, BCopter, CCopter, DCopter, ECopter,
 	
 	// dust navals
-	silver, gold, platinum;
+	silver, gold, platinum, iridium, tenelite;
 
 	public void load() {
 		ACopter = new RotorUnitType("ACopter") {{
@@ -340,6 +340,8 @@ public class CreatiiveUnitTypes implements ContentList {
             range = 160f;
             maxRange = range;
 
+            immunities = ObjectSet.with(StatusEffects.burning, StatusEffects.melting);
+
             rotors.add(
             	new DrawRotor(name + "-rotor") {{
             		x = y = 0f;
@@ -394,6 +396,8 @@ public class CreatiiveUnitTypes implements ContentList {
             rotateShooting = false;
             range = 240;
             maxRange = range;
+
+            immunities = ObjectSet.with(StatusEffects.burning, StatusEffects.melting);
 
             trailLength = 22;
             trailX = 5.5f;
@@ -469,6 +473,8 @@ public class CreatiiveUnitTypes implements ContentList {
             range = 8f * 40f;
             maxRange = range;
 
+            immunities = ObjectSet.with(StatusEffects.burning, StatusEffects.melting);
+
             trailLength = 23;
             trailX = 9f;
             trailY = -9f;
@@ -540,5 +546,211 @@ public class CreatiiveUnitTypes implements ContentList {
             	}}
             );
 		}};
+
+		iridium = new RotorUnitType("iridium") {{
+			localizedName = "Iridium";
+			canBoost = true;
+			flying = false;
+			health = 11000;
+            armor = 12f;
+            constructor = UnitWaterMove::create;
+            speed = 0.73f;
+            drag = 0.17f;
+            hitSize = 39f;
+            accel = 0.2f;
+            rotateSpeed = 1.3f;
+            rotateShooting = false;
+            range = 360f;
+            maxRange = range;
+
+            immunities = ObjectSet.with(StatusEffects.burning, StatusEffects.melting);
+
+            trailLength = 50;
+            trailX = 18f;
+            trailY = -21f;
+            trailScl = 3f;
+
+            rotors.add(
+            	new DrawRotor(name + "-rotor") {{
+            		x = y = 0f;
+            		rotorSpeed = 15f;
+            	}}
+            );
+
+            weapons.add(
+            	new Weapon("creatiive-weapon-dust-torpedomine") {{
+            		x = 12f;
+            		y = -6f;
+            		reload = 90f;
+            		mirror = true;
+            		recoil = 3f;
+            		rotate = true;
+            		rotateSpeed = 3.7f;
+            		bullet = new ArtilleryBulletType(4f, 15f) {{
+            			hitEffect = Fx.blastExplosion;
+                    	lifetime = range/speed + 10f;
+                    	width = height = 14f;
+                    	splashDamageRadius = 30f;
+                    	splashDamage = 60f;
+                    	fragBullets = 4;
+                    	fragBullet = new WaterMissileBulletType(4f, 350f) {{
+            				lifetime = range/speed + 60f;
+            			}};
+            		}};
+            	}},
+				new Weapon("creatiive-weapon-dust-anti_airbig") {{
+            		x = 0f;
+            		y = 15f;
+            		reload = 10f;
+            		mirror = false;
+            		recoil = 3f;
+            		rotate = true;
+            		rotateSpeed = 3.7f;
+            		bullet = new ArtilleryBulletType(4f, 150f) {{
+                    	lifetime = range/speed + 10f;
+                    	width = 7f;
+                    	height = 9f;
+                    	splashDamageRadius = 30f;
+                    	splashDamage = 60f;
+                    	collidesGround = false;
+                    	collidesAir = true;
+                    	collides = true;
+                    	fragBullets = 4;
+                    	fragBullet = new BasicBulletType(1f, 70f) {{
+            				lifetime = 10f;
+                    		width = 5f;
+                    		height = 7f;
+                    		splashDamageRadius = 15f;
+                    		splashDamage = 30f;
+            			}};
+            		}};
+            	}}
+            );
+		}};
+
+		tenelite = new RotorUnitType("tenelite") {{
+			health = 22000;
+            speed = 0.62f;
+            drag = 0.18f;
+            hitSize = 58f;
+            armor = 16f;
+            accel = 0.19f;
+            rotateSpeed = 0.9f;
+            rotateShooting = false;
+
+            float spawnTime = 60f * 15f;
+            immunities = ObjectSet.with(StatusEffects.burning, StatusEffects.melting);
+            abilities.add(new ForceFieldAbility(140f, 4f, 7000f, 60f * 8));
+
+            trailLength = 70;
+            trailX = 23f;
+            trailY = -32f;
+            trailScl = 3.5f;
+
+            rotors.add(
+            	new DrawRotor(name + "-rotor") {{
+            		x = y = 0f;
+            		rotorSpeed = 15f;
+            	}}
+            );
+
+            weapons.add(
+            	new Weapon("creatiive-weapon-dust-anti_airbig") {{
+            		x = 15f;
+            		y = 12f;
+            		reload = 10f;
+            		mirror = true;
+            		recoil = 3f;
+            		rotate = true;
+            		rotateSpeed = 3.7f;
+            		bullet = new ArtilleryBulletType(4f, 150f) {{
+                    	lifetime = range/speed + 10f;
+                    	width = 7f;
+                    	height = 9f;
+                    	splashDamageRadius = 30f;
+                    	splashDamage = 60f;
+                    	collidesGround = false;
+                    	collidesAir = true;
+                    	collides = true;
+                    	fragBullets = 4;
+                    	fragBullet = new BasicBulletType(1f, 70f) {{
+            				lifetime = 10f;
+                    		width = 5f;
+                    		height = 7f;
+                    		splashDamageRadius = 15f;
+                    		splashDamage = 30f;
+            			}};
+            		}};
+            	}},
+            	new Weapon("creatiive-weapon-dust-anti_airbig") {{
+            		x = 24f;
+            		y = 2f;
+            		reload = 10f;
+            		mirror = true;
+            		recoil = 3f;
+            		rotate = true;
+            		rotateSpeed = 3.7f;
+            		bullet = new ArtilleryBulletType(4f, 150f) {{
+                    	lifetime = range/speed + 10f;
+                    	width = 7f;
+                    	height = 9f;
+                    	splashDamageRadius = 30f;
+                    	splashDamage = 60f;
+                    	collidesGround = false;
+                    	collidesAir = true;
+                    	collides = true;
+                    	fragBullets = 4;
+                    	fragBullet = new BasicBulletType(1f, 70f) {{
+            				lifetime = 10f;
+                    		width = 5f;
+                    		height = 7f;
+                    		splashDamageRadius = 15f;
+                    		splashDamage = 30f;
+            			}};
+            		}};
+            	}},
+            	new Weapon("creatiive-weapon-dust-torpedomine") {{
+            		x = 14f;
+            		y = -10f;
+            		reload = 90f;
+            		mirror = true;
+            		recoil = 3f;
+            		rotate = true;
+            		rotateSpeed = 3.7f;
+            		bullet = new ArtilleryBulletType(4f, 15f) {{
+            			hitEffect = Fx.blastExplosion;
+                    	lifetime = range/speed + 10f;
+                    	width = height = 14f;
+                    	splashDamageRadius = 30f;
+                    	splashDamage = 60f;
+                    	fragBullets = 4;
+                    	fragBullet = new WaterMissileBulletType(4f, 600f) {{
+            				lifetime = range/speed + 60f;
+            				size = 2f;
+            			}};
+            		}};
+            	}},
+            	new Weapon("creatiive-weapon-dust-torpedomine") {{
+            		x = 4f;
+            		y = -18f;
+            		reload = 90f;
+            		mirror = true;
+            		recoil = 3f;
+            		rotate = true;
+            		rotateSpeed = 3.7f;
+            		bullet = new ArtilleryBulletType(4f, 15f) {{
+            			hitEffect = Fx.blastExplosion;
+                    	lifetime = range/speed + 10f;
+                    	width = height = 14f;
+                    	splashDamageRadius = 30f;
+                    	splashDamage = 60f;
+                    	fragBullets = 4;
+                    	fragBullet = new WaterMissileBulletType(4f, 600f) {{
+            				lifetime = range/speed + 60f;
+            			}};
+            		}};
+            	}},
+            );
+		}}
 	}
 }
