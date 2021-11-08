@@ -637,6 +637,9 @@ public class CreatiiveUnitTypes implements ContentList {
             accel = 0.19f;
             rotateSpeed = 0.9f;
             rotateShooting = false;
+            constructor = UnitWaterMove::create;
+            range = 400f;
+            maxRange = range;
 
             float spawnTime = 60f * 15f;
             immunities = ObjectSet.with(StatusEffects.burning, StatusEffects.melting);
@@ -724,7 +727,7 @@ public class CreatiiveUnitTypes implements ContentList {
                     	splashDamageRadius = 30f;
                     	splashDamage = 60f;
                     	fragBullets = 4;
-                    	fragBullet = new WaterMissileBulletType(4f, 600f) {{
+                    	fragBullet = new WaterMissileBulletType(4f, 450f) {{
             				lifetime = range/speed + 60f;
             				size = 2f;
             			}};
@@ -745,7 +748,7 @@ public class CreatiiveUnitTypes implements ContentList {
                     	splashDamageRadius = 30f;
                     	splashDamage = 60f;
                     	fragBullets = 4;
-                    	fragBullet = new WaterMissileBulletType(4f, 600f) {{
+                    	fragBullet = new WaterMissileBulletType(4f, 450f) {{
             				lifetime = range/speed + 60f;
             			}};
             		}};
