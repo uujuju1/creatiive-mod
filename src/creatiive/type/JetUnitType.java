@@ -14,7 +14,7 @@ public class JetUnitType extends UnitType {
 	public float engineX = 0f;
 	public float engineY = 0f;
 
-	public JetUnitType(Stirng name) {
+	public JetUnitType(String name) {
 		super(name);
 		flying = lowAltitude = true;
 		constructor = UnitWaterMove::create;
@@ -22,11 +22,11 @@ public class JetUnitType extends UnitType {
 	}
 
 	@Override
-	public void DrawEngine(Unit unit) {
+	public void drawEngine(Unit unit) {
 		if (!unit.isFlying()) return;
 
 		float scal = unit.elevation;
-		float offset = engineOffset * scal;
+		float offset = engineOffset * scale;
 
 		Draw.color(unit.team.color);
 		Fill.circle(
