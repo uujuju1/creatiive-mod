@@ -1,5 +1,6 @@
 package creatiive.type;
 
+import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.math.geom.*;
@@ -25,7 +26,7 @@ public class JetUnitType extends UnitType {
 	public void drawEngine(Unit unit) {
 		if (!unit.isFlying()) return;
 
-		float scal = unit.elevation;
+		float scale = unit.elevation;
 		float offset = engineOffset * scale;
 
 		Draw.color(unit.team.color);
