@@ -777,6 +777,24 @@ public class CreatiiveUnitTypes implements ContentList {
             rotateSpeed = 0.9f;
             rotateShooting = false;
             maxRange = range;
+
+            weapons.add(
+            	new Weapon("creatiive-weapon-jet-heal") {{
+            		x = 3.75f;
+            		y = -2f;
+            		reload = 30f;
+            		mirror = true;
+            		rotate = true;
+            		rotateSpeed = 3f;
+            		bullet = new LaserBoltBulletType(4f, 7){{
+                    	lifetime = range/speed;
+                    	healPercent = 5.5f;
+                   		collidesTeam = true;
+                    	backColor = Pal.heal;
+                    	frontColor = Color.white;
+                	}};
+            	}}
+            );
 		}};
 	}
 }
