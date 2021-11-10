@@ -638,7 +638,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			localizedName = "Tenelite";
 			health = 22000;
 			canBoost = true;
-			flying = false
+			flying = false;
             speed = 0.62f;
             drag = 0.18f;
             hitSize = 58f;
