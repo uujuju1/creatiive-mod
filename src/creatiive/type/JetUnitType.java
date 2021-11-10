@@ -1,6 +1,8 @@
 package creatiive.type;
 
-import arc.graphics.g2d.Draw;
+import arc.graphics.g2d.*;
+import arc.math.*;
+import arc.math.geom.*;
 import arc.struct.Seq;
 import arc.util.Time;
 import mindustry.gen.*;
