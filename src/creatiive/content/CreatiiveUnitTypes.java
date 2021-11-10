@@ -35,8 +35,14 @@ import static mindustry.Vars.tilesize;
 import static mindustry.content.Bullets.*;
 
 public class CreatiiveUnitTypes implements ContentList {
-	// flying
-	public static UnitType ACopter, BCopter, CCopter, DCopter, ECopter,
+	
+	public static UnitType 
+
+	// copters
+	ACopter, BCopter, CCopter, DCopter, ECopter,
+
+	// jets
+	arcana,
 	
 	// dust navals
 	silver, gold, platinum, iridium, tenelite;
@@ -629,7 +635,10 @@ public class CreatiiveUnitTypes implements ContentList {
 		}};
 
 		tenelite = new RotorUnitType("tenelite") {{
+			localizedName = "Tenelite";
 			health = 22000;
+			canBoost = true;
+			flying = false
             speed = 0.62f;
             drag = 0.18f;
             hitSize = 58f;
@@ -754,6 +763,20 @@ public class CreatiiveUnitTypes implements ContentList {
             		}};
             	}}
             );
+		}};
+
+		arcana = new JetUnitType("arcana") {{
+			localizedName = "Arcana";
+			health = 350;
+			speed = 3f;
+			accel = 0.06f;
+            drag = 0.017f;
+            engineX = 2.25f;
+            engineY = 5.25f;
+            range = 136f;
+            rotateSpeed = 0.9f;
+            rotateShooting = false;
+            maxRange = range;
 		}};
 	}
 }
