@@ -42,7 +42,7 @@ public class CreatiiveUnitTypes implements ContentList {
 	ACopter, BCopter, CCopter, DCopter, ECopter,
 
 	// jets
-	arcana,
+	arcana, monoquone,
 	
 	// dust navals
 	silver, gold, platinum, iridium, tenelite;
@@ -772,9 +772,9 @@ public class CreatiiveUnitTypes implements ContentList {
 			accel = 0.06f;
             drag = 0.017f;
             engineX = 2.25f;
-            engineY = 5.25f;
+            engineY = 5.5f;
             range = 136f;
-            rotateSpeed = 0.9f;
+            rotateSpeed = 2f;
             rotateShooting = false;
             maxRange = range;
 
@@ -793,6 +793,79 @@ public class CreatiiveUnitTypes implements ContentList {
                     	backColor = Pal.heal;
                     	frontColor = Color.white;
                 	}};
+            	}},
+            	new RepairBeamWeapon("creatiive-weapon-jet-repairBeam") {{
+            		x = 0f;
+            		y = -1f;
+            		beamWidth = 0.5f;
+            		mirror = false;
+            		repairSpeed = 0.5f;
+            		bullet = new BulletType() {{
+            			maxRange = range/2;
+            		}};
+            	}}
+            );
+		}};
+
+		monoquone = new JetUnitType("monoquone") {{
+			localizedName = "Monoquone";
+			health = 530;
+			speed = 2.8f;
+			accel = 0.06f;
+            drag = 0.017f;
+            engineX = 2.75f;
+            engineY = -8f;
+            range = 184f;
+            maxRange = range;
+
+            weapons.add(
+            	new Weapon("creatiive-weapon-jet-heal") {{
+            		x = 6f;
+            		y = -1f;
+            		reload = 30f;
+            		mirror = true;
+            		rotate = true;
+            		rotateSpeed = 3f;
+            		bullet = new LaserBoltBulletType(4f, 7){{
+                    	lifetime = range/speed;
+                    	healPercent = 5.5f;
+                   		collidesTeam = true;
+                    	backColor = Pal.heal;
+                    	frontColor = Color.white;
+                	}};
+            	}},
+            	new Weapon("creatiive-weapon-jet-heal") {{
+            		x = 2.5f;
+            		y = 2.5f;
+            		reload = 30f;
+            		mirror = true;
+            		rotate = true;
+            		rotateSpeed = 3f;
+            		bullet = new LaserBoltBulletType(4f, 7){{
+                    	lifetime = range/speed;
+                    	healPercent = 5.5f;
+                   		collidesTeam = true;
+                    	backColor = Pal.heal;
+                    	frontColor = Color.white;
+                	}};
+            	}},
+            	new Weapon("creatiive-weapon-jet-repairBeam") {{
+            		x = 2f;
+            		y = -0.5f;
+            		reload = 60f;
+            		mirror = true;
+            		rotate = true;
+            		rotateSpeed = 2.5f;
+            		bullet = new BasicBulletType(7f, 50) {{
+            			width = 10f;
+            			height = 10f;
+            			lifetime = range/speed;
+            			collidesTeam = true;
+            			frontColor = Color.white;
+            			backColor = Pal.heal;
+            			weaveScale = 8f;
+                    	weaveMag = 1f;
+            		}};
             	}}
             );
 		}};
