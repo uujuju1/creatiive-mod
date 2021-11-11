@@ -31,27 +31,27 @@ public class JetUnitType extends UnitType {
 
 		Draw.color(unit.team.color);
 		Fill.circle(
-			unit.x + Angles.trnsx(unit.rotation + 90, engineX, engineY),
-			unit.y + Angles.trnsy(unit.rotation + 90, engineX, engineY),
+			unit.x + Angles.trnsx(unit.rotation + 90, engineX, -engineY),
+			unit.y + Angles.trnsy(unit.rotation + 90, engineX, -engineY),
 			(engineSize + Mathf.absin(Time.time, 2f, engineSize / 4f)) * scale
 		);
 		Draw.color(Color.white);
 		Fill.circle(
-			unit.x + Angles.trnsx(unit.rotation + 90, engineX, engineY),
-			unit.y + Angles.trnsy(unit.rotation + 90, engineX, engineY),
+			unit.x + Angles.trnsx(unit.rotation + 90, engineX, -engineY),
+			unit.y + Angles.trnsy(unit.rotation + 90, engineX, -engineY),
 			(engineSize + Mathf.absin(Time.time, 2f, engineSize / 4f)) / 2f * scale
 		);
 
 		Draw.color(unit.team.color);
 		Fill.circle(
-			unit.x + Angles.trnsx(unit.rotation + 90, -engineX, engineY),
-			unit.y + Angles.trnsy(unit.rotation + 90, -engineX, engineY),
+			unit.x + Angles.trnsx(unit.rotation + 90, -engineX, -engineY),
+			unit.y + Angles.trnsy(unit.rotation + 90, -engineX, -engineY),
 			(engineSize + Mathf.absin(Time.time, 2f, engineSize / 4f)) * scale
 		);
 		Draw.color(Color.white);
 		Fill.circle(
-			unit.x + Angles.trnsx(unit.rotation + 90, -engineX, engineY),
-			unit.y + Angles.trnsy(unit.rotation + 90, -engineX, engineY),
+			unit.x + Angles.trnsx(unit.rotation + 90, -engineX, -engineY),
+			unit.y + Angles.trnsy(unit.rotation + 90, -engineX, -engineY),
 			(engineSize + Mathf.absin(Time.time, 2f, engineSize / 4f)) / 2f * scale
 		);
 		Draw.color();

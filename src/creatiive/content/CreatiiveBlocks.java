@@ -30,7 +30,7 @@ import static mindustry.type.ItemStack.with;
 public class CreatiiveBlocks implements ContentList {
 	public static Block
 	// production
-	carbonizedFurnace,
+	carbonizedFurnace, rustMoisturizer,
 
 	// enviromnent
 	sandMetalFloor, sandMetalFloor2, sandMetalFloor3, sandMetalFloor4, sandMetalFloor5,
@@ -54,6 +54,7 @@ public class CreatiiveBlocks implements ContentList {
 
 	@Override
 	public void load() {
+        // production
 		carbonizedFurnace = new GenericCrafter("carbonized-furnace") {{
 			requirements(Category.crafting, with(
 				Items.silicon, 75,
@@ -62,7 +63,7 @@ public class CreatiiveBlocks implements ContentList {
 			));
 			localizedName = "Carbonized Furnace";
 			size = 2;
-			health = 160;
+			health = 40 * size * size;
 			hasItems = true;
 			drawer = new DrawSmelter(Color.valueOf("F2FF7D"));
 			craftTime = 30;
@@ -74,6 +75,26 @@ public class CreatiiveBlocks implements ContentList {
 			consumes.power(1f);
 			outputItem = new ItemStack(CreatiiveItems.highCarbonSteel, 1);
 		}};
+
+        rustMoisturizer = new GenericCrafter("rust-moisturizer") {{
+            requirements(Category.crafting, with(
+                Items.silicon, 125,
+                Items.plastanium, 50,
+                CreatiiveItems.highCarbonSteel, 60,
+                Items.copper, 230
+            ));
+            localizedName = "Rust Moisturizer";
+            size = 3;
+            health = 40 * size * size;
+            hasItems = true;
+            drawer = new DrawLiquid();
+            craftTime = 120;
+            craftEffect = Fx.smelt;
+            consumes.items(new ItemStack(CreatiiveItems.dusterite, 3));
+            consumes.liquids(new LiquidStack(Liquids.water, 0.5f));
+            consumes.power(1.5f);
+            outputItem = new ItemStack(CreatiiveItems.moisturizedDust);
+        }};
 
 		// env
 		sandMetalFloor = new Floor("sand-metal-floor", 0);

@@ -770,9 +770,9 @@ public class CreatiiveUnitTypes implements ContentList {
 			health = 350;
 			speed = 3f;
 			accel = 0.06f;
-            drag = 0.017f;
+            drag = 0.024f;
             engineX = 2.25f;
-            engineY = 5.5f;
+            engineY = -5.5f;
             range = 136f;
             rotateSpeed = 2f;
             rotateShooting = false;
@@ -811,10 +811,10 @@ public class CreatiiveUnitTypes implements ContentList {
 			localizedName = "Monoquone";
 			health = 530;
 			speed = 2.8f;
-			accel = 0.06f;
-            drag = 0.017f;
+			accel = 0.07f;
+            drag = 0.028f;
             engineX = 2.75f;
-            engineY = 8f;
+            engineY = -8f;
             range = 184f;
             rotateShooting = false;
             rotateSpeed = 2f;
@@ -876,8 +876,8 @@ public class CreatiiveUnitTypes implements ContentList {
 			localizedName = "Zelinote";
 			health = 830;
 			speed = 1.9f;
-			accel = 0.06f;
-            drag = 0.017f;
+			accel = 0.08f;
+            drag = 0.032f;
             engineX = 5.5f;
             engineY = -11.5f;
             range = 232f;
@@ -887,7 +887,7 @@ public class CreatiiveUnitTypes implements ContentList {
 
             weapons.add(
             	new Weapon("creatiive-weapon-jet-repairBeam") {{
-            		x = 0f;
+            		x = 5.5f;
             		y = -6f;
             		reload = 30f;
             		mirror = true;
@@ -904,4 +904,4 @@ public class CreatiiveUnitTypes implements ContentList {
             );
 		}};
 	}
-}
+}[]
