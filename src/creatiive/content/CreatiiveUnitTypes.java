@@ -42,7 +42,7 @@ public class CreatiiveUnitTypes implements ContentList {
 	ACopter, BCopter, CCopter, DCopter, ECopter,
 
 	// jets
-	arcana, monoquone,
+	arcana, monoquone, zelinote,
 	
 	// dust navals
 	silver, gold, platinum, iridium, tenelite;
@@ -814,8 +814,10 @@ public class CreatiiveUnitTypes implements ContentList {
 			accel = 0.06f;
             drag = 0.017f;
             engineX = 2.75f;
-            engineY = -8f;
+            engineY = 8f;
             range = 184f;
+            rotateShooting = false;
+            rotateSpeed = 2f;
             maxRange = range;
 
             weapons.add(
@@ -850,17 +852,17 @@ public class CreatiiveUnitTypes implements ContentList {
                 	}};
             	}},
             	new Weapon("creatiive-weapon-jet-repairBeam") {{
-            		x = 2f;
-            		y = -0.5f;
+            		x = 2.75f;
+            		y = -5f;
             		reload = 60f;
             		mirror = true;
             		rotate = true;
             		rotateSpeed = 2.5f;
             		bullet = new BasicBulletType(7f, 50) {{
-            			width = 10f;
-            			height = 10f;
+            			width = height = 10f;
             			lifetime = range/speed;
             			collidesTeam = true;
+            			healPercent = 6f;
             			frontColor = Color.white;
             			backColor = Pal.heal;
             			weaveScale = 8f;
@@ -869,5 +871,37 @@ public class CreatiiveUnitTypes implements ContentList {
             	}}
             );
 		}};
+
+		zelinote = new JetUnitType("zelinote") {{
+			localizedName = "Zelinote";
+			health = 830;
+			speed = 1.9f;
+			accel = 0.06f;
+            drag = 0.017f;
+            engineX = 5.5f;
+            engineY = -11.5f;
+            range = 232f;
+            maxRange = range;
+            rotateShooting = false;
+            rotateSpeed = 2f;
+
+            weapons.add(
+            	new Weapon("creatiive-weapon-jet-repairBeam") {{
+            		x = 0f;
+            		y = -6f;
+            		reload = 30f;
+            		mirror = true;
+            		rotate = true;
+            		rotateSpeed = 0.6f;
+            		bullet = new MissileBulletType(4f, 125) {{
+            			width = 7f;
+            			height = 10f;
+            			lifetime = range/speed;
+            			frontColor = Pal.heal;
+            			backColor = Color.white;
+            		}};
+            	}}
+            );
+		}}
 	}
 }
