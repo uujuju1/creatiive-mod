@@ -902,6 +902,6 @@ public class CreatiiveUnitTypes implements ContentList {
             		}};
             	}}
             );
-		}}
+		}};
 	}
 }
