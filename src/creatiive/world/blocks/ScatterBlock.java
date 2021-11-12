@@ -10,6 +10,8 @@ import arc.math.geom.*;
 import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
+import arc.scene.ui.*;
+import arc.scene.ui.layout.*;
 import mindustry.audio.*;
 import mindustry.content.*;
 import mindustry.graphics.*;
@@ -23,7 +25,7 @@ import mindustry.logic.*;
 import mindustry.type.*;
 import mindustry.world.draw.*;
 
-import static mindustry.vars.*;
+import static mindustry.Vars;
 
 public class ScatterBlock extends Block {
 	public Color heatColor = Pal.turretHeat;
@@ -67,7 +69,11 @@ public class ScatterBlock extends Block {
    			return table.table(t -> {
    				TextButton b = t.button("x", () -> {
    					configure(1);
-   					consume();
+   					if (consValid()) {
+   						consume();
+   						bullet.create(Team.delerict, x, y, Math.random() * 360f);
+   					}
+   					
    				}).size(40f).get();
    			}).size(40f);
    		}
