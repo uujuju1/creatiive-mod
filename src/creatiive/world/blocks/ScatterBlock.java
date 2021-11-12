@@ -24,7 +24,7 @@ import static mindustry.vars.*;
 
 public class ScatterBlock extends Block {
 	public Color heatColor = Pal.turretHeat;
-	public BulletType = Bullets.defaultCopper;
+	public BulletType bullet = Bullets.defaultCopper;
 	public Effect shootEffect = Fx.none;
     public Effect smokeEffect = Fx.none;
     public Effect ammoUseEffect = Fx.none;
@@ -60,9 +60,11 @@ public class ScatterBlock extends Block {
    	@Override
    	public Cell<Table> addConfigButton(Table table, Int index) {
    		return table.table(t -> {
-   			TextButton b = t.button("x" () -> {
+   			TextButton b = t.button("x", () -> {
+   				configure(1);
    				consume();
    			}).size(40f).get();
+   			
    		}).size(40f);
    	}
 }

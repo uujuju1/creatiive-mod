@@ -33,7 +33,7 @@ public class CreatiiveBlocks implements ContentList {
 	carbonizedFurnace, rustMoisturizer,
 
     // test
-    scatterBlock
+    scatterBlock,
 
 	// enviromnent
 	sandMetalFloor, sandMetalFloor2, sandMetalFloor3, sandMetalFloor4, sandMetalFloor5,
