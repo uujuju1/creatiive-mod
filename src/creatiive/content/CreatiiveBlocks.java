@@ -32,6 +32,9 @@ public class CreatiiveBlocks implements ContentList {
 	// production
 	carbonizedFurnace, rustMoisturizer,
 
+    // test
+    scatterBlock
+
 	// enviromnent
 	sandMetalFloor, sandMetalFloor2, sandMetalFloor3, sandMetalFloor4, sandMetalFloor5,
 	sandDamagedMetalFloor,
@@ -91,17 +94,17 @@ public class CreatiiveBlocks implements ContentList {
             craftTime = 120;
             craftEffect = Fx.smelt;
             consumes.items(new ItemStack(CreatiiveItems.dusterite, 3));
-            consumes.liquids(new LiquidStack(Liquids.water, 0.5f));
+            consumes.liquid(new LiquidStack(Liquids.water, 0.5f));
             consumes.power(1.5f);
-            outputItem = new ItemStack(CreatiiveItems.moisturizedDust);
+            outputItem = new ItemStack(CreatiiveItems.moisturizedDust, 2);
         }};
 
 		// env
 		sandMetalFloor = new Floor("sand-metal-floor", 0);
-		sandMetalFloor2 = new Floor("sand-metal-floor2", 0);
-		sandMetalFloor3 = new Floor("sand-metal-floor3", 0);
-		sandMetalFloor4 = new Floor("sand-metal-floor4", 0);
-		sandMetalFloor5 = new Floor("sand-metal-floor5", 0);
+		sandMetalFloor2 = new Floor("sand-metal-floor-2", 0);
+		sandMetalFloor3 = new Floor("sand-metal-floor-3", 0);
+		sandMetalFloor4 = new Floor("sand-metal-floor-4", 0);
+		sandMetalFloor5 = new Floor("sand-metal-floor-5", 0);
 
 		sandDamagedMetalFloor = new Floor("sand-damaged-metal-floor", 3);
 
@@ -379,6 +382,11 @@ public class CreatiiveBlocks implements ContentList {
             consumes.liquid(Liquids.cryofluid, 3f);
             liquidCapacity = 180f;
             constructTime = 60f * 60f * 4;
+        }};
+
+        scatterBlock = new ScatterBlock("scater") {{
+            size = 2;
+            health = 160;
         }};
 	}
 }
