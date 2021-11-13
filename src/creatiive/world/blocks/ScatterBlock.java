@@ -25,8 +25,6 @@ import mindustry.logic.*;
 import mindustry.type.*;
 import mindustry.world.draw.*;
 
-import static mindustry.Vars;
-
 public class ScatterBlock extends Block {
 	public Color heatColor = Pal.turretHeat;
 	public BulletType bullet = Bullets.standardCopper;
@@ -40,6 +38,7 @@ public class ScatterBlock extends Block {
     public int shots = 10;
 
     public ScatterBlock(String name) {
+    	super(name);
     	destructible = true;
     	update = true;
         solid = true;
@@ -57,25 +56,13 @@ public class ScatterBlock extends Block {
    	public class ScatterBlockBuild extends Building { 
    		// some code modified from eso
    		@Override
-   		public void buildConfiguration(Table table) {
-   			table.table(Tex.clear, t -> {
-   				t.table().size(40);
-   				t.addConfigButton(t, 1).align(Align.center);
-   			});
-   		}
-
-   		@Override
-   		public Cell<Table> addConfigButton(Table table, Int index) {
-   			return table.table(t -> {
-   				TextButton b = t.button("x", () -> {
-   					configure(1);
-   					if (consValid()) {
-   						consume();
-   						bullet.create(Team.delerict, x, y, Math.random() * 360f);
-   					}
-   					
-   				}).size(40f).get();
-   			}).size(40f);
+   		public void updateTile() {
+   			if (consValid()) {
+   				for (i = 0; i <= shots; i++) {
+   					bullet.create(this.team, x, y, Math.random() * 360f);
+   				}
+   				consume();
+   			}
    		}
    	}
 }
