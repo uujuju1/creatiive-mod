@@ -58,7 +58,7 @@ public class ScatterBlock extends Block {
    		public void updateTile() {
    			if (consValid()) {
    				for (int i = 0; i <= shots; i++) {
-   					bullet.create(this, this.team, x, y Mathf.random() * 360f);
+   					bullet.create(this, this.team, x, y, Mathf.random() * 360f);
    				}
    				consume();
    			}
