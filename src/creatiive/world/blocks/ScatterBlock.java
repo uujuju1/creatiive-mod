@@ -26,7 +26,6 @@ import mindustry.type.*;
 import mindustry.world.draw.*;
 
 public class ScatterBlock extends Block {
-	public Color heatColor = Pal.turretHeat;
 	public BulletType bullet = Bullets.standardCopper;
 	public Effect shootEffect = Fx.none;
     public Effect smokeEffect = Fx.none;
@@ -44,6 +43,7 @@ public class ScatterBlock extends Block {
         outlineIcon = true;
         group = BlockGroup.turrets;
         flags = EnumSet.of(BlockFlag.turret);
+        sync = true;
     }
 
    	@Override
