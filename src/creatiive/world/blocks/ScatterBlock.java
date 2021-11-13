@@ -54,14 +54,18 @@ public class ScatterBlock extends Block {
    	}
 
    	public class ScatterBlockBuild extends Building { 
-   		@Override
-   		public void updateTile(Teamc sauce) {
+   		public void updateShoot(Teamc sauce) {
    			if (consValid()) {
    				for (int i = 0; i <= shots; i++) {
    					bullet.create(sauce, x, y, Mathf.random() * 360f);
    				}
    				consume();
    			}
+   		}
+
+   		@Override
+   		public void updateTile() {
+   			updateShoot();
    		}
    	}
 }
