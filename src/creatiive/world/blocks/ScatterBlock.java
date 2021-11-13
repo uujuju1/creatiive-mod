@@ -54,12 +54,11 @@ public class ScatterBlock extends Block {
    	}
 
    	public class ScatterBlockBuild extends Building { 
-   		// some code modified from eso
    		@Override
-   		public void updateTile() {
+   		public void updateTile(TeamC sauce) {
    			if (consValid()) {
-   				for (i = 0; i <= shots; i++) {
-   					bullet.create(this.team, x, y, Math.random() * 360f);
+   				for (int i = 0; i <= shots; i++) {
+   					bullet.create(sauce, x, y, Mathf.random() * 360f);
    				}
    				consume();
    			}
