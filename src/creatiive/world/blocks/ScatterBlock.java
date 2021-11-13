@@ -49,7 +49,7 @@ public class ScatterBlock extends Block {
    	@Override
    	public void init() {
    		super.init();
-   		consumes.items(new ItemStack(ammo, itemCapacity));
+   		consumes.items(new ItemStack(ammo, 10));
    	}
 
    	public class ScatterBlockBuild extends Building { 
