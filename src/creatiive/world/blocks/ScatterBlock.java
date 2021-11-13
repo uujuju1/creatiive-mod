@@ -35,11 +35,10 @@ public class ScatterBlock extends Block {
     public TextureRegion turretSprite;
     public Item ammo = Items.copper;
 
-    public int shots = 10;
-
     public ScatterBlock(String name) {
     	super(name);
     	destructible = true;
+    	hasItems = true;
     	update = true;
         solid = true;
         outlineIcon = true;
@@ -50,7 +49,7 @@ public class ScatterBlock extends Block {
    	@Override
    	public void init() {
    		super.init();
-   		consumes.items(new ItemStack(ammo, shots));
+   		consumes.items(with(ammo, itemCapacity));
    	}
 
    	public class ScatterBlockBuild extends Building { 
