@@ -62,7 +62,6 @@ public class ScatterBlock extends Block {
    				}
    				consume();
    			}
-   			super.update();
    		}
    	}
 }

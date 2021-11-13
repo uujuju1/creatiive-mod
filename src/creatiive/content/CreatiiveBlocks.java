@@ -386,6 +386,7 @@ public class CreatiiveBlocks implements ContentList {
         }};
 
         scatterBlock = new ScatterBlock("scater") {{
+            requirements(Category.defense, with(Items.coper, 69420));
             size = 2;
             health = 160;
         }};
