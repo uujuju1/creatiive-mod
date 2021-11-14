@@ -33,8 +33,8 @@ public class CreatiiveBlocks implements ContentList {
 	// production
 	carbonizedFurnace, rustMoisturizer,
 
-    // test
-    scatterBlock,
+    // scatters
+    dustScatter, healScatter,
 
 	// enviromnent
 	sandMetalFloor, sandMetalFloor2, sandMetalFloor3, sandMetalFloor4, sandMetalFloor5,
@@ -385,13 +385,24 @@ public class CreatiiveBlocks implements ContentList {
             constructTime = 60f * 60f * 4;
         }};
 
-        scatterBlock = new ScatterBlock("scater") {{
-            requirements(Category.defense, with(Items.copper, 69420));
+        dustScatter = new ScatterBlock("dust-scatter") {{
+            requirements(Category.defense, with(CreatiiveItems.dusterite, 50, Items.silicon, 25));
             size = 2;
             health = 160;
             itemCapacity = 10;
+            shots = 10;
             consumes.items(new ItemStack(Items.copper, 10));
             consumes.power(0.1f);
+        }};
+
+        healScatter = new ScatterBlock("heal-scatter") {{
+            requirements(Category.defense, with(CreatiiveItems.moisturizedDust, 50 Items.silicon, 45));
+            size = 2;
+            health = 160;
+            itemCapacity = 10;
+            shots = 10;
+            consumes.items(new ItemStack(CreatiiveItems.moisturizedDust, 10));
+            consumes.power(0.5f);
         }};
 	}
 }
