@@ -396,7 +396,7 @@ public class CreatiiveBlocks implements ContentList {
         }};
 
         healScatter = new ScatterBlock("heal-scatter") {{
-            requirements(Category.defense, with(CreatiiveItems.moisturizedDust, 50 Items.silicon, 45));
+            requirements(Category.defense, with(CreatiiveItems.moisturizedDust, 50, Items.silicon, 45));
             size = 2;
             health = 160;
             itemCapacity = 10;
