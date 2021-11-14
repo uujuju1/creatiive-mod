@@ -46,12 +46,6 @@ public class ScatterBlock extends Block {
         itemCapacity = 10;
     }
 
-   	@Override
-   	public void init() {
-   		super.init();
-   		consumes.items(new ItemStack(ammo, 10));
-   	}
-
    	public class ScatterBlockBuild extends Building { 
    		@Override
    		public void updateTile() {
