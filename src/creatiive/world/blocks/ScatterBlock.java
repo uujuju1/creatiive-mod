@@ -31,7 +31,7 @@ public class ScatterBlock extends Block {
     public Effect smokeEffect = Fx.none;
     public Effect ammoUseEffect = Fx.none;
     public Sound shootSound = Sounds.shoot;
-    public TextureRegion turretSprite;
+    public TextureRegion turretSprite, heatSprite;
     public Item ammo = Items.copper;
 
     public ScatterBlock(String name) {
@@ -44,6 +44,7 @@ public class ScatterBlock extends Block {
         group = BlockGroup.turrets;
         flags = EnumSet.of(BlockFlag.turret);
         sync = true;
+        itemCapacity = 10;
     }
 
    	@Override
@@ -52,15 +53,41 @@ public class ScatterBlock extends Block {
    		consumes.items(new ItemStack(ammo, 10));
    	}
 
+   	@Override
+   	public void load() {
+   		turretRegion = Core.atlas.find()
+   	}
+
    	public class ScatterBlockBuild extends Building { 
    		@Override
    		public void updateTile() {
-   			if (consValid()) {
+   			if (this.consValid()) {
    				for (int i = 0; i <= itemCapacity; i++) {
    					bullet.create(this, this.team, x, y, Mathf.random() * 360f);
    				}
    				consume();
    			}
+   		}
+
+   		public void drawBases() {
+   			if (size = 1) {
+   				return "-1";
+   			}
+   			if (size = 2) {
+   				return "-2";
+   			}
+   			if (size = 3) {
+   				return "-3";
+   			}
+   			if (size = 4) {
+   				return "-4";
+   			}
+   		}
+
+   		@Override
+   		public void draw() {
+   			Draw.rect("scatterBase" + drawBases(), x, y, 0);
+   			Draw.rect(turretRegion, x, y, 0);
    		}
    	}
 }
