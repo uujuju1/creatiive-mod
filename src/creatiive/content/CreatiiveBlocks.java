@@ -390,6 +390,7 @@ public class CreatiiveBlocks implements ContentList {
             size = 2;
             health = 160;
             itemCapacity = 1;
+            consumes.items(new ItemStack(Items.copper, 10));
         }};
-	}
+     }
 }
