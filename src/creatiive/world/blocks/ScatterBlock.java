@@ -55,7 +55,7 @@ public class ScatterBlock extends Block {
 
    	@Override
    	public void load() {
-   		turretRegion = Core.atlas.find()
+   		turretRegion = Core.atlas.find("router");
    	}
 
    	public class ScatterBlockBuild extends Building { 
