@@ -389,8 +389,9 @@ public class CreatiiveBlocks implements ContentList {
             requirements(Category.defense, with(Items.copper, 69420));
             size = 2;
             health = 160;
-            itemCapacity = 1;
+            itemCapacity = 10;
             consumes.items(new ItemStack(Items.copper, 10));
+            consumes.power(0.1f);
         }};
-     }
+	}
 }
