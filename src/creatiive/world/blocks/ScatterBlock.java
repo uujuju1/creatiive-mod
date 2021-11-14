@@ -31,7 +31,7 @@ public class ScatterBlock extends Block {
     public Effect smokeEffect = Fx.none;
     public Effect ammoUseEffect = Fx.none;
     public Sound shootSound = Sounds.shoot;
-    public TextureRegion turretSprite, heatSprite;
+    public TextureRegion turretRegion;
     public Item ammo = Items.copper;
 
     public ScatterBlock(String name) {
@@ -55,7 +55,6 @@ public class ScatterBlock extends Block {
 
    	@Override
    	public void load() {
-   		turretRegion = Core.atlas.find("router");
    	}
 
    	public class ScatterBlockBuild extends Building { 
@@ -69,25 +68,8 @@ public class ScatterBlock extends Block {
    			}
    		}
 
-   		public void drawBases() {
-   			if (size = 1) {
-   				return "-1";
-   			}
-   			if (size = 2) {
-   				return "-2";
-   			}
-   			if (size = 3) {
-   				return "-3";
-   			}
-   			if (size = 4) {
-   				return "-4";
-   			}
-   		}
-
    		@Override
    		public void draw() {
-   			Draw.rect("scatterBase" + drawBases(), x, y, 0);
-   			Draw.rect(turretRegion, x, y, 0);
    		}
    	}
 }
