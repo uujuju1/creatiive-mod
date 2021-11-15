@@ -51,7 +51,7 @@ public class ScatterBlock extends Block {
     }
 
     @Override
-    public load() {
+    public void load() {
         baseRegion = Core.atlas.find(name + "-base");
         turretRegion = Core.atlas.find(name);
         heatRegion = Core.atlas.find(name + "-heat");
