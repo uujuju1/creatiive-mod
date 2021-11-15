@@ -43,11 +43,11 @@ public class ScatterBlock extends Block {
         itemCapacity = 10;
     }
     
-    @Override
-    public void load() {
-        baseRegion = Core.atlas.find(name + "-base");
-        turretRegion = Core.atlas.find(name);
-    }
+    // @Override
+    // public void load() {
+    //     baseRegion = Core.atlas.find(name + "-base");
+    //     turretRegion = Core.atlas.find(name);
+    // }
 
     public class ScatterBlockBuild extends Building { 
         @Override
