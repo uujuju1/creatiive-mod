@@ -390,8 +390,11 @@ public class CreatiiveBlocks implements ContentList {
             size = 2;
             health = 160;
             shots = 10;
-            consumes.items(new ItemStack(Items.copper, 10));
+            consumes.items(new ItemStack(CreatiiveItems.dusterite, 10));
             consumes.power(0.1f);
+            bullet = new BasicBullletType(4f, 15) {{
+                lifetime = 30f;
+            }};
         }};
 
         healScatter = new ScatterBlock("heal-scatter") {{
@@ -401,6 +404,13 @@ public class CreatiiveBlocks implements ContentList {
             shots = 10;
             consumes.items(new ItemStack(CreatiiveItems.moisturizedDust, 10));
             consumes.power(0.5f);
+            bullet = new LaserBoltBulletType(4f, 10){{
+                lifetime = 30f;
+                healPercent = 0.5f;
+                collidesTeam = true;
+                frontColor = Pal.heal;
+                backColor = Color.white;
+            }};
         }};
 	}
 }

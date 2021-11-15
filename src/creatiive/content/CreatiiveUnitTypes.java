@@ -330,6 +330,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			);
 		}};
 
+		// dust navals
 		silver = new RotorUnitType("silver") {{
 			localizedName = "Silver";
 			canBoost = true;
@@ -765,6 +766,7 @@ public class CreatiiveUnitTypes implements ContentList {
             );
 		}};
 
+		// jets
 		arcana = new JetUnitType("arcana") {{
 			localizedName = "Arcana";
 			health = 350;
