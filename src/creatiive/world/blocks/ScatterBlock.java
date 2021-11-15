@@ -1,6 +1,7 @@
 package creatiive.world.blocks;
 
 import arc.*;
+import arc.Core;
 import arc.audio.*;
 import arc.func.*;
 import arc.graphics.*;
@@ -27,8 +28,6 @@ import mindustry.world.draw.*;
 
 public class ScatterBlock extends Block {
     public BulletType bullet = Bullets.standardCopper;
-    public Item ammo = Items.copper;
-    public TextureRegion baseRegion, turretRegion;
     
     public int shots = 10;
 
@@ -42,12 +41,6 @@ public class ScatterBlock extends Block {
         sync = true;
         itemCapacity = 10;
     }
-    
-    // @Override
-    // public void load() {
-    //     baseRegion = Core.atlas.find(name + "-base");
-    //     turretRegion = Core.atlas.find(name);
-    // }
 
     public class ScatterBlockBuild extends Building { 
         @Override
@@ -60,12 +53,5 @@ public class ScatterBlock extends Block {
             consume();
             }
         }
-
-        /*  
-        @Override 
-        public void draw() {
-            Draw.rect(baseRegion, x, y, 0);
-            Draw.rect(turretRegion, x, y, 0);
-        }*/
     }
 }
