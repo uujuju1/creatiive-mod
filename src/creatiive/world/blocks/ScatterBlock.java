@@ -27,13 +27,8 @@ import mindustry.world.draw.*;
 
 public class ScatterBlock extends Block {
     public BulletType bullet = Bullets.standardCopper;
-    public Color heatColor = Pal.turretHeat;
-    public Effect shootEffect = Fx.none;
-    public Effect smokeEffect = Fx.none;
-    public Effect ammoUseEffect = Fx.none;
-    public Sound shootSound = Sounds.shoot;
     public Item ammo = Items.copper;
-    public TextureRegion baseRegion, turretRegion, heatRegion;
+    public TextureRegion baseRegion, turretRegion;
     
     public int shots = 10;
 
@@ -43,18 +38,15 @@ public class ScatterBlock extends Block {
         hasItems = true;
         update = true;
         solid = true;
-        outlineIcon = true;
-        group = BlockGroup.turrets;
         flags = EnumSet.of(BlockFlag.turret);
         sync = true;
         itemCapacity = 10;
     }
-
+    
     @Override
     public void load() {
         baseRegion = Core.atlas.find(name + "-base");
         turretRegion = Core.atlas.find(name);
-        heatRegion = Core.atlas.find(name + "-heat");
     }
 
     public class ScatterBlockBuild extends Building { 
@@ -69,10 +61,11 @@ public class ScatterBlock extends Block {
             }
         }
 
+        /*  
         @Override 
         public void draw() {
             Draw.rect(baseRegion, x, y, 0);
             Draw.rect(turretRegion, x, y, 0);
-        }
+        }*/
     }
 }

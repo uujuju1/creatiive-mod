@@ -386,20 +386,18 @@ public class CreatiiveBlocks implements ContentList {
         }};
 
         dustScatter = new ScatterBlock("dust-scatter") {{
-            requirements(Category.defense, with(CreatiiveItems.dusterite, 50, Items.silicon, 25));
+            requirements(Category.turret, with(CreatiiveItems.dusterite, 50, Items.silicon, 25));
             size = 2;
             health = 160;
-            itemCapacity = 10;
             shots = 10;
             consumes.items(new ItemStack(Items.copper, 10));
             consumes.power(0.1f);
         }};
 
         healScatter = new ScatterBlock("heal-scatter") {{
-            requirements(Category.defense, with(CreatiiveItems.moisturizedDust, 50, Items.silicon, 45));
+            requirements(Category.turret, with(CreatiiveItems.moisturizedDust, 50, Items.silicon, 45));
             size = 2;
             health = 160;
-            itemCapacity = 10;
             shots = 10;
             consumes.items(new ItemStack(CreatiiveItems.moisturizedDust, 10));
             consumes.power(0.5f);
