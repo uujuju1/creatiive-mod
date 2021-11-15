@@ -392,7 +392,7 @@ public class CreatiiveBlocks implements ContentList {
             shots = 10;
             consumes.items(new ItemStack(CreatiiveItems.dusterite, 10));
             consumes.power(0.1f);
-            bullet = new BasicBullletType(4f, 15) {{
+            bullet = new BasicBulletType(4f, 15) {{
                 lifetime = 30f;
             }};
         }};
