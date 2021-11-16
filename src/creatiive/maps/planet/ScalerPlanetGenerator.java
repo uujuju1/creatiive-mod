@@ -39,19 +39,18 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
 
 	Block[][] arr =
     {
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
-    {Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt},
+    {Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand}
     };
 
     ObjectMap<Block, Block> dec = ObjectMap.of(
@@ -412,7 +411,7 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
     public Color getColor(Vec3 position) {
         Block block = getBlock(position);
         //replace salt with sand color
-        if(block == Blocks.salt) return Blocks.salt.mapColor;
+        if(block == Blocks.salt) return Blocks.water.mapColor;
         return Tmp.c1.set(block.mapColor).a(1f - block.albedo);
     }
 
