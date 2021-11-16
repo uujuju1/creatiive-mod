@@ -39,30 +39,30 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
 
 	Block[][] arr =
     {
-    {Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand},
-    {Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
-    {Blocks.salt, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
-    {Blocks.salt, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.sand, Blocks.mud, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.sand, Blocks.mud, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.sand, Blocks.mud, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.salt, Blocks.mud, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
     {Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
     {Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
     {Blocks.salt, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
-    {Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
-    {Blocks.salt, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
-    {Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
-    {Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
-    {Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand}
+    {Blocks.salt, Blocks.salt, Blocks.dirt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.salt, Blocks.salt, Blocks.dirt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.sand, Blocks.salt, Blocks.dirt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.sand, Blocks.salt, Blocks.dirt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand},
+    {Blocks.sand, Blocks.salt, Blocks.dirt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand}
     };
 
     ObjectMap<Block, Block> dec = ObjectMap.of(
-        Blocks.dirt, Blocks.sporeCluster,
-        Blocks.moss, Blocks.sporeCluster,
-        Blocks.moss, Blocks.moss,
+        Blocks.salt, Blocks.sand,
+        Blocks.salt, Blocks.sand,
+        Blocks.salt, Blocks.sand,
         Blocks.sandWater, Blocks.sandWater
     );
 
     ObjectMap<Block, Block> tars = ObjectMap.of(
-        Blocks.dirt, Blocks.shale,
-        Blocks.moss, Blocks.shale
+        Blocks.dirt, Blocks.dirt,
+        Blocks.dirt, Blocks.dirt
     );
 
     float water = 2f / arr[0].length;
@@ -236,47 +236,18 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
         tech();
 
         pass((x, y) -> {
-            //random moss
+            //random mud
             if (floor == Blocks.dirt) {
                 if (Math.abs(0.5f - noise(x - 90, y, 4, 0.8, 65)) > 0.02) {
-                    floor = Blocks.moss;
+                    floor = Blocks.mud;
                 }
             }
 
-            //tar
+            //salt
             if (floor == Blocks.sand) {
                 if (Math.abs(0.5f - noise(x - 40, y, 2, 0.7, 80)) > 0.25f &&
                         Math.abs(0.5f - noise(x, y + sector.id * 10, 1, 1, 60)) > 0.41f && !(roomseq.contains(r -> Mathf.within(x, y, r.x, r.y, 15)))) {
-                    floor = Blocks.tar;
-                    ore = Blocks.air;
-                }
-            }
-
-            //hotrock tweaks
-            if (floor == Blocks.hotrock) {
-                if (Math.abs(0.5f - noise(x - 90, y, 4, 0.8, 80)) > 0.035) {
-                    floor = Blocks.basalt;
-                } else {
-                    ore = Blocks.air;
-                    boolean all = true;
-                    for (Point2 p : Geometry.d4) {
-                        Tile other = tiles.get(x + p.x, y + p.y);
-                        if (other == null || (other.floor() != Blocks.hotrock && other.floor() != Blocks.magmarock)) {
-                            all = false;
-                        }
-                    }
-                    if (all) {
-                        floor = Blocks.magmarock;
-                    }
-                }
-            } else if (floor != Blocks.basalt && floor != Blocks.sandWater && floor.asFloor().hasSurface()) {
-                float noise = noise(x + 782, y, 5, 0.75f, 260f, 1f);
-                if (noise > 0.67f && !roomseq.contains(e -> Mathf.within(x, y, e.x, e.y, 14))) {
-                    if (noise > 0.72f) {
-                        floor = noise > 0.78f ? Blocks.salt : (floor == Blocks.basalt ? Blocks.sandWater : Blocks.salt);
-                    } else {
-                        floor = (floor == Blocks.basalt ? floor : Blocks.sand);
-                    }
+                    floor = Blocks.salt;
                     ore = Blocks.air;
                 }
             }
@@ -410,8 +381,6 @@ public class ScalerPlanetGenerator extends SerpuloPlanetGenerator {
     @Override
     public Color getColor(Vec3 position) {
         Block block = getBlock(position);
-        //replace salt with sand color
-        if(block == Blocks.salt) return Blocks.water.mapColor;
         return Tmp.c1.set(block.mapColor).a(1f - block.albedo);
     }
 
