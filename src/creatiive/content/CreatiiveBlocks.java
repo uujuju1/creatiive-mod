@@ -24,6 +24,7 @@ import mindustry.world.meta.*;
 import mindustry.world.draw.*;
 
 import creatiive.content.*;
+import creatiive.world.blocks.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -32,8 +33,7 @@ public class CreatiiveBlocks implements ContentList {
 	// production
 	carbonizedFurnace, rustMoisturizer,
 
-    // test
-    scatterBlock,
+  dustScatter, healScatter,
 
 	// enviromnent
 	sandMetalFloor, sandMetalFloor2, sandMetalFloor3, sandMetalFloor4, sandMetalFloor5,
@@ -94,7 +94,7 @@ public class CreatiiveBlocks implements ContentList {
             craftTime = 120;
             craftEffect = Fx.smelt;
             consumes.items(new ItemStack(CreatiiveItems.dusterite, 3));
-            consumes.liquid(new LiquidStack(Liquids.water, 0.5f));
+            consumes.liquid(Liquids.water, 0.5f);
             consumes.power(1.5f);
             outputItem = new ItemStack(CreatiiveItems.moisturizedDust, 2);
         }};
@@ -384,9 +384,32 @@ public class CreatiiveBlocks implements ContentList {
             constructTime = 60f * 60f * 4;
         }};
 
-        scatterBlock = new ScatterBlock("scater") {{
+        dustScatter = new ScatterBlock("dust-scatter") {{
+            requirements(Category.turret, with(CreatiiveItems.dusterite, 50, Items.silicon, 25));
             size = 2;
             health = 160;
+            shots = 10;
+            consumes.items(new ItemStack(CreatiiveItems.dusterite, 10));
+            consumes.power(0.1f);
+            bullet = new BasicBulletType(4f, 15) {{
+                lifetime = 30f;
+            }};
+        }};
+
+        healScatter = new ScatterBlock("heal-scatter") {{
+            requirements(Category.turret, with(CreatiiveItems.moisturizedDust, 50, Items.silicon, 45));
+            size = 2;
+            health = 160;
+            shots = 10;
+            consumes.items(new ItemStack(CreatiiveItems.moisturizedDust, 10));
+            consumes.power(0.5f);
+            bullet = new LaserBoltBulletType(4f, 10){{
+                lifetime = 30f;
+                healPercent = 0.5f;
+                collidesTeam = true;
+                frontColor = Pal.heal;
+                backColor = Color.white;
+            }};
         }};
 	}
 }

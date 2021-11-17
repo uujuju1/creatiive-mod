@@ -68,7 +68,7 @@ public class CreatiiveUnitTypes implements ContentList {
 				}},
 				new DrawRotor(name + "-BRotor") {{
 					x = 0f;
-					y = -10f;
+					y = -9f;
 					rotorSpeed = 11;
 				}}
 			);
@@ -131,12 +131,12 @@ public class CreatiiveUnitTypes implements ContentList {
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
 					x = 0f;
-					y = 3.25f;
+					y = 3.75f;
 					rotorSpeed = 11;
 				}},
 				new DrawRotor(name + "-BRotor") {{
 					x = 0f;
-					y = -9.5f;
+					y = -10.5f;
 					rotorSpeed = 12;
 				}}
 			);
@@ -199,13 +199,23 @@ public class CreatiiveUnitTypes implements ContentList {
 
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
-					x = 0f;
+					x = 11f;
+					y = 7.5f;
+					rotorSpeed = 12;
+				}},
+				new DrawRotor(name + "-ARotor") {{
+					x = -11f;
 					y = 7.5f;
 					rotorSpeed = 12;
 				}},
 				new DrawRotor(name + "-BRotor") {{
-					x = 0f;
-					y = -18f;
+					x = 4.5f;
+					y = -16f;
+					rotorSpeed = 13;
+				}},
+				new DrawRotor(name + "-BRotor") {{
+					x = -4.5f;
+					y = -16f;
 					rotorSpeed = 13;
 				}}
 			);
@@ -330,6 +340,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			);
 		}};
 
+		// dust navals
 		silver = new RotorUnitType("silver") {{
 			localizedName = "Silver";
 			canBoost = true;
@@ -765,6 +776,7 @@ public class CreatiiveUnitTypes implements ContentList {
             );
 		}};
 
+		// jets
 		arcana = new JetUnitType("arcana") {{
 			localizedName = "Arcana";
 			health = 350;

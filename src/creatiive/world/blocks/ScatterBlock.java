@@ -1,6 +1,7 @@
 package creatiive.world.blocks;
 
 import arc.*;
+import arc.Core;
 import arc.audio.*;
 import arc.func.*;
 import arc.graphics.*;
@@ -10,6 +11,8 @@ import arc.math.geom.*;
 import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
+import arc.scene.ui.*;
+import arc.scene.ui.layout.*;
 import mindustry.audio.*;
 import mindustry.content.*;
 import mindustry.graphics.*;
@@ -19,52 +22,36 @@ import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.world.meta.*;
 import mindustry.world.*;
-
-import static mindustry.vars.*;
+import mindustry.logic.*;
+import mindustry.type.*;
+import mindustry.world.draw.*;
 
 public class ScatterBlock extends Block {
-	public Color heatColor = Pal.turretHeat;
-	public BulletType bullet = Bullets.defaultCopper;
-	public Effect shootEffect = Fx.none;
-    public Effect smokeEffect = Fx.none;
-    public Effect ammoUseEffect = Fx.none;
-    public Sound shootSound = Sounds.shoot;
-    public TextureRegion turretSprite;
-    public Item ammo = Items.copper;
-
+    public BulletType bullet = Bullets.standardCopper;
+    
     public int shots = 10;
 
     public ScatterBlock(String name) {
-    	destructible = true;
-    	update = true;
+        super(name);
+        destructible = true;
+        hasItems = true;
+        update = true;
         solid = true;
-        outlineIcon = true;
-        group = BlockGroup.turrets;
         flags = EnumSet.of(BlockFlag.turret);
+        sync = true;
+        itemCapacity = 10;
     }
 
-   	@Override public void init() {
-   		super.init();
-   		consumes.items(new ItemsStack(ammo, shots));
-   	}
-
-   	// some code modified from eso
-   	@Override
-   	public void buildConfiguration(Table table) {
-   		table.table(Tex.clear, t -> {
-   			t.table().size(40);
-   			t.addConfigButton(t, 1).align(Align.center);
-   		});
-   	}
-
-   	@Override
-   	public Cell<Table> addConfigButton(Table table, Int index) {
-   		return table.table(t -> {
-   			TextButton b = t.button("x", () -> {
-   				configure(1);
-   				consume();
-   			}).size(40f).get();
-   			
-   		}).size(40f);
-   	}
+    public class ScatterBlockBuild extends Building { 
+        @Override
+        public void updateTile() {
+            // check consume for shoot
+            if (cons.valid()) {
+                for (int i = 0; i <= shots; i++) {
+                    bullet.create(this, this.team, x, y, Mathf.random() * 360f);
+                }
+            consume();
+            }
+        }
+    }
 }

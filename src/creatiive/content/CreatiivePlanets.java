@@ -19,7 +19,7 @@ public class CreatiivePlanets implements ContentList {
             meshLoader = () -> new HexMesh(this, 6);
             atmosphereColor = Color.valueOf("ff7a38");
             atmosphereRadIn = 0.02f;
-            atmosphereRadOut = 0.3f;
+            atmosphereRadOut = 0.15f;
             startSector = 15;
             alwaysUnlocked = true;
 		}};
