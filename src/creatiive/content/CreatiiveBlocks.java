@@ -139,7 +139,7 @@ public class CreatiiveBlocks implements ContentList {
                     CreatiiveItems.erbite, 3
                 )
             );
-            consumes.liquid(Liquids.oil, 0.2);
+            consumes.liquid(Liquids.oil, 0.2f);
             consumes.power(2f);
             outputItem = new ItemStack(CreatiiveItems.lerbonium, 1);
         }};
