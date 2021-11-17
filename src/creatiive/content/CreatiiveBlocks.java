@@ -187,19 +187,19 @@ public class CreatiiveBlocks implements ContentList {
             size = 1;
         }};
         erbiteWallLarge = new Wall("erbite-wall-large") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite * size * size));
+            requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
             localizedName = "Large Erbite Wall";
             health = 460 * size * size;
             size = 2;
         }};
         erbiteWallHuge = new Wall("erbite-wall-huge") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite * size * size));
+            requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
             localizedName = "Huge Erbite Wall";
             health = 460 * size * size;
             size = 3;
         }};
         erbiteWallGigantic = new Wall("erbite-wall-gigantic") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite * size * size));
+            requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
             localizedName = "Gigantic Erbite Wall";
             health = 460 * size * size;
             size = 4;
