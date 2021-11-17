@@ -31,9 +31,10 @@ import static mindustry.type.ItemStack.with;
 public class CreatiiveBlocks implements ContentList {
 	public static Block
 	// production
-	carbonizedFurnace, rustMoisturizer,
+	carbonizedFurnace, rustMoisturizer, magnetizer, lerboniumWeaver,
 
-  dustScatter, healScatter,
+    // scatters
+    dustScatter, healScatter,
 
 	// enviromnent
 	sandMetalFloor, sandMetalFloor2, sandMetalFloor3, sandMetalFloor4, sandMetalFloor5,
@@ -51,6 +52,7 @@ public class CreatiiveBlocks implements ContentList {
 
 	// walls
 	dusteriteWall, dusteriteWallLarge, dusteriteWallHuge, dusteriteWallGigantic,
+    erbiteWall, erbiteWallLarge, erbiteWallHuge, erbiteWallGigantic,
 
 	// turrets
 	pull, attract, implode;
@@ -78,7 +80,6 @@ public class CreatiiveBlocks implements ContentList {
 			consumes.power(1f);
 			outputItem = new ItemStack(CreatiiveItems.highCarbonSteel, 1);
 		}};
-
         rustMoisturizer = new GenericCrafter("rust-moisturizer") {{
             requirements(Category.crafting, with(
                 Items.silicon, 125,
@@ -98,6 +99,50 @@ public class CreatiiveBlocks implements ContentList {
             consumes.power(1.5f);
             outputItem = new ItemStack(CreatiiveItems.moisturizedDust, 2);
         }};
+        magnetizer = new GenericCrafter("magnetizer") {{
+            requirements(Category.crafting,
+                with(
+                    CreatiiveItems.zicromnium, 140,
+                    CreatiiveItems.dusterite, 250,
+                    Items.silicon, 200,
+                    Items.titanium, 165
+                )
+            );
+            localizedName = "Magnetizer";
+            health = 160;
+            size = 2;
+            craftTime = 90;
+            craftEffect = Fx.smelt;
+            consumes.items(with(Items.silicon, 2, CreatiiveItems.zicromnium, 2));
+            consumes.power(1f);
+            outputItem = new ItemStack(CreatiiveItems.erbite, 2);
+        }};
+        lerboniumWeaver = new GenericCrafter("lerbonium-weaver") {{
+            requirements(Category.crafting, 
+                with(
+                    CreatiiveItems.erbite, 220,
+                    CreatiiveItems.zicromnium, 350,
+                    CreatiiveItems.moisturizedDust, 200,
+                    Items.silicon, 400,
+                    Items.plastanium, 380
+                )
+            );
+            localizedName = "Lerbonium Weaver";
+            health = 220;
+            size = 3;
+            craftTime = 120;
+            craftEffect = Fx.smelt;
+            drawer = new DrawWeave();
+            consumes.items(
+                with(
+                    Items.titanium, 2,
+                    CreatiiveItems.erbite, 3
+                )
+            );
+            consumes.liquid(Liquids.oil, 0.2);
+            consumes.power(2f);
+            outputItem = new ItemStack(CreatiiveItems.lerbonium, 1);
+        }};
 
 		// env
 		sandMetalFloor = new Floor("sand-metal-floor", 0);
@@ -115,14 +160,12 @@ public class CreatiiveBlocks implements ContentList {
 			health = 350;
 			size = 1;
 		}};
-
 		dusteriteWallLarge = new Wall("dusterite-wall-large") {{
 			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 4));
 			localizedName = "Large Dusterite Wall";
 			health = 350 * 4;
 			size = 2;
 		}};
-
 		dusteriteWallHuge = new Wall("dusterite-wall-huge") {{
 			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 9));
 			localizedName = "Huge Dusterite Wall";
@@ -130,13 +173,37 @@ public class CreatiiveBlocks implements ContentList {
 			health = 350 * 11;
 			size = 3;
 		}};
-
 		dusteriteWallGigantic = new Wall("dusterite-wall-gigantic") {{
 			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 16));
 			localizedName = "Gigantic Dusterite Wall";
 			health = 350 * 17;
 			size = 4;
 		}};
+
+        erbiteWall = new Wall("erbite-wall") {{
+            requirements(Category.defense, with(CreatiiveItems.erbite, 6));
+            localizedName = "Erbite Wall";
+            health = 460;
+            size = 1;
+        }};
+        erbiteWallLarge = new Wall("erbite-wall-large") {{
+            requirements(Category.defense, with(CreatiiveItems.erbite * size * size));
+            localizedName = "Large Erbite Wall";
+            health = 460 * size * size;
+            size = 2;
+        }};
+        erbiteWallHuge = new Wall("erbite-wall-huge") {{
+            requirements(Category.defense, with(CreatiiveItems.erbite * size * size));
+            localizedName = "Huge Erbite Wall";
+            health = 460 * size * size;
+            size = 3;
+        }};
+        erbiteWallGigantic = new Wall("erbite-wall-gigantic") {{
+            requirements(Category.defense, with(CreatiiveItems.erbite * size * size));
+            localizedName = "Gigantic Erbite Wall";
+            health = 460 * size * size;
+            size = 4;
+        }};
 
 		// ores
 		oreDusterite = new OreBlock(CreatiiveItems.dusterite) {{
