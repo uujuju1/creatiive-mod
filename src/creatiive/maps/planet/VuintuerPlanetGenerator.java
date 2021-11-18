@@ -4,7 +4,7 @@ import arc.graphics.Color;
 import arc.math.*;
 import arc.math.geom.*;
 import arc.struct.*;
-import arc.util.Tmp;
+import arc.util.Tmp; 
 import mindustry.ai.Astar;
 import mindustry.ai.BaseRegistry.BasePart;
 import mindustry.content.Blocks;
@@ -28,13 +28,14 @@ import creatiive.content.*;
 
 import static mindustry.Vars.*;
 
-public class VuintuerPlanetGenerator extends PlanetGenerator {
+public class VuintuerPlanetGenerator extends SerpuloPlanetGenerator {
+    public VintuerPlanetGenerator() {
+    }
+
 	public int seed = 80;
 	BaseGenerator baseGen = new BaseGenerator();
 	float scl = 6f;
 	float waterOffset = 0.050f;
-
-	public VuintuerPlanetGenerator() {}
 
 	Block[][] arr = {
     	{Blocks.darksand, Blocks.basalt, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.salt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
@@ -52,15 +53,15 @@ public class VuintuerPlanetGenerator extends PlanetGenerator {
     };
 
     ObjectMap<Block, Block> dec = ObjectMap.of(
-        Blocks.darksand, Blocks.basalt,
-        Blocks.darksand, Blocks.basalt,
-        Blocks.darksand, Blocks.basalt,
-        Blocks.darksandWater, Blocks.darksandWater
+        Blocks.salt, Blocks.sand,
+        Blocks.salt, Blocks.sand,
+        Blocks.salt, Blocks.sand,
+        Blocks.sandWater, Blocks.sandWater
     );
 
     ObjectMap<Block, Block> tars = ObjectMap.of(
-        Blocks.stone, Blocks.stone,
-        Blocks.stone, Blocks.stone
+        Blocks.dirt, Blocks.dirt,
+        Blocks.dirt, Blocks.dirt
     );
 
     float water = 2f / arr[0].length;
@@ -71,8 +72,8 @@ public class VuintuerPlanetGenerator extends PlanetGenerator {
 
     @Override
     public void generateSector(Sector sector) {
-    	super.generateSector(sector);
-    	sector.generateEnemyBase = false;
+        super.generateSector(sector);
+        sector.generateEnemyBase = false;
     }
 
     @Override
@@ -181,7 +182,7 @@ public class VuintuerPlanetGenerator extends PlanetGenerator {
 
         inverseFloodFill(tiles.getn(spawn.x, spawn.y));
 
-        Seq<Block> ores = Seq.with(Blocks.oreCopper, Blocks.oreLead, CreatiiveBlocks.oreZicromnium);
+        Seq<Block> ores = Seq.with(Blocks.oreCopper, Blocks.oreLead, CreatiiveBlocks.oreDusterite);
         float poles = Math.abs(sector.tile.v.y);
         float nmag = 0.5f;
         float scl = 1f;
@@ -197,6 +198,10 @@ public class VuintuerPlanetGenerator extends PlanetGenerator {
 
         if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 2, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.7f*addscl){
             ores.add(Blocks.oreThorium);
+        }
+
+        if(rand.chance(0.25)){
+            ores.add(Blocks.oreScrap);
         }
 
         FloatSeq frequencies = new FloatSeq();

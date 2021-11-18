@@ -44,7 +44,7 @@ public class CreatiiveBlocks implements ContentList {
 	dusteriteBridge,
 
 	// ores
-	oreDusterite,
+	oreDusterite, oreZicromnium,
 
     // unit factories
     rotorizedFactory,
