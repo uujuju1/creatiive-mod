@@ -33,7 +33,7 @@ public class VuintuerPlanetGenerator extends SerpuloPlanetGenerator {
     }
 
 	public int seed = 80;
-	BaseGenerator baseGen = new BaseGenerator();
+	BaseGenerator basegen = new BaseGenerator();
 	float scl = 6f;
 	float waterOffset = 0.050f;
 
