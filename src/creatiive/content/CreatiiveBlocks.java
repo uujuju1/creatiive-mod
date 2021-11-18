@@ -211,6 +211,11 @@ public class CreatiiveBlocks implements ContentList {
             oreThreshold = 0.846f;
             oreScale = 24.428572f;
         }};
+        oreZicromnium = new OreBlock(CreatiiveItems.zicromnium) {{
+            oreDefault = true;
+            oreThreshold = 0.846f;
+            oreScale = 24.428572f;
+        }};
 
         // distribution
         // bridges
