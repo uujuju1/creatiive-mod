@@ -37,25 +37,25 @@ public class VuintuerPlanetGenerator extends PlanetGenerator {
 	public VuintuerPlanetGenerator() {}
 
 	Block[][] arr = {
-    	{Blocks.darkSand, Blocks.basalt, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.salt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.darkSand, Blocks.basalt, Blocks.stone, Blocks.basalt, Blocks.darkSand, Blocks.basalt, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.darkSand, Blocks.basalt, Blocks.stone, Blocks.darkSand, Blocks.darkSand, Blocks.basalt, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.darkSand, Blocks.darkSand, Blocks.stone, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.basalt, Blocks.darkSand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.darkSand, Blocks.darkSand, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.darkSand, Blocks.darkSand, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.basalt, Blocks.darkSand, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.basalt, Blocks.darkSand, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
-    	{Blocks.basalt, Blocks.darkSand, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt}
+    	{Blocks.darksand, Blocks.basalt, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.salt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.darksand, Blocks.basalt, Blocks.stone, Blocks.basalt, Blocks.darksand, Blocks.basalt, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.darksand, Blocks.basalt, Blocks.stone, Blocks.darksand, Blocks.darksand, Blocks.basalt, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.darksand, Blocks.darksand, Blocks.stone, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.basalt, Blocks.darksand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.darksand, Blocks.darksand, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.darksand, Blocks.darksand, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.basalt, Blocks.darksand, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.basalt, Blocks.darksand, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt},
+    	{Blocks.basalt, Blocks.darksand, Blocks.stone, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.basalt}
     };
 
     ObjectMap<Block, Block> dec = ObjectMap.of(
-        Blocks.darkSand, Blocks.basalt,
-        Blocks.darkSand, Blocks.basalt,
-        Blocks.darkSand, Blocks.basalt,
-        Blocks.darkSandWater, Blocks.darkSandWater
+        Blocks.darksand, Blocks.basalt,
+        Blocks.darksand, Blocks.basalt,
+        Blocks.darksand, Blocks.basalt,
+        Blocks.darksandWater, Blocks.darksandWater
     );
 
     ObjectMap<Block, Block> tars = ObjectMap.of(
