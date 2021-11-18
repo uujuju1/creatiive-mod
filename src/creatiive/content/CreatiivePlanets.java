@@ -9,7 +9,7 @@ import mindustry.content.*;
 import creatiive.maps.planet.*;
 
 public class CreatiivePlanets implements ContentList {
-	public static Planet scaler vuintuer;
+	public static Planet scaler, vuintuer;
 
 	@Override
 	public void load() {
