@@ -23,7 +23,7 @@ public class CreatiivePlanets implements ContentList {
             startSector = 15;
             alwaysUnlocked = true;
 		}};
-		vuintuer = new Planer("vuintuer", Planets.sun, 2, 0.90f) {{
+		vuintuer = new Planet("vuintuer", Planets.sun, 2, 0.90f) {{
 			localizedName = "Vuintuer";
 			generator = new VuintuerPlanetGenerator();
 			meshLoader = () -> new HexMesh(this, 6);
