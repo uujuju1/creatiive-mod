@@ -18,7 +18,7 @@ public class ShieldUnitType extends UnitType {
     }};
 
     public Color shieldColor = Pal.lancerLaser;
-    public TextureRegion shieldRegion
+    public TextureRegion shieldRegion;
 
 	public int reloadTime = 5;
 	float rel = 0;
