@@ -27,9 +27,7 @@ public class CreatiivePlanets implements ContentList {
 			localizedName = "Vuintuer";
 			generator = new VuintuerPlanetGenerator();
 			meshLoader = () -> new HexMesh(this, 6);
-			atmosphereColor = Color.valueOf("ff7a38");
-            atmosphereRadIn = 0.02f;
-            atmosphereRadOut = 0.15f;
+			hasAtmosphere = false;
 			alwaysUnlocked = true;
 			orbitRadius = 100f;
 		}};

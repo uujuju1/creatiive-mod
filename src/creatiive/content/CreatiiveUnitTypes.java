@@ -994,7 +994,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			legMoveSpace = 1.4f;
 			hovering = true;
 			groundLayer = Layer.legUnit - 1f;
-			visualElevation - 0.2f;
+			visualElevation = 0.2f;
 
 			weapons.add(
 				new Weapon("creatiive-weapon-arc-shockgun") {{
