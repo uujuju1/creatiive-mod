@@ -963,8 +963,6 @@ public class CreatiiveUnitTypes implements ContentList {
                         incendAmount = 1;
                         healPercent = 0.4f;
                         collidesTeam = true;
-                        frontColor = Pal.heal;
-                        backColor = Colors.white;
                     }};
                 }}
             );
