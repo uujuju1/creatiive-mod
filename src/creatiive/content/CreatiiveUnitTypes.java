@@ -36,13 +36,17 @@ import static mindustry.content.Bullets.*;
 
 public class CreatiiveUnitTypes implements ContentList {
 	
-	public static UnitType 
+	public static UnitType
+	// ground
+	nilo,
 
+
+	// air
 	// copters
 	ACopter, BCopter, CCopter, DCopter, ECopter,
 
 	// jets
-	arcana, monoquone, zelinote,
+	arcana, monoquone, zelinote, kepsylon, zermite,
 	
 	// dust navals
 	silver, gold, platinum, iridium, tenelite;
@@ -782,11 +786,11 @@ public class CreatiiveUnitTypes implements ContentList {
 			health = 350;
 			speed = 3f;
 			accel = 0.06f;
-            drag = 0.024f;
+            drag = 0.048f;
             engineX = 2.25f;
             engineY = -5.5f;
             range = 136f;
-            rotateSpeed = 2f;
+            rotateSpeed = 3.5f;
             rotateShooting = false;
             maxRange = range;
 
@@ -824,12 +828,12 @@ public class CreatiiveUnitTypes implements ContentList {
 			health = 530;
 			speed = 2.8f;
 			accel = 0.07f;
-            drag = 0.028f;
+            drag = 0.056f;
             engineX = 2.75f;
             engineY = -8f;
             range = 184f;
             rotateShooting = false;
-            rotateSpeed = 2f;
+            rotateSpeed = 3f;
             maxRange = range;
 
             weapons.add(
@@ -889,13 +893,13 @@ public class CreatiiveUnitTypes implements ContentList {
 			health = 830;
 			speed = 1.9f;
 			accel = 0.08f;
-            drag = 0.032f;
+            drag = 0.064f;
             engineX = 5.5f;
             engineY = -11.5f;
             range = 232f;
             maxRange = range;
             rotateShooting = false;
-            rotateSpeed = 2f;
+            rotateSpeed = 2.5f;
 
             weapons.add(
             	new Weapon("creatiive-weapon-jet-repairBeam") {{
@@ -914,6 +918,105 @@ public class CreatiiveUnitTypes implements ContentList {
             		}};
             	}}
             );
+		}};
+		kepsylon = new JetUnitType("kepsylon") {{
+			localizedName = "Kepsylon";
+			health = 3570;
+			speed = 1.8f;
+			accel = 0.09f;
+            drag = 0.072f;
+            engineX = 12f;
+            engineY = -9f;
+            range = 264f;
+            maxRange = range;
+            rotateShooting = false;
+            rotateSpeed = 2f;
+            weapons.add(
+            	new Weapon("plasma-laser-mount"){{
+                    shake = 3f;
+                    shootY = 7f;
+                    rotate = true;
+                    x = 10f;
+                    y = 0f;
+					targetInterval = 20f;
+					targetSwitchInterval = 35f;
+					rotateSpeed = 3.5f;
+					reload = 170f;
+					recoil = 1f;
+					shootSound = Sounds.beam;
+					continuous = true;
+					cooldownTime = reload;
+					bullet = new ContinuousLaserBulletType(){{
+                        maxRange = 90f;
+                        damage = 26f;
+                        length = 95f;
+                        hitEffect = Fx.hitMeltHeal;
+                        drawSize = 200f;
+                        lifetime = 155f;
+                        shake = 1f;
+                        shootEffect = Fx.shootHeal;
+                        smokeEffect = Fx.none;
+                        width = 4f;
+                        largeHit = false;
+                        incendChance = 0.03f;
+                        incendSpread = 5f;
+                        incendAmount = 1;
+                        healPercent = 0.4f;
+                        collidesTeam = true;
+                        frontColor = Pal.heal;
+                        backColor = Colors.white;
+                    }};
+                }}
+            );
+		}};
+		zermite = new JetUnitType("zermite") {{
+			localizedName = "Zermite";
+			health = 15000;
+			speed = 1.7f;
+			accel = 0.1f;
+            drag = 0.08f;
+            range = 304f;
+            maxRange = range;
+            rotateSpeed = 1.5f;
+            rotateShooting = false;
+		}};
+
+		// arc
+		nilo = new UnitType("nilo") {{
+			localizedName = "Nilo";
+			health = 250;
+			speed = 2f;
+			rotateSpeed = 2f;
+			rotateShooting = true;
+			legCount = 3;
+			legLength = 9f;
+			legTrns = 0.6f;
+			legMoveSpace = 1.4f;
+			hovering = true;
+			groundLayer = Layer.legUnit - 1f;
+			visualElevation - 0.2f;
+
+			weapons.add(
+				new Weapon("creatiive-weapon-arc-shockgun") {{
+					x = 3.5f;
+					y = 0f;
+					reload = 30f;
+					rotate = false;
+					bullet = new LightningBulletType(){{
+                    	lightningColor = hitColor = Color.valueOf("8AA3F4");
+                    	damage = 15f;
+                    	lightningLength = 8;
+                    	lightningLengthRand = 6;
+                    	shootEffect = Fx.shootHeal;
+                    	
+                    	lightningType = new BulletType(0.0001f, 0f){{
+                        	lifetime = Fx.lightning.lifetime;
+                        	hitEffect = Fx.hitLancer;
+                        	hittable = false;
+                   		}};
+                	}};
+				}}
+			);
 		}};
 	}
 }

@@ -182,7 +182,7 @@ public class VuintuerPlanetGenerator extends SerpuloPlanetGenerator {
 
         inverseFloodFill(tiles.getn(spawn.x, spawn.y));
 
-        Seq<Block> ores = Seq.with(Blocks.oreCopper, Blocks.oreLead, CreatiiveBlocks.oreDusterite);
+        Seq<Block> ores = Seq.with(Blocks.oreCopper, Blocks.oreLead, CreatiiveBlocks.oreZicromnium);
         float poles = Math.abs(sector.tile.v.y);
         float nmag = 0.5f;
         float scl = 1f;
