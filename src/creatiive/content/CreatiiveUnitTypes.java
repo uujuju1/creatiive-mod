@@ -38,7 +38,7 @@ public class CreatiiveUnitTypes implements ContentList {
 	
 	public static UnitType
 	// ground
-	nilo,
+	// nilo,
 
 
 	// air
@@ -47,6 +47,9 @@ public class CreatiiveUnitTypes implements ContentList {
 
 	// jets
 	arcana, monoquone, zelinote, kepsylon, zermite,
+
+	// misc
+	kermirade,
 	
 	// dust navals
 	silver, gold, platinum, iridium, tenelite;
@@ -979,7 +982,7 @@ public class CreatiiveUnitTypes implements ContentList {
             rotateShooting = false;
 		}};
 
-		// arc
+		/** arc idk how to make legs
 		nilo = new UnitType("nilo") {{
 			localizedName = "Nilo";
 			health = 250;
@@ -993,6 +996,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			hovering = true;
 			groundLayer = Layer.legUnit - 1f;
 			visualElevation = 0.2f;
+			constructor = 
 
 			weapons.add(
 				new Weapon("creatiive-weapon-arc-shockgun") {{
@@ -1015,6 +1019,16 @@ public class CreatiiveUnitTypes implements ContentList {
                 	}};
 				}}
 			);
+		}};
+		*/
+		kermirade = new ShieldUnitType("kermirade") {{
+			localizedName = "Kermirade";
+			health = 696;
+			speed = 5f;
+			accel = 0.3f;
+			drag = 0.01f;
+			rotateShooting = true;
+			rotateSpeed = 1.5f;
 		}};
 	}
 }
