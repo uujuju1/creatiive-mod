@@ -6,31 +6,28 @@ import arc.graphics.g2d.*;
 import arc.struct.Seq;
 import arc.util.Time;
 import mindustry.gen.*;
+import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.type.UnitType;
 import mindustry.entities.*;
 import mindustry.entities.bullet.*;
 
 public class ShieldUnitType extends UnitType {
-	public BulletType shootType = new LightningBulletType() {{
-        damage = 20;
-        lightningLength = 25;
-        collidesAir = false;
-        ammoMultiplier = 1f;
-    }};
+	public BulletType shootType = Bullets.standardCopper;
 
-    public Color shieldColor = Pal.lancerLaser;
-    public TextureRegion shieldRegion;
+    // public Color shieldColor = Pal.lancerLaser;
+    // public TextureRegion shieldRegion;
 
 	public int reloadTime = 5;
 	float rel = 0;
-	float alpha = 0;
+	// float alpha = 0;
 
 	public ShieldUnitType(String name) {
 		super(name);
 		flying = true;
 		constructor = UnitEntity::create;
 	}
+
 	@Override
 	public void update(Unit unit) {
 		float x = unit.vel.x;
@@ -46,6 +43,7 @@ public class ShieldUnitType extends UnitType {
 		}
 	}
 
+	/**
 	@Override
 	public void draw(Unit unit) {
 		super.draw(unit);
@@ -59,4 +57,5 @@ public class ShieldUnitType extends UnitType {
 	public void load() {
 		shieldRegion = Core.atlas.find(name + "-shield");
 	}
+	*/
 }
