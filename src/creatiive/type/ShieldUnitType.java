@@ -32,9 +32,9 @@ public class ShieldUnitType extends UnitType {
 	public void update(Unit unit) {
 		float x = unit.vel.x;
 		float y = unit.vel.y;
-		if (x >= 2.5f || y >= 2.5f) {
-			// if (rel == 0) {
-				shootType.create(unit, unit.team, unit.x, unit.y, unit.rotation);
+		if (Math.abs(x) >= 2.5f || Math.abs(y) >= 2.5f) {
+			// if (rel <= 0) {
+				shootType.create(unit, unit.team, unit.x, unit.y, unit.rotation + (Mathf.random(-1, 1) * 45));
 				// rel = 5;
 			// }
 		}
