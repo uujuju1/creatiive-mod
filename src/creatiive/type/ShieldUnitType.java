@@ -33,14 +33,14 @@ public class ShieldUnitType extends UnitType {
 		float x = unit.vel.x;
 		float y = unit.vel.y;
 		if (x >= 2.5f || y >= 2.5f) {
-			if (rel == 0) {
+			// if (rel == 0) {
 				shootType.create(unit, unit.team, unit.x, unit.y, unit.rotation);
-				rel = 5;
-			}
+				// rel = 5;
+			// }
 		}
-		if (rel >= 0f) {
-			rel--;
-		}
+		// if (rel >= 0f) {
+			// rel--;
+		// }
 	}
 
 	/**
