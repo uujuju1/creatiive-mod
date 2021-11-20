@@ -982,7 +982,7 @@ public class CreatiiveUnitTypes implements ContentList {
             rotateShooting = false;
 		}};
 
-		/** arc idk how to make legs
+		/** arc idk how to make legs */
 		nilo = new UnitType("nilo") {{
 			localizedName = "Nilo";
 			health = 250;
@@ -996,7 +996,7 @@ public class CreatiiveUnitTypes implements ContentList {
 			hovering = true;
 			groundLayer = Layer.legUnit - 1f;
 			visualElevation = 0.2f;
-			constructor = 
+			constructor = LegsUnit::create;
 
 			weapons.add(
 				new Weapon("creatiive-weapon-arc-shockgun") {{
@@ -1020,7 +1020,8 @@ public class CreatiiveUnitTypes implements ContentList {
 				}}
 			);
 		}};
-		*/
+
+		// misc
 		kermirade = new ShieldUnitType("kermirade") {{
 			localizedName = "Kermirade";
 			health = 696;
