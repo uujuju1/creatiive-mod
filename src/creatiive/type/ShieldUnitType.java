@@ -1,6 +1,8 @@
 package creatiive.type;
 
-import arc.graphics.g2d.Draw;
+import arc.Core;
+import arc.graphics.*;
+import arc.graphics.g2d.*;
 import arc.struct.Seq;
 import arc.util.Time;
 import mindustry.gen.*;
@@ -29,16 +31,17 @@ public class ShieldUnitType extends UnitType {
 		flying = true;
 		constructor = UnitEntity::create;
 	}
-
 	@Override
 	public void update(Unit unit) {
-		if (unit.vel >= 2.5f) {
-			if (rel = 0) {
+		float x = unit.vel.x;
+		float y = unit.vel.y;
+		if (x >= 2.5f || y >= 2.5f) {
+			if (rel == 0) {
 				shootType.create(unit, unit.team, unit.x, unit.y, unit.rotation);
 				rel = 5;
 			}
 		}
-		if (rel >= 0) {
+		if (rel >= 0f) {
 			rel--;
 		}
 	}
