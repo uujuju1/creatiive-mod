@@ -1,6 +1,8 @@
 package creatiive.type;
 
 import arc.Core;
+import arc.math.*;
+import arc.math.geom.*;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.struct.Seq;
