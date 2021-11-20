@@ -17,7 +17,7 @@ import mindustry.entities.bullet.*;
 public class ShieldUnitType extends UnitType {
 	public BulletType shootType = Bullets.standardCopper;
 
-    // public Color shieldColor = Pal.lancerLaser;
+    public Color shieldColor = Pal.lancerLaser;
     public TextureRegion shieldRegion;
 
 	public int reloadTime = 5;
