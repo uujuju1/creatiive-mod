@@ -38,10 +38,11 @@ public class CreatiiveUnitTypes implements ContentList {
 	
 	public static UnitType
 	// ground
-	// nilo,
+	nilo,
 
 
 	// air
+	
 	// copters
 	ACopter, BCopter, CCopter, DCopter, ECopter,
 
