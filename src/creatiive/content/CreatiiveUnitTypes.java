@@ -1091,7 +1091,7 @@ public class CreatiiveUnitTypes implements ContentList {
                 	}};
 				}}
 			);
-		}}
+		}};
 
 		// misc
 		kermirade = new ShieldUnitType("kermirade") {{
