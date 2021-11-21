@@ -237,7 +237,7 @@ public class CreatiiveTurrets implements ContentList {
         		}},
         		Items.pyratite, new BasicBulletType(4f, 10) {{
         			lifetime = range/speed;
-        			status = StatusEffect.burning;
+        			status = StatusEffects.burning;
         			statusDuration = 120f;
         		}}
         	);
@@ -280,7 +280,7 @@ public class CreatiiveTurrets implements ContentList {
         			width = 9f;
         			height = 11f;
         			lifetime = range/speed;
-        			status = StatusEffect.burning;
+        			status = StatusEffects.burning;
         			statusDuration = 120f;
         		}}
         	);
@@ -323,7 +323,7 @@ public class CreatiiveTurrets implements ContentList {
         			width = 11f;
         			height = 13f;
         			lifetime = range/speed;
-        			status = StatusEffect.burning;
+        			status = StatusEffects.burning;
         			statusDuration = 120f;
         		}}
         	);
