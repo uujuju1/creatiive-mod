@@ -89,7 +89,7 @@ public class CreatiiveTurrets implements ContentList {
         			pierce = true;
         			pierceCap = 20;
         		}},
-        		Items.titanium, new BasicBulletType(4f 80) {{
+        		Items.titanium, new BasicBulletType(4f, 80) {{
         			lifetime = 50f;
         			width = 11f;
         			height = 13f;
@@ -205,7 +205,7 @@ public class CreatiiveTurrets implements ContentList {
 					lightning = 5;
 					lightningLength = 15;
         		}}
-        	)
+        	);
         }};
 
 
@@ -256,7 +256,7 @@ public class CreatiiveTurrets implements ContentList {
         	shots = 2;
         	burstSpacing = 2;
         	recoilAmount = 2f;
-        	range = 200f
+        	range = 200f;
         	inaccuracy = 2f;
         	rotateSpeed = 7f;
         	restitution = 0.04f;
@@ -291,7 +291,7 @@ public class CreatiiveTurrets implements ContentList {
         		CreatiiveItems.erbite, 100,
         		Items.silicon, 150,
         		Items.graphite, 140,
-        		Items.plastanium, 120,
+        		Items.plastanium, 120
         	));
         	localizedName = "Terskermite";
         	health = 200 * 9;
@@ -309,23 +309,23 @@ public class CreatiiveTurrets implements ContentList {
         			height = 13f;
         			lifetime = range/speed;
         		}},
-        		CreatiiveItems.erbite, new MissileBulletType(6f, 150) {{
+        		CreatiiveItems.erbite, new BasicBulletType(6f, 150) {{
         			width = 11f;
         			height = 13f;
         			lifetime = range/speed;
         		}},
-        		Items.titanium, new MissileBulletType(6f, 170) {{
+        		Items.titanium, new BasicBulletType(6f, 170) {{
         			width = 11f;
         			height = 13f;
         			lifetime = range/speed;
         		}},
-        		Items.pyratite, new MissileBulletType(6f, 140) {{
+        		Items.pyratite, new BasicBulletType(6f, 140) {{
         			width = 11f;
         			height = 13f;
         			lifetime = range/speed;
         			status = StatusEffect.burning;
         			statusDuration = 120f;
-        		}},
+        		}}
         	);
         }};
 	} 

@@ -28,7 +28,7 @@ public class CreatiiveWalls implements ContentList {
 	// dustertite
 	dusteriteWall, dusteriteWallLarge, dusteriteWallHuge, dusteriteWallGigantic,
 	// erbite
-    erbiteWall, erbiteWallLarge, erbiteWallHuge, erbiteWallGigantic,
+    erbiteWall, erbiteWallLarge, erbiteWallHuge, erbiteWallGigantic;
 
     @Override
     public void load() {
