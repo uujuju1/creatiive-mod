@@ -380,6 +380,6 @@ public class CreatiiveTurrets implements ContentList {
 					lightningLength = 15;
         		}}
         	);
-        }}
+        }};
 	} 
 }
