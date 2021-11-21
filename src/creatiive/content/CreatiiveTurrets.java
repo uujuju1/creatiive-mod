@@ -29,7 +29,7 @@ public class CreatiiveTurrets implements ContentList {
 	// dusterite
 	pull, attract, implode, inhale,
 	// erbite
-	zetni, tameteri, terskermite/*, katserume*/; 
+	zetni, tameteri, terskermite, katserume; 
 
 	@Override
 	public void load() {
@@ -162,7 +162,7 @@ public class CreatiiveTurrets implements ContentList {
         		Items.graphite, 420	
         	));
         	localizedName = "Implode";
-        	size = 3;
+        	size = 4;
         	health = 160 * size * size;
         	reloadTime = 30f;
         	recoilAmount = -1f;
@@ -328,5 +328,58 @@ public class CreatiiveTurrets implements ContentList {
         		}}
         	);
         }};
+        katserume = new ItemTurret("katserume") {{
+        	requirements(Category.turret, with(
+        		CreatiiveItems.lerbonium, 400,
+        		CreatiiveItems.erbite, 500,
+        		Items.surgeAlloy, 300,
+        		Items.silicon, 400,
+        		Items.plastanium, 600,
+        		Items.thorium, 450
+        	));
+        	localizedName = "Katserume";
+        	health = 200 * 16;
+        	size = 4;
+        	reloadTime = 10f;
+        	shots = 2;
+        	burstSpacing = 3.5f;
+        	recoilAmount = 2f;
+        	range = 300f;
+        	inaccuracy = 2f;
+        	restitution = 0.05f;
+        	ammo(
+        		CreatiiveItems.lerbonium, new BasicBulletType(4f, 300) {{
+        			lifetime = 75f;
+        			width = 13f;
+        			height = 15f;
+        			pierce = true;
+        			pierceCap = 40;
+        		}},
+        		CreatiiveItems.erbite, new BasicBulletType(4f, 350) {{
+        			lifetime = 75f;
+        			width = 13f;
+        			height = 15f;
+        			pierce = true;
+        			pierceCap = 40;
+        		}},
+        		Items.silicon, new MissileBulletType(4f, 250) {{
+        			lifetime = 75f;
+        			width = 13f;
+        			height = 15f;
+        			pierce = true;
+        			pierceCap = 40;
+        		}},
+        		Items.surgeAlloy, new BasicBulletType(4f, 200) {{
+        			lifetime = 75f;
+        			width = 13f;
+        			height = 15f;
+        			pierce = true;
+        			pierceCap = 40;
+        			lightningDamage = 15;
+					lightning = 8;
+					lightningLength = 15;
+        		}}
+        	);
+        }}
 	} 
 }
