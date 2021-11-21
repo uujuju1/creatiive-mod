@@ -25,7 +25,7 @@ public class CreatiiveFx {
 		color(Pal.lancerLaser);
         float w = 1f + 5 * e.fout();
         stroke(e.fout());
-        Lines.cirle(e.x, e.y, e.fin() * 8f);
+        Lines.circle(e.x, e.y, e.fin() * 8f);
         Drawf.tri(e.x, e.y, w, 17f * e.fout(), e.rotation);
         Drawf.tri(e.x, e.y, w, 4f * e.fout(), e.rotation + 180f);
 	});
