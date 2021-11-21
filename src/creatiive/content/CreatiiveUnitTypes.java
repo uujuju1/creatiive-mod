@@ -1,6 +1,7 @@
 package creatiive.content;
 
 import creatiive.type.*;
+import creatiive.graphics.*;
 import creatiive.entities.bullet.*;
 
 import arc.graphics.*;
@@ -38,7 +39,7 @@ public class CreatiiveUnitTypes implements ContentList {
 	
 	public static UnitType
 	// ground
-	nilo,
+	nilo, mosquerite,
 
 
 	// air
@@ -983,12 +984,12 @@ public class CreatiiveUnitTypes implements ContentList {
             rotateShooting = false;
 		}};
 
-		/** arc idk how to make legs */
+		// arc
 		nilo = new UnitType("nilo") {{
 			localizedName = "Nilo";
 			health = 250;
 			speed = 2f;
-			rotateSpeed = 2f;
+			rotateSpeed = 5f;
 			rotateShooting = true;
 			legCount = 3;
 			legLength = 9f;
@@ -1010,7 +1011,7 @@ public class CreatiiveUnitTypes implements ContentList {
                     	damage = 15f;
                     	lightningLength = 8;
                     	lightningLengthRand = 6;
-                    	shootEffect = Fx.shootHeal;
+                    	shootEffect = CreatiiveFx.shootArc;
                     	
                     	lightningType = new BulletType(0.0001f, 0f){{
                         	lifetime = Fx.lightning.lifetime;
@@ -1021,6 +1022,76 @@ public class CreatiiveUnitTypes implements ContentList {
 				}}
 			);
 		}};
+		mosquerite = new UnitType("mosquerite") {{
+			localizedName = "Mosquerite";
+			health = 545;
+			speed = 1.5f;
+			rotateSpeed = 4.5f;
+			rotateShooting = true;
+			legCount = 4;
+			legLength = 13f;
+			legTrns = 0.6f;
+			legMoveSpace = 1.3f;
+			hovering = true;
+			groundLayer = Layer.legUnit;
+			visualElevation = 0.3f;
+			constructor = LegsUnit::create;
+			range = 160f;
+			maxRange = range;
+
+			weapons.add(
+				new Weapon("creatiive-weapon-arc-electra") {{
+					x = y = 0f;
+					reload = 5f;
+					mirror = false;
+					recoil = 0.5f;
+					bullet = new BasicBulletType(4f, 15) {{
+						width = height = 8f;
+						lifetime = 40f;
+						frontColor = Pal.lancerLaser;
+						backColor = Color.valueOf("74ADDB");
+					}};
+				}},
+				new Weapon("creatiive-weapon-arc-shockgun") {{
+					x = 4f;
+					y = 4f;
+					reload = 30f;
+					rotate = false;
+					bullet = new LightningBulletType(){{
+                    	lightningColor = hitColor = Color.valueOf("8AA3F4");
+                    	damage = 15f;
+                    	lightningLength = 12;
+                    	lightningLengthRand = 6;
+                    	shootEffect = CreatiiveFx.shootArc;
+                    	
+                    	lightningType = new BulletType(0.0001f, 0f){{
+                        	lifetime = Fx.lightning.lifetime;
+                        	hitEffect = Fx.hitLancer;
+                        	hittable = false;
+                   		}};
+                	}};
+				}},
+				new Weapon("creatiive-weapon-arc-shockgun") {{
+					x = 6f;
+					y = 1.75f;
+					reload = 30f;
+					rotate = false;
+					bullet = new LightningBulletType(){{
+                    	lightningColor = hitColor = Color.valueOf("8AA3F4");
+                    	damage = 15f;
+                    	lightningLength = 8;
+                    	lightningLengthRand = 6;
+                    	shootEffect = CreatiiveFx.shootArc;
+                    	
+                    	lightningType = new BulletType(0.0001f, 0f){{
+                        	lifetime = Fx.lightning.lifetime;
+                        	hitEffect = Fx.hitLancer;
+                        	hittable = false;
+                   		}};
+                	}};
+				}}
+			);
+		}}
 
 		// misc
 		kermirade = new ShieldUnitType("kermirade") {{

@@ -17,8 +17,6 @@ import mindustry.entities.bullet.*;
 public class ShieldUnitType extends UnitType {
 	public BulletType shootType = Bullets.standardCopper;
 
-	public int reloadTime = 5;
-
 	public ShieldUnitType(String name) {
 		super(name);
 		flying = true;
