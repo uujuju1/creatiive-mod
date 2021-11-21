@@ -48,14 +48,7 @@ public class CreatiiveBlocks implements ContentList {
 
     // unit factories
     rotorizedFactory,
-    carbonAdditive, carbonMultiplicative, carbonExponential, carbonTetrative,
-
-	// walls
-	dusteriteWall, dusteriteWallLarge, dusteriteWallHuge, dusteriteWallGigantic,
-    erbiteWall, erbiteWallLarge, erbiteWallHuge, erbiteWallGigantic,
-
-	// turrets
-	pull, attract, implode;
+    carbonAdditive, carbonMultiplicative, carbonExponential, carbonTetrative;
 
 	@Override
 	public void load() {
@@ -153,58 +146,6 @@ public class CreatiiveBlocks implements ContentList {
 
 		sandDamagedMetalFloor = new Floor("sand-damaged-metal-floor", 3);
 
-		// walls
-		dusteriteWall = new Wall("dusterite-wall") {{
-			requirements(Category.defense, with(CreatiiveItems.dusterite, 6));
-			localizedName = "Dusterite Wall";
-			health = 350;
-			size = 1;
-		}};
-		dusteriteWallLarge = new Wall("dusterite-wall-large") {{
-			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 4));
-			localizedName = "Large Dusterite Wall";
-			health = 350 * 4;
-			size = 2;
-		}};
-		dusteriteWallHuge = new Wall("dusterite-wall-huge") {{
-			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 9));
-			localizedName = "Huge Dusterite Wall";
-			details = "sus";
-			health = 350 * 11;
-			size = 3;
-		}};
-		dusteriteWallGigantic = new Wall("dusterite-wall-gigantic") {{
-			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 16));
-			localizedName = "Gigantic Dusterite Wall";
-			health = 350 * 17;
-			size = 4;
-		}};
-
-        erbiteWall = new Wall("erbite-wall") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite, 6));
-            localizedName = "Erbite Wall";
-            health = 460;
-            size = 1;
-        }};
-        erbiteWallLarge = new Wall("erbite-wall-large") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
-            localizedName = "Large Erbite Wall";
-            health = 460 * size * size;
-            size = 2;
-        }};
-        erbiteWallHuge = new Wall("erbite-wall-huge") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
-            localizedName = "Huge Erbite Wall";
-            health = 460 * size * size;
-            size = 3;
-        }};
-        erbiteWallGigantic = new Wall("erbite-wall-gigantic") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
-            localizedName = "Gigantic Erbite Wall";
-            health = 460 * size * size;
-            size = 4;
-        }};
-
 		// ores
 		oreDusterite = new OreBlock(CreatiiveItems.dusterite) {{
 			oreDefault = true;
@@ -224,99 +165,6 @@ public class CreatiiveBlocks implements ContentList {
         	range = 4;
         	speed = 74f;
         	bufferCapacity = 14;
-        }};
-
-        // turrets
-        pull = new ItemTurret("pull") {{
-        	requirements(Category.turret, with(CreatiiveItems.dusterite, 15, Items.lead, 20));
-        	ammo(
-        		CreatiiveItems.dusterite, new BasicBulletType(4f, 15) {{
-        			lifetime = 30f;
-        			width = 7f;
-        			height = 9f;
-        			pierce = true;
-        			pierceCap = 10;
-        		}},
-        		Items.silicon, new MissileBulletType(4f, 17) {{
-        			lifetime = 30f;
-        			width = 7f;
-        			height = 9f;
-        			pierce = true;
-        			pierceCap = 10;
-        		}}
-        	);
-        	localizedName = "Pull";
-        	health = 230;
-        	size = 1;
-        	reloadTime = 30f;
-        	recoilAmount = -1f;
-        	range = 120f;
-        	inaccuracy = 1f;
-        	rotateSpeed = 10f;
-        	maxAmmo = 30;
-        	restitution = 0.05f;
-        }};
-
-        attract = new ItemTurret("attract") {{
-        	requirements(Category.turret, with(CreatiiveItems.dusterite, 120, Items.silicon, 80, Items.titanium, 75));
-        	ammo(
-        		CreatiiveItems.dusterite, new BasicBulletType(4f, 50) {{
-        			lifetime = 50f;
-        			width = 9f;
-        			height = 11f;
-        			pierce = true;
-        			pierceCap = 10;
-        		}},
-        		Items.silicon, new MissileBulletType(4f, 75) {{
-        			lifetime = 50f;
-        			width = 9f;
-        			height = 11f;
-        			pierce = true;
-        			pierceCap = 10;
-        		}}
-        	);
-        	localizedName = "Attract";
-        	health = 240 * 2 * 2;
-        	size = 2;
-        	reloadTime = 60f;
-        	recoilAmount = -1.5f;
-        	range = 200f;
-        	inaccuracy = 1.5f;
-        	rotateSpeed = 7.5f;
-        	maxAmmo = 100;
-        	restitution = 0.05f;
-        }};
-
-        implode = new ItemTurret("implode") {{
-        	requirements(Category.turret, with(CreatiiveItems.dusterite, 250, Items.silicon, 150, Items.thorium, 100));
-        	ammo(
-        		CreatiiveItems.dusterite, new BasicBulletType(4f, 50) {{
-        			lifetime = 60f;
-        			width = 11;
-        			height = 13;
-        			pierce = true;
-        			pierceCap = 10;
-        		}},
-        		Items.silicon, new MissileBulletType(4f, 75) {{
-        			lifetime = 60f;
-        			width = 11;
-        			height = 13;
-        			pierce = true;
-        			pierceCap = 10;
-        		}}
-        	);
-        	localizedName = "Implode";
-        	health = 260 * 3 * 3;
-        	size = 3;
-        	reloadTime = 30f;
-        	recoilAmount = -1f;
-        	range = 240f;
-        	inaccuracy = 2f;
-        	rotateSpeed = 5f;
-        	shots = 4;
-        	burstSpacing = 4f;
-        	maxAmmo = 100;
-        	restitution = 0.05f;
         }};
 
         // factories
