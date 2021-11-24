@@ -92,17 +92,17 @@ public class CreatiiveTechTree implements ContentList {
     public void load() {
     	// start
     	vanillaNode(coreShard, () -> {
-    		node(start, () ->
+    		node(creatiiveBegginings, () ->
     			// items
     			node(dusterite, () ->
-    				node(moisturizedDust, Seq.with(new Produce Items.sporePod))
+    				node(moisturizedDust, Seq.with(new Produce(Items.sporePod)))
     			),
     			node(zicromnium, () ->
-    				node(erbite, Seq.with(new Produce(Items.titanium) () ->
+    				node(erbite, Seq.with(new Produce(Items.titanium)), () ->
     					node(lerbonium, Seq.with(new Produce(Items.thorium)))
     				)
     			),
-    			node(highCarbonSteel, Seq.with(new Produce(Items.silicon))),
+    			node(highCarbonSteel, Seq.with(new Produce(Items.silicon)))
 
     			// turrets
     			node(pull, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> 
@@ -122,7 +122,7 @@ public class CreatiiveTechTree implements ContentList {
 
     			// scatters
     			node(dustScatter, Seq.with(new Produce(CreatiiveItems.dusterite)), () ->
-    				node(healScatter, Seq.with(new Produce, CreatiiveItems.moisturizedDust))
+    				node(healScatter, Seq.with(new Produce(CreatiiveItems.moisturizedDust)))
     			),
 
     			// walls
@@ -131,7 +131,7 @@ public class CreatiiveTechTree implements ContentList {
     					node(dusteriteWallHuge, () -> 
     						node(dusteriteWallGigantic)
     					)
-    				)
+    				),
     				node(erbiteWall, Seq.with(new Produce(CreatiiveItems.dusterite)), () ->
     					node(erbiteWallLarge, () -> 
     						node(erbiteWallHuge, () -> 

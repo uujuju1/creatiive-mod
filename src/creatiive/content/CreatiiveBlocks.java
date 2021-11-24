@@ -48,10 +48,10 @@ public class CreatiiveBlocks implements ContentList {
 
     // unit factories
     rotorizedFactory,
-    carbonAdditive, carbonMultiplicative, carbonExponential, carbonTetrative;
+    carbonAdditive, carbonMultiplicative, carbonExponential, carbonTetrative,
 
     // start
-    creatiiveBegginings,
+    creatiiveBegginings;
 
 	@Override
 	public void load() {
@@ -338,7 +338,7 @@ public class CreatiiveBlocks implements ContentList {
         // ababa
         creatiiveBegginings = new Block("creatiive-begginings") {{
             inEditor = false;
-            buildVisibility = BuildVisibility.debugOnly
+            buildVisibility = BuildVisibility.debugOnly;
         }};
 	}
 }

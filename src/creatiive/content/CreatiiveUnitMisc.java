@@ -352,7 +352,7 @@ public class CreatiiveUnitMisc implements ContentList {
 					y = -0.5f;
 					reload = 60f;
 					shots = 2f;
-					bullet = Bullets.standardHoming
+					bullet = Bullets.standardHoming;
 				}}
 			);
 		}};
