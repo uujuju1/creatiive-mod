@@ -95,11 +95,11 @@ public class CreatiiveTechTree implements ContentList {
             node(creatiiveBegginings, () -> {
     			// items
     			node(dusterite, () -> {
-    				node(moisturizedDust, Seq.with(new Produce(Items.sporePod)))
+    				node(moisturizedDust, Seq.with(new Produce(Items.sporePod)));
                 });
     			node(zicromnium, () -> {
                     node(erbite, Seq.with(new Produce(Items.titanium)), () -> {
-                        node(lerbonium, Seq.with(new Produce(Items.thorium)))
+                        node(lerbonium, Seq.with(new Produce(Items.thorium)));
                     });
                 });
     			node(highCarbonSteel, Seq.with(new Produce(Items.silicon)));
