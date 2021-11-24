@@ -96,14 +96,13 @@ public class CreatiiveTechTree implements ContentList {
     			// items
     			node(dusterite, () ->
     				node(moisturizedDust, Seq.with(new Produce(Items.sporePod)))
-    			),
+    			);
     			node(zicromnium, () ->
     				node(erbite, Seq.with(new Produce(Items.titanium)), () ->
     					node(lerbonium, Seq.with(new Produce(Items.thorium)))
     				)
-    			),
-    			node(highCarbonSteel, Seq.with(new Produce(Items.silicon)))
-
+    			);
+    			node(highCarbonSteel, Seq.with(new Produce(Items.silicon)));
     			// turrets
     			node(pull, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> 
     				node(attract, Seq.with(new Produce(Items.titanium)), () -> 
@@ -118,12 +117,12 @@ public class CreatiiveTechTree implements ContentList {
     						)
     					)
     				)
-    			),
+    			);
 
     			// scatters
     			node(dustScatter, Seq.with(new Produce(CreatiiveItems.dusterite)), () ->
     				node(healScatter, Seq.with(new Produce(CreatiiveItems.moisturizedDust)))
-    			),
+    			);
 
     			// walls
     			node(dusteriteWall, Seq.with(new Produce(CreatiiveItems.dusterite)), () ->
@@ -139,7 +138,7 @@ public class CreatiiveTechTree implements ContentList {
     						)
     					)
     				)
-    			),
+    			);
 
     			// units
     			node(rotorizedFactory, Seq.with(new Produce(Items.highCarbonSteel), new Research(Blocks.airFactory)), () ->
@@ -169,8 +168,8 @@ public class CreatiiveTechTree implements ContentList {
     						)
     					)
 	    			)
-    			)
-    		)
+    			);
+    		);
     	});
     }
 }
