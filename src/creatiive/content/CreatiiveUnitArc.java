@@ -35,7 +35,7 @@ import static mindustry.Vars.*;
 import static mindustry.Vars.tilesize;
 import static mindustry.content.Bullets.*;
 
-public class CreatiiveUnitTypes implements ContentList {
+public class CreatiiveArc implements ContentList {
 	
 	public static UnitType
 	// ground
