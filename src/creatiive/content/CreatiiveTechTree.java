@@ -23,7 +23,7 @@ import static mindustry.content.UnitTypes.*;
 public class CreatiiveTechTree implements ContentList {
 	static TechTree.TechNode context = null;
 
-    private static void vanillaNode (UnlockableContent parent, Runnable children) {
+    private static void ConeccNode (UnlockableContent parent, Runnable children) {
         context = TechTree.all.find(t -> t.content == parent);
         children.run();
     }
@@ -91,85 +91,86 @@ public class CreatiiveTechTree implements ContentList {
     @Override
     public void load() {
     	// start
-    	vanillaNode(coreShard, () -> {
-    		node(creatiiveBegginings, () ->
+    	ConeccNode(coreShard, () -> {
+            node(creatiiveBegginings, () -> {
     			// items
-    			node(dusterite, () ->
+    			node(dusterite, () -> {
     				node(moisturizedDust, Seq.with(new Produce(Items.sporePod)))
-    			);
-    			node(zicromnium, () ->
-    				node(erbite, Seq.with(new Produce(Items.titanium)), () ->
-    					node(lerbonium, Seq.with(new Produce(Items.thorium)))
-    				)
-    			);
+                });
+    			node(zicromnium, () -> {
+                    node(erbite, Seq.with(new Produce(Items.titanium)), () -> {
+                        node(lerbonium, Seq.with(new Produce(Items.thorium)))
+                    });
+                });
     			node(highCarbonSteel, Seq.with(new Produce(Items.silicon)));
-    			// turrets
-    			node(pull, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> 
-    				node(attract, Seq.with(new Produce(Items.titanium)), () -> 
-    					node(implode, Seq.with(new Produce(Items.plastanium)), () -> 
-    						node(inhale, Seq.with(new Produce(Items.surgeAlloy)))
-    					)
-    				),
-    				node(zetni, Seq.with(new Produce(CreatiiveItems.erbite)), () -> 
-    					node(tameteri, Seq.with(new Produce(Items.thorium)), () -> 
-    						node(terskermite, Seq.with(new Produce(Items.plastanium)), () -> 
-    							node(katserume, Seq.with(new Produce(Items.surgeAlloy)))
-    						)
-    					)
-    				)
-    			);
+    			
+                // turrets
+    			node(pull, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> {
+    				node(attract, Seq.with(new Produce(Items.titanium)), () -> {
+    					node(implode, Seq.with(new Produce(Items.plastanium)), () -> {
+    						node(inhale, Seq.with(new Produce(Items.surgeAlloy)));
+    					});
+    				});
+    				node(zetni, Seq.with(new Produce(CreatiiveItems.erbite)), () -> {
+    					node(tameteri, Seq.with(new Produce(Items.thorium)), () -> {
+    						node(terskermite, Seq.with(new Produce(Items.plastanium)), () -> {
+    							node(katserume, Seq.with(new Produce(Items.surgeAlloy)));
+    						});
+    					});
+    				});
+    			});
 
     			// scatters
-    			node(dustScatter, Seq.with(new Produce(CreatiiveItems.dusterite)), () ->
-    				node(healScatter, Seq.with(new Produce(CreatiiveItems.moisturizedDust)))
-    			);
+    			node(dustScatter, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> {
+    				node(healScatter, Seq.with(new Produce(CreatiiveItems.moisturizedDust)));
+    			});
 
     			// walls
-    			node(dusteriteWall, Seq.with(new Produce(CreatiiveItems.dusterite)), () ->
-    				node(dusteriteWallLarge, () -> 
-    					node(dusteriteWallHuge, () -> 
-    						node(dusteriteWallGigantic)
-    					)
-    				),
-    				node(erbiteWall, Seq.with(new Produce(CreatiiveItems.dusterite)), () ->
-    					node(erbiteWallLarge, () -> 
-    						node(erbiteWallHuge, () -> 
-    							node(erbiteWallGigantic)
-    						)
-    					)
-    				)
-    			);
+    			node(dusteriteWall, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> {
+    				node(dusteriteWallLarge, () -> {
+    					node(dusteriteWallHuge, () -> {
+    						node(dusteriteWallGigantic);
+    					});
+    				});
+    				node(erbiteWall, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> {
+    					node(erbiteWallLarge, () -> {
+    						node(erbiteWallHuge, () -> {
+    							node(erbiteWallGigantic);
+    						});
+    					});
+    				});
+    			});
 
     			// units
-    			node(rotorizedFactory, Seq.with(new Produce(Items.highCarbonSteel), new Research(Blocks.airFactory)), () ->
-    				node(carbonAdditive, Seq.with(new Research(Blocks.additiveReconstructor)), () ->
-    					node(carbonMultiplicative, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () ->
-    						node(carbonExponential, Seq.with(new Research(Blocks.exponentialReconstructor)), () ->
-    							node(carbonTetrative, Seq.with(new Research(Blocks.tetrativeReconstructor)))
-    						)
-    					)	
-    				),
+    			node(rotorizedFactory, Seq.with(new Produce(Items.highCarbonSteel), new Research(Blocks.airFactory)), () ->{
+    				node(carbonAdditive, Seq.with(new Research(Blocks.additiveReconstructor)), () -> {
+    					node(carbonMultiplicative, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () -> {
+    						node(carbonExponential, Seq.with(new Research(Blocks.exponentialReconstructor)), () -> {
+    							node(carbonTetrative, Seq.with(new Research(Blocks.tetrativeReconstructor)));
+    						});
+    					});	
+    				});
 
-    				node(ACopter, () ->
-    					node(BCopter, Seq.with(new Research(Blocks.additiveReconstructor)), () ->
-    						node(CCopter, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () ->
-    							node(DCopter, Seq.with(new Research(Blocks.exponentialReconstructor)), () ->
-    								node(ECopter, Seq.with(new Research(Blocks.tetrativReconstructor)))
-    							)
-    						)
-    					)
-	    			),
-	    			node(silver, Seq.with(new Produce(CreatiiveItems.dusterite)), () ->
-    					node(gold, Seq.with(new Research(Blocks.additiveReconstructor)), () ->
-    						node(platinum, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () ->
-    							node(iridium, Seq.with(new Research(Blocks.exponentialReconstructor)), () ->
-    								node(tenelite, Seq.with(new Research(Blocks.tetrativReconstructor)))
-    							)
-    						)
-    					)
-	    			)
-    			);
-    		);
+    				// node(ACopter, () ->
+    				// 	node(BCopter, Seq.with(new Research(Blocks.additiveReconstructor)), () -> {
+    				// 		node(CCopter, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () -> {
+    				// 			node(DCopter, Seq.with(new Research(Blocks.exponentialReconstructor)), () -> {
+    				// 				node(ECopter, Seq.with(new Research(Blocks.tetrativReconstructor)));
+    				// 			});
+    				// 		});
+    				// 	});
+	    			// });
+	    			node(silver, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> {
+    					node(gold, Seq.with(new Research(Blocks.additiveReconstructor)), () -> {
+    						node(platinum, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () -> {
+    							node(iridium, Seq.with(new Research(Blocks.exponentialReconstructor)), () -> {
+    								node(tenelite, Seq.with(new Research(Blocks.tetrativReconstructor)));
+    							});
+    						});
+    					});
+	    			});
+    			});
+    		});
     	});
     }
 }
