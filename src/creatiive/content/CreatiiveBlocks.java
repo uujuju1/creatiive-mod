@@ -50,6 +50,9 @@ public class CreatiiveBlocks implements ContentList {
     rotorizedFactory,
     carbonAdditive, carbonMultiplicative, carbonExponential, carbonTetrative;
 
+    // start
+    creatiiveBegginings,
+
 	@Override
 	public void load() {
         // production
@@ -330,6 +333,12 @@ public class CreatiiveBlocks implements ContentList {
                 frontColor = Pal.heal;
                 backColor = Color.white;
             }};
+        }};
+
+        // ababa
+        creatiiveBegginings = new Block("creatiive-begginings") {{
+            inEditor = false;
+            buildVisibility = BuildVisibility.debugOnly
         }};
 	}
 }

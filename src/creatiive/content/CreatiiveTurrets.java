@@ -106,7 +106,11 @@ public class CreatiiveTurrets implements ContentList {
 			);
 		}};
 		implode = new ItemTurret("implode") {{
-        	requirements(Category.turret, with(CreatiiveItems.dusterite, 250, Items.silicon, 150, Items.thorium, 100));
+        	requirements(Category.turret, with(
+                CreatiiveItems.dusterite, 250,
+                Items.silicon, 150,
+                Items.thorium, 100
+            ));
         	localizedName = "Implode";
         	size = 3;
         	health = 160 * size * size;
@@ -161,7 +165,7 @@ public class CreatiiveTurrets implements ContentList {
         		Items.plastanium, 300,
         		Items.graphite, 420	
         	));
-        	localizedName = "Implode";
+        	localizedName = "Inhale";
         	size = 4;
         	health = 160 * size * size;
         	reloadTime = 30f;
@@ -171,7 +175,7 @@ public class CreatiiveTurrets implements ContentList {
         	rotateSpeed = 5f;
         	shots = 4;
         	burstSpacing = 4f;
-        	maxAmmo = 100;
+        	maxAmmo = 150;
         	restitution = 0.05f;
         	ammo(
         		CreatiiveItems.dusterite, new BasicBulletType(4f, 300) {{
@@ -348,7 +352,7 @@ public class CreatiiveTurrets implements ContentList {
         	inaccuracy = 2f;
         	restitution = 0.05f;
         	ammo(
-        		CreatiiveItems.lerbonium, new BasicBulletType(4f, 300) {{
+        		CreatiiveItems.lerbonium, new MissileBulletType(4f, 300) {{
         			lifetime = 75f;
         			width = 13f;
         			height = 15f;
