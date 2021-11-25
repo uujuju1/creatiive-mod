@@ -126,7 +126,7 @@ public class CreatiiveTechTree implements ContentList {
     			});
 
     			// walls
-    			node(dusteriteWall, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> {
+    			node(dusteriteWall, Seq.with(new Produce(dusterite)), () -> {
     				node(dusteriteWallLarge, () -> {
     					node(dusteriteWallHuge, () -> {
     						node(dusteriteWallGigantic);
@@ -164,7 +164,7 @@ public class CreatiiveTechTree implements ContentList {
     					node(gold, Seq.with(new Research(Blocks.additiveReconstructor)), () -> {
     						node(platinum, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () -> {
     							node(iridium, Seq.with(new Research(Blocks.exponentialReconstructor)), () -> {
-    								node(tenelite, Seq.with(new Research(Blocks.tetrativReconstructor)));
+    								node(tenelite, Seq.with(new Research(Blocks.tetrativeReconstructor)));
     							});
     						});
     					});
