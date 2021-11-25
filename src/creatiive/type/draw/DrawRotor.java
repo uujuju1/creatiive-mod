@@ -1,4 +1,4 @@
-package creatiive.type;
+package creatiive.type.draw;
 
 import arc.Core;
 import arc.graphics.g2d.*;

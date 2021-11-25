@@ -9,7 +9,7 @@ import mindustry.content.*;
 import creatiive.maps.planet.*;
 
 public class CreatiivePlanets implements ContentList {
-	public static Planet scaler;
+	public static Planet scaler, vuintuer;
 
 	@Override
 	public void load() {
@@ -22,6 +22,14 @@ public class CreatiivePlanets implements ContentList {
             atmosphereRadOut = 0.15f;
             startSector = 15;
             alwaysUnlocked = true;
+		}};
+		vuintuer = new Planet("vuintuer", Planets.sun, 2, 0.90f) {{
+			localizedName = "Vuintuer";
+			generator = new VuintuerPlanetGenerator();
+			meshLoader = () -> new HexMesh(this, 6);
+			hasAtmosphere = false;
+			alwaysUnlocked = true;
+			orbitRadius = 100f;
 		}};
 	}
 }

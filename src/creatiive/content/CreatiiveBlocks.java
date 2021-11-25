@@ -31,9 +31,10 @@ import static mindustry.type.ItemStack.with;
 public class CreatiiveBlocks implements ContentList {
 	public static Block
 	// production
-	carbonizedFurnace, rustMoisturizer,
+	carbonizedFurnace, rustMoisturizer, magnetizer, lerboniumWeaver,
 
-  dustScatter, healScatter,
+    // scatters
+    dustScatter, healScatter,
 
 	// enviromnent
 	sandMetalFloor, sandMetalFloor2, sandMetalFloor3, sandMetalFloor4, sandMetalFloor5,
@@ -43,17 +44,14 @@ public class CreatiiveBlocks implements ContentList {
 	dusteriteBridge,
 
 	// ores
-	oreDusterite,
+	oreDusterite, oreZicromnium,
 
     // unit factories
     rotorizedFactory,
     carbonAdditive, carbonMultiplicative, carbonExponential, carbonTetrative,
 
-	// walls
-	dusteriteWall, dusteriteWallLarge, dusteriteWallHuge, dusteriteWallGigantic,
-
-	// turrets
-	pull, attract, implode;
+    // start
+    creatiiveBegginings;
 
 	@Override
 	public void load() {
@@ -78,7 +76,6 @@ public class CreatiiveBlocks implements ContentList {
 			consumes.power(1f);
 			outputItem = new ItemStack(CreatiiveItems.highCarbonSteel, 1);
 		}};
-
         rustMoisturizer = new GenericCrafter("rust-moisturizer") {{
             requirements(Category.crafting, with(
                 Items.silicon, 125,
@@ -98,6 +95,50 @@ public class CreatiiveBlocks implements ContentList {
             consumes.power(1.5f);
             outputItem = new ItemStack(CreatiiveItems.moisturizedDust, 2);
         }};
+        magnetizer = new GenericCrafter("magnetizer") {{
+            requirements(Category.crafting,
+                with(
+                    CreatiiveItems.zicromnium, 140,
+                    CreatiiveItems.dusterite, 250,
+                    Items.silicon, 200,
+                    Items.titanium, 165
+                )
+            );
+            localizedName = "Magnetizer";
+            health = 160;
+            size = 2;
+            craftTime = 90;
+            craftEffect = Fx.smelt;
+            consumes.items(with(Items.silicon, 2, CreatiiveItems.zicromnium, 2));
+            consumes.power(1f);
+            outputItem = new ItemStack(CreatiiveItems.erbite, 2);
+        }};
+        lerboniumWeaver = new GenericCrafter("lerbonium-weaver") {{
+            requirements(Category.crafting, 
+                with(
+                    CreatiiveItems.erbite, 220,
+                    CreatiiveItems.zicromnium, 350,
+                    CreatiiveItems.moisturizedDust, 200,
+                    Items.silicon, 400,
+                    Items.plastanium, 380
+                )
+            );
+            localizedName = "Lerbonium Weaver";
+            health = 220;
+            size = 3;
+            craftTime = 120;
+            craftEffect = Fx.smelt;
+            drawer = new DrawWeave();
+            consumes.items(
+                with(
+                    Items.titanium, 2,
+                    CreatiiveItems.erbite, 3
+                )
+            );
+            consumes.liquid(Liquids.oil, 0.2f);
+            consumes.power(2f);
+            outputItem = new ItemStack(CreatiiveItems.lerbonium, 1);
+        }};
 
 		// env
 		sandMetalFloor = new Floor("sand-metal-floor", 0);
@@ -108,39 +149,14 @@ public class CreatiiveBlocks implements ContentList {
 
 		sandDamagedMetalFloor = new Floor("sand-damaged-metal-floor", 3);
 
-		// walls
-		dusteriteWall = new Wall("dusterite-wall") {{
-			requirements(Category.defense, with(CreatiiveItems.dusterite, 6));
-			localizedName = "Dusterite Wall";
-			health = 350;
-			size = 1;
-		}};
-
-		dusteriteWallLarge = new Wall("dusterite-wall-large") {{
-			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 4));
-			localizedName = "Large Dusterite Wall";
-			health = 350 * 4;
-			size = 2;
-		}};
-
-		dusteriteWallHuge = new Wall("dusterite-wall-huge") {{
-			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 9));
-			localizedName = "Huge Dusterite Wall";
-			details = "sus";
-			health = 350 * 11;
-			size = 3;
-		}};
-
-		dusteriteWallGigantic = new Wall("dusterite-wall-gigantic") {{
-			requirements(Category.defense, with(CreatiiveItems.dusterite, 6 * 16));
-			localizedName = "Gigantic Dusterite Wall";
-			health = 350 * 17;
-			size = 4;
-		}};
-
 		// ores
 		oreDusterite = new OreBlock(CreatiiveItems.dusterite) {{
 			oreDefault = true;
+            oreThreshold = 0.846f;
+            oreScale = 24.428572f;
+        }};
+        oreZicromnium = new OreBlock(CreatiiveItems.zicromnium) {{
+            oreDefault = true;
             oreThreshold = 0.846f;
             oreScale = 24.428572f;
         }};
@@ -152,99 +168,6 @@ public class CreatiiveBlocks implements ContentList {
         	range = 4;
         	speed = 74f;
         	bufferCapacity = 14;
-        }};
-
-        // turrets
-        pull = new ItemTurret("pull") {{
-        	requirements(Category.turret, with(CreatiiveItems.dusterite, 15, Items.lead, 20));
-        	ammo(
-        		CreatiiveItems.dusterite, new BasicBulletType(4f, 15) {{
-        			lifetime = 30f;
-        			width = 7f;
-        			height = 9f;
-        			pierce = true;
-        			pierceCap = 10;
-        		}},
-        		Items.silicon, new MissileBulletType(4f, 17) {{
-        			lifetime = 30f;
-        			width = 7f;
-        			height = 9f;
-        			pierce = true;
-        			pierceCap = 10;
-        		}}
-        	);
-        	localizedName = "Pull";
-        	health = 230;
-        	size = 1;
-        	reloadTime = 30f;
-        	recoilAmount = -1f;
-        	range = 120f;
-        	inaccuracy = 1f;
-        	rotateSpeed = 10f;
-        	maxAmmo = 30;
-        	restitution = 0.05f;
-        }};
-
-        attract = new ItemTurret("attract") {{
-        	requirements(Category.turret, with(CreatiiveItems.dusterite, 120, Items.silicon, 80, Items.titanium, 75));
-        	ammo(
-        		CreatiiveItems.dusterite, new BasicBulletType(4f, 50) {{
-        			lifetime = 50f;
-        			width = 9f;
-        			height = 11f;
-        			pierce = true;
-        			pierceCap = 10;
-        		}},
-        		Items.silicon, new MissileBulletType(4f, 75) {{
-        			lifetime = 50f;
-        			width = 9f;
-        			height = 11f;
-        			pierce = true;
-        			pierceCap = 10;
-        		}}
-        	);
-        	localizedName = "Attract";
-        	health = 240 * 2 * 2;
-        	size = 2;
-        	reloadTime = 60f;
-        	recoilAmount = -1.5f;
-        	range = 200f;
-        	inaccuracy = 1.5f;
-        	rotateSpeed = 7.5f;
-        	maxAmmo = 100;
-        	restitution = 0.05f;
-        }};
-
-        implode = new ItemTurret("implode") {{
-        	requirements(Category.turret, with(CreatiiveItems.dusterite, 250, Items.silicon, 150, Items.thorium, 100));
-        	ammo(
-        		CreatiiveItems.dusterite, new BasicBulletType(4f, 50) {{
-        			lifetime = 60f;
-        			width = 11;
-        			height = 13;
-        			pierce = true;
-        			pierceCap = 10;
-        		}},
-        		Items.silicon, new MissileBulletType(4f, 75) {{
-        			lifetime = 60f;
-        			width = 11;
-        			height = 13;
-        			pierce = true;
-        			pierceCap = 10;
-        		}}
-        	);
-        	localizedName = "Implode";
-        	health = 260 * 3 * 3;
-        	size = 3;
-        	reloadTime = 30f;
-        	recoilAmount = -1f;
-        	range = 240f;
-        	inaccuracy = 2f;
-        	rotateSpeed = 5f;
-        	shots = 4;
-        	burstSpacing = 4f;
-        	maxAmmo = 100;
-        	restitution = 0.05f;
         }};
 
         // factories
@@ -410,6 +333,12 @@ public class CreatiiveBlocks implements ContentList {
                 frontColor = Pal.heal;
                 backColor = Color.white;
             }};
+        }};
+
+        // ababa
+        creatiiveBegginings = new Block("creatiive-begginings") {{
+            inEditor = false;
+            buildVisibility = BuildVisibility.debugOnly;
         }};
 	}
 }

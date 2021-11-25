@@ -6,7 +6,11 @@ import mindustry.type.Item;
 
 public class CreatiiveItems implements ContentList {
 	public static Item 
-	highCarbonSteel, dusterite, moisturizedDust;
+	// scaler
+	highCarbonSteel, dusterite, moisturizedDust,
+
+	// customplanetthatidonthaveaname
+	erbite, zicromnium, lerbonium;
 
 	@Override
 	public void load(){
@@ -22,6 +26,19 @@ public class CreatiiveItems implements ContentList {
 			localizedName = "Moisturized Dust";
 			cost = 3;
 			flammability = 0.8f;
+		}};
+		erbite = new Item("erbite", Color.valueOf("3D3253")) {{
+			localizedName = "Erbite";
+			cost = 2;
+		}};
+		zicromnium = new Item("zicromnium", Color.valueOf("9999D4")) {{
+			localizedName = "Zicromnium";
+			cost = 7;
+			hardness = 1;
+		}};
+		lerbonium = new Item("lerbonium", Color.valueOf("5F3037")) {{
+			localizedName = "Lerbonium";
+			cost = 12;
 		}};
 	}
 }
