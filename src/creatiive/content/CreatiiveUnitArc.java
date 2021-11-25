@@ -100,9 +100,10 @@ public class CreatiiveUnitArc implements ContentList {
 
 			weapons.add(
 				new Weapon("creatiive-weapon-arc-electra") {{
-					x = y = 0f;
+					x = 3f;
+					y = -3f;
 					reload = 5f;
-					mirror = false;
+					mirror = true;
 					recoil = 0.5f;
 					bullet = new BasicBulletType(4f, 15) {{
 						width = height = 8f;
@@ -112,8 +113,8 @@ public class CreatiiveUnitArc implements ContentList {
 					}};
 				}},
 				new Weapon("creatiive-weapon-arc-shockgun") {{
-					x = 4f;
-					y = 4f;
+					x = 3.5f;
+					y = 3.5f;
 					reload = 30f;
 					rotate = false;
 					bullet = new LightningBulletType(){{
@@ -131,8 +132,8 @@ public class CreatiiveUnitArc implements ContentList {
                 	}};
 				}},
 				new Weapon("creatiive-weapon-arc-shockgun") {{
-					x = 6f;
-					y = 1.75f;
+					x = 6.75f;
+					y = 2f;
 					reload = 30f;
 					rotate = false;
 					bullet = new LightningBulletType(){{

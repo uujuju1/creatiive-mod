@@ -50,6 +50,8 @@ public class CreatiiveBlocks implements ContentList {
     rotorizedFactory,
     carbonAdditive, carbonMultiplicative, carbonExponential, carbonTetrative,
 
+    arcFactory,
+
     // start
     creatiiveBegginings;
 
@@ -179,13 +181,29 @@ public class CreatiiveBlocks implements ContentList {
                 CreatiiveItems.highCarbonSteel, 35
             ));
             plans = Seq.with(
-                new UnitPlan(CreatiiveUnitTypes.ACopter, 60f * 25, with(Items.silicon, 20, CreatiiveItems.highCarbonSteel, 25)),
-                new UnitPlan(CreatiiveUnitTypes.silver, 60f * 15, with(Items.silicon, 15, CreatiiveItems.dusterite, 20))
+                new UnitPlan(CreatiiveUnitMisc.ACopter, 60f * 25, with(Items.silicon, 20, CreatiiveItems.highCarbonSteel, 25)),
+                new UnitPlan(CreatiiveUnitDust.silver, 60f * 15, with(Items.silicon, 15, CreatiiveItems.dusterite, 20))
             );
             localizedName = "Rotorized Factory";
             size = 3;
             health = 220;
             consumes.power(1.5f);
+        }};
+
+        arcFactory = new UnitFactory("arc-factory") {{
+            requirements(Category.units, with(
+                CreatiiveItems.zicromnium, 85,
+                CreatiiveItems.erbite, 55,
+                Items.titanium, 60,
+                Items.silicon, 70
+            ));
+            plans = Seq.with(
+                new UnitPlan(CreatiiveUnitArc.nilo, 60f * 30, with(
+                    CreatiiveItems.zicromnium, 10,
+                    Items.titanium, 15,
+                    Items.silicon, 10
+                ))
+            );
         }};
 
         // reconstructors
@@ -198,8 +216,10 @@ public class CreatiiveBlocks implements ContentList {
                 Items.silicon, 90
             ));
             upgrades.addAll(
-                new UnitType[]{CreatiiveUnitTypes.ACopter, CreatiiveUnitTypes.BCopter},
-                new UnitType[]{CreatiiveUnitTypes.silver, CreatiiveUnitTypes.gold}
+                new UnitType[]{CreatiiveUnitMisc.ACopter, CreatiiveUnitMisc.BCopter},
+                new UnitType[]{CreatiiveUnitDust.silver, CreatiiveUnitDust.gold},
+                new UnitType[]{CreatiiveUnitDust.arcana, CreatiiveUnitDust.monoquone},
+                new UnitType[]{CreatiiveUnitArc.nilo, CreatiiveUnitArc.mosquerite}
             );
             localizedName = "Carbon Reconstructor(ADDITIVE)";
             size = 3;
@@ -225,8 +245,9 @@ public class CreatiiveBlocks implements ContentList {
                 Items.thorium, 650
             ));
             upgrades.addAll(
-                new UnitType[]{CreatiiveUnitTypes.BCopter, CreatiiveUnitTypes.CCopter},
-                new UnitType[]{CreatiiveUnitTypes.gold, CreatiiveUnitTypes.platinum}
+                new UnitType[]{CreatiiveUnitMisc.BCopter, CreatiiveMisc.CCopter},
+                new UnitType[]{CreatiiveUnitDust.gold, CreatiiveUnitDust.platinum},
+                new UnitType[]{CreatiiveUnitDust.monoquone, CreatiiveUnitDust.zelinote}
             );
             localizedName = "Carbon Reconstructor(MULTIPLICATIVE)";
             size = 5;
@@ -255,7 +276,9 @@ public class CreatiiveBlocks implements ContentList {
                 Items.phaseFabric, 600
             ));
             upgrades.addAll(
-                new UnitType[]{CreatiiveUnitTypes.CCopter, CreatiiveUnitTypes.DCopter}
+                new UnitType[]{CreatiiveUnitMisc.CCopter, CreatiiveMisc.DCopter},
+                new UnitType[]{CreatiiveUnitDust.platinum, CreatiiveUnitDust.iridium},
+                new UnitType[]{CreatiiveUnitDust.zelinote, CreatiiveUnitDust.kepsylon}
             );
             localizedName = "Carbon Reconstructor(EXPONENTIAL)";
             size = 7;
@@ -286,7 +309,9 @@ public class CreatiiveBlocks implements ContentList {
                 Items.surgeAlloy, 800
             ));
             upgrades.addAll(
-                new UnitType[]{CreatiiveUnitTypes.DCopter, CreatiiveUnitTypes.ECopter}
+                new UnitType[]{CreatiiveUnitMisc.DCopter, CreatiiveUnitMisc.ECopter},
+                new UnitType[]{CreatiiveUnitDust.iridium, CreatiiveUnitDust.tenelite},
+                new UnitType[]{CreatiiveUnitDust.kepsylon, CreatiiveUnitDust.zermite}
             );
             localizedName = "Carbon Reconstructor(TETRATIVE)";
             size = 9;
@@ -306,6 +331,7 @@ public class CreatiiveBlocks implements ContentList {
             liquidCapacity = 180f;
             constructTime = 60f * 60f * 4;
         }};
+
 
         dustScatter = new ScatterBlock("dust-scatter") {{
             requirements(Category.turret, with(CreatiiveItems.dusterite, 50, Items.silicon, 25));
