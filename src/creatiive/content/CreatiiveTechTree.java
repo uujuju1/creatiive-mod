@@ -105,13 +105,13 @@ public class CreatiiveTechTree implements ContentList {
     			node(highCarbonSteel, Seq.with(new Produce(Items.silicon)));
     			
                 // turrets
-    			node(pull, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> {
+    			node(pull, Seq.with(new Produce(dusterite)), () -> {
     				node(attract, Seq.with(new Produce(Items.titanium)), () -> {
     					node(implode, Seq.with(new Produce(Items.plastanium)), () -> {
     						node(inhale, Seq.with(new Produce(Items.surgeAlloy)));
     					});
     				});
-    				node(zetni, Seq.with(new Produce(CreatiiveItems.erbite)), () -> {
+    				node(zetni, Seq.with(new Produce(erbite)), () -> {
     					node(tameteri, Seq.with(new Produce(Items.thorium)), () -> {
     						node(terskermite, Seq.with(new Produce(Items.plastanium)), () -> {
     							node(katserume, Seq.with(new Produce(Items.surgeAlloy)));
@@ -121,8 +121,8 @@ public class CreatiiveTechTree implements ContentList {
     			});
 
     			// scatters
-    			node(dustScatter, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> {
-    				node(healScatter, Seq.with(new Produce(CreatiiveItems.moisturizedDust)));
+    			node(dustScatter, Seq.with(new Produce(dusterite)), () -> {
+    				node(healScatter, Seq.with(new Produce(moisturizedDust)));
     			});
 
     			// walls
@@ -132,7 +132,7 @@ public class CreatiiveTechTree implements ContentList {
     						node(dusteriteWallGigantic);
     					});
     				});
-    				node(erbiteWall, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> {
+    				node(erbiteWall, Seq.with(new Produce(dusterite)), () -> {
     					node(erbiteWallLarge, () -> {
     						node(erbiteWallHuge, () -> {
     							node(erbiteWallGigantic);
@@ -142,7 +142,7 @@ public class CreatiiveTechTree implements ContentList {
     			});
 
     			// units
-    			node(rotorizedFactory, Seq.with(new Produce(Items.highCarbonSteel), new Research(Blocks.airFactory)), () ->{
+    			node(rotorizedFactory, Seq.with(new Produce(highCarbonSteel), new Research(Blocks.airFactory)), () ->{
     				node(carbonAdditive, Seq.with(new Research(Blocks.additiveReconstructor)), () -> {
     					node(carbonMultiplicative, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () -> {
     						node(carbonExponential, Seq.with(new Research(Blocks.exponentialReconstructor)), () -> {
@@ -160,7 +160,7 @@ public class CreatiiveTechTree implements ContentList {
     				// 		});
     				// 	});
 	    			// });
-	    			node(silver, Seq.with(new Produce(CreatiiveItems.dusterite)), () -> {
+	    			node(silver, Seq.with(new Produce(dusterite)), () -> {
     					node(gold, Seq.with(new Research(Blocks.additiveReconstructor)), () -> {
     						node(platinum, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () -> {
     							node(iridium, Seq.with(new Research(Blocks.exponentialReconstructor)), () -> {

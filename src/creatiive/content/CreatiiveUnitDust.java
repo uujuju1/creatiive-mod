@@ -38,7 +38,7 @@ import static mindustry.content.Bullets.*;
 public class CreatiiveUnitDust implements ContentList {
 	public static UnitType 
 	silver, gold, platinum, iridium, tenelite,
-	arcana, monoquone, zelinote, kepsylon, zernite;
+	arcana, monoquone, zelinote, kepsylon, zermite;
 
 	@Override public void load() {
 		silver = new RotorUnitType("silver") {{
