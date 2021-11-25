@@ -245,7 +245,7 @@ public class CreatiiveBlocks implements ContentList {
                 Items.thorium, 650
             ));
             upgrades.addAll(
-                new UnitType[]{CreatiiveUnitMisc.BCopter, CreatiiveMisc.CCopter},
+                new UnitType[]{CreatiiveUnitMisc.BCopter, CreatiiveUnitMisc.CCopter},
                 new UnitType[]{CreatiiveUnitDust.gold, CreatiiveUnitDust.platinum},
                 new UnitType[]{CreatiiveUnitDust.monoquone, CreatiiveUnitDust.zelinote}
             );
@@ -276,7 +276,7 @@ public class CreatiiveBlocks implements ContentList {
                 Items.phaseFabric, 600
             ));
             upgrades.addAll(
-                new UnitType[]{CreatiiveUnitMisc.CCopter, CreatiiveMisc.DCopter},
+                new UnitType[]{CreatiiveUnitMisc.CCopter, CreatiiveUnitMisc.DCopter},
                 new UnitType[]{CreatiiveUnitDust.platinum, CreatiiveUnitDust.iridium},
                 new UnitType[]{CreatiiveUnitDust.zelinote, CreatiiveUnitDust.kepsylon}
             );
