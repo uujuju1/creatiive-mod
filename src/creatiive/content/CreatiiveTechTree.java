@@ -1,4 +1,4 @@
-package Creatiive.content;
+package creatiive.content;
 
 import arc.struct.Seq;
 import mindustry.content.*;
