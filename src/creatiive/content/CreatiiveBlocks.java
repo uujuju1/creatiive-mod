@@ -90,7 +90,7 @@ public class CreatiiveBlocks implements ContentList {
             size = 3;
             health = 40 * size * size;
             hasItems = true;
-            drawer = new DrawInputLiquid();
+            drawer = new DrawLiquid();
             craftTime = 120;
             craftEffect = Fx.smelt;
             consumes.items(new ItemStack(CreatiiveItems.dusterite, 3));
