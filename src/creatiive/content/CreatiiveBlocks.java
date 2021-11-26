@@ -25,6 +25,7 @@ import mindustry.world.draw.*;
 
 import creatiive.content.*;
 import creatiive.world.blocks.*;
+import creatiive.world.draw.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -89,7 +90,7 @@ public class CreatiiveBlocks implements ContentList {
             size = 3;
             health = 40 * size * size;
             hasItems = true;
-            drawer = new DrawLiquid();
+            drawer = new DrawInputLiquid();
             craftTime = 120;
             craftEffect = Fx.smelt;
             consumes.items(new ItemStack(CreatiiveItems.dusterite, 3));

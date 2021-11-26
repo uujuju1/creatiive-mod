@@ -95,7 +95,7 @@ public class CreatiiveUnitArc implements ContentList {
 			groundLayer = Layer.legUnit;
 			visualElevation = 0.3f;
 			constructor = LegsUnit::create;
-			range = 160f;
+			range = 360f;
 			maxRange = range;
 
 			weapons.add(
@@ -149,6 +149,46 @@ public class CreatiiveUnitArc implements ContentList {
                         	hittable = false;
                    		}};
                 	}};
+				}}
+			);
+		}};
+		eskerbone = new UnitType("eskerbone") {{
+			localizedName = "Eskerbone";
+			health = 1250;
+			speed = 1.3f;
+			rotateSpeed = 4f;
+			rotateShooting = true;
+			legCount = 6;
+			legLength = 13f;
+			legTrns = 1f;
+			legMoveSpace = 1.6f;
+			hovering = true;
+			groundLayer = Layer.legUnit + 0.001f;
+			visualElevation = 0.4f;
+			constructor = LegsUnit::create;
+			range = 180f;
+			maxRange = range;
+
+			weapons.add(
+				new Weapon("creatiive-weapon-arc-point") {{
+					x = y = 0f;
+					reload = 180f;
+					rotate = true;
+					rotateSpeed = 6;
+					shootY = 5f;
+					shootSound = Sounds.railgun;
+
+					bullet = new RailBulletType(){{
+                	    shootEffect = Fx.railShoot;
+            	        length = range;
+        	            updateEffectSeg = 60f;
+    	                pierceEffect = Fx.railHit;
+                    	updateEffect = Fx.railTrail;
+                	    hitEffect = Fx.massiveExplosion;
+            	        smokeEffect = Fx.shootBig2;
+        	            damage = 530;
+    	                pierceDamageFactor = 0.5f;
+	                }};
 				}}
 			);
 		}};
