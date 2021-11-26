@@ -35,3 +35,4 @@ public class DrawInputLiquid extends DrawBlock {
     public TextureRegion[] icons(Block block){
         return top.found() ? new TextureRegion[]{block.region, top} : new TextureRegion[]{block.region};
     }
+}
