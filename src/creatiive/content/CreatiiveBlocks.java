@@ -31,7 +31,7 @@ import static mindustry.type.ItemStack.with;
 public class CreatiiveBlocks implements ContentList {
 	public static Block
 	// production
-	carbonizedFurnace, rustMoisturizer, magnetizer, lerboniumWeaver,
+	carbonizedFurnace, rustMoisturizer, magnetizer, lerboniumWeaver, plastaniumImploder,
 
     // scatters
     dustScatter, healScatter,
@@ -140,6 +140,29 @@ public class CreatiiveBlocks implements ContentList {
             consumes.liquid(Liquids.oil, 0.2f);
             consumes.power(2f);
             outputItem = new ItemStack(CreatiiveItems.lerbonium, 1);
+        }};
+        plastaniumImploder = new GenericCrafter("plastanium-imploder") {{
+            requirements(Category.crafting, with(
+                Items.plastanium, 100,
+                Items.silicon, 200,
+                Items.thorium, 150,
+                Items.titanium, 250,
+                Items.graphite, 300
+            ));
+            localizedName = "Plastanium Imploder";
+            health = 220;
+            size = 3;
+            itemCapacity = 20;
+            craftTime = 90f;
+            craftEffect = Fx.smelt;
+            updateEffect = Fx.none;
+            consumes.items(with(
+                Items.titanium, 5,
+                Items.graphite, 3
+            ));
+            consumes.liquid(Liquids.oil, 0.3f);
+            consumes.power(4f);
+            outputItem = new ItemStack(Items.plastanium, 4);
         }};
 
 		// env
