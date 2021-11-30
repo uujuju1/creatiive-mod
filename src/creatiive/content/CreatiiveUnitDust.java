@@ -489,34 +489,6 @@ public class CreatiiveUnitDust implements ContentList {
             rotateSpeed = 3.5f;
             rotateShooting = false;
             maxRange = range;
-
-            weapons.add(
-            	new Weapon("creatiive-weapon-jet-heal") {{
-            		x = 3.75f;
-            		y = -2f;
-            		reload = 30f;
-            		mirror = true;
-            		rotate = true;
-            		rotateSpeed = 3f;
-            		bullet = new LaserBoltBulletType(4f, 7){{
-                    	lifetime = range/speed;
-                    	healPercent = 5.5f;
-                   		collidesTeam = true;
-                    	backColor = Pal.heal;
-                    	frontColor = Color.white;
-                	}};
-            	}},
-            	new RepairBeamWeapon("creatiive-weapon-jet-repairBeam") {{
-            		x = 0f;
-            		y = -1f;
-            		beamWidth = 0.5f;
-            		mirror = false;
-            		repairSpeed = 0.5f;
-            		bullet = new BulletType() {{
-            			maxRange = range/2;
-            		}};
-            	}}
-            );
 		}};
 
 		monoquone = new JetUnitType("monoquone") {{
@@ -531,57 +503,6 @@ public class CreatiiveUnitDust implements ContentList {
             rotateShooting = false;
             rotateSpeed = 3f;
             maxRange = range;
-
-            weapons.add(
-            	new Weapon("creatiive-weapon-jet-heal") {{
-            		x = 6f;
-            		y = -1f;
-            		reload = 30f;
-            		mirror = true;
-            		rotate = true;
-            		rotateSpeed = 3f;
-            		bullet = new LaserBoltBulletType(4f, 7){{
-                    	lifetime = range/speed;
-                    	healPercent = 5.5f;
-                   		collidesTeam = true;
-                    	backColor = Pal.heal;
-                    	frontColor = Color.white;
-                	}};
-            	}},
-            	new Weapon("creatiive-weapon-jet-heal") {{
-            		x = 2.5f;
-            		y = 2.5f;
-            		reload = 30f;
-            		mirror = true;
-            		rotate = true;
-            		rotateSpeed = 3f;
-            		bullet = new LaserBoltBulletType(4f, 7){{
-                    	lifetime = range/speed;
-                    	healPercent = 5.5f;
-                   		collidesTeam = true;
-                    	backColor = Pal.heal;
-                    	frontColor = Color.white;
-                	}};
-            	}},
-            	new Weapon("creatiive-weapon-jet-repairBeam") {{
-            		x = 2.75f;
-            		y = -5f;
-            		reload = 60f;
-            		mirror = true;
-            		rotate = true;
-            		rotateSpeed = 2.5f;
-            		bullet = new BasicBulletType(7f, 50) {{
-            			width = height = 10f;
-            			lifetime = range/speed;
-            			collidesTeam = true;
-            			healPercent = 6f;
-            			frontColor = Color.white;
-            			backColor = Pal.heal;
-            			weaveScale = 8f;
-                    	weaveMag = 1f;
-            		}};
-            	}}
-            );
 		}};
 
 		zelinote = new JetUnitType("zelinote") {{
@@ -596,24 +517,6 @@ public class CreatiiveUnitDust implements ContentList {
             maxRange = range;
             rotateShooting = false;
             rotateSpeed = 2.5f;
-
-            weapons.add(
-            	new Weapon("creatiive-weapon-jet-repairBeam") {{
-            		x = 5.5f;
-            		y = -6f;
-            		reload = 30f;
-            		mirror = true;
-            		rotate = true;
-            		rotateSpeed = 0.6f;
-            		bullet = new MissileBulletType(4f, 125) {{
-            			width = 7f;
-            			height = 10f;
-            			lifetime = range/speed;
-            			frontColor = Pal.heal;
-            			backColor = Color.white;
-            		}};
-            	}}
-            );
 		}};
 		kepsylon = new JetUnitType("kepsylon") {{
 			localizedName = "Kepsylon";
@@ -627,41 +530,6 @@ public class CreatiiveUnitDust implements ContentList {
             maxRange = range;
             rotateShooting = false;
             rotateSpeed = 2f;
-            weapons.add(
-            	new Weapon("plasma-laser-mount"){{
-                    shake = 3f;
-                    shootY = 7f;
-                    rotate = true;
-                    x = 10f;
-                    y = 0f;
-					targetInterval = 20f;
-					targetSwitchInterval = 35f;
-					rotateSpeed = 3.5f;
-					reload = 170f;
-					recoil = 1f;
-					shootSound = Sounds.beam;
-					continuous = true;
-					cooldownTime = reload;
-					bullet = new ContinuousLaserBulletType(){{
-                        maxRange = 90f;
-                        damage = 26f;
-                        length = 95f;
-                        hitEffect = Fx.hitMeltHeal;
-                        drawSize = 200f;
-                        lifetime = 155f;
-                        shake = 1f;
-                        shootEffect = Fx.shootHeal;
-                        smokeEffect = Fx.none;
-                        width = 4f;
-                        largeHit = false;
-                        incendChance = 0.03f;
-                        incendSpread = 5f;
-                        incendAmount = 1;
-                        healPercent = 0.4f;
-                        collidesTeam = true;
-                    }};
-                }}
-            );
 		}};
 		zermite = new JetUnitType("zermite") {{
 			localizedName = "Zermite";
