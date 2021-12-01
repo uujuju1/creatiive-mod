@@ -20,13 +20,6 @@ import static mindustry.Vars.*;
 public class DynamicEffect extends Effect {
 	public float intensity = 1f;
 
-	public DynamicEffect(float life, float clipScl, float scl, Cons<EffectContainer> renderer) {
-		this.intensity = scl;
-        this.lifetime = life;
-        this.renderer = renderer;
-        this.clip = clipScl;
-        all.add(this);
-	}
 	public DynamicEffect(float life, float scl, Cons<EffectContainer> renderer) {
 		this.intensity = scl;
         this.lifetime = life;
