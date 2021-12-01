@@ -53,16 +53,18 @@ public class ScatterBlock extends Block {
 
     public class ScatterBlockBuild extends Building { 
         public float alpha = 0;
-        
+
         @Override
         public void updateTile() {
             // check consume for shoot
-            if (cons.valid() && alpha) {
-                for (int i = 0; i <= shots; i++) {
-                    bullet.create(this, this.team, x, y, Mathf.random() * 360f);
-                }
-            consume();
-            alpha = 1f;
+            if (cons.valid()) {
+                if (alpha <= 0.001f) {
+                    for (int i = 0; i <= shots; i++) {
+                        bullet.create(this, this.team, x, y, Mathf.random() * 360f);
+                    }
+                    consume();
+                    alpha = 1f;
+                }   
             }
             if (alpha <= 0.001f) {
                 alpha = 0f;
