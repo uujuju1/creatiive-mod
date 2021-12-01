@@ -13,8 +13,6 @@ import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
 
-import creatiive.graphics.DynamicEffect;
-
 import static arc.graphics.g2d.Draw.rect;
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
@@ -32,7 +30,7 @@ public class CreatiiveFx {
         Drawf.tri(e.x, e.y, w, 4f * e.fout(), e.rotation + 180f);
 	}),
 	dynamicPlastShards = new Effect(40f, e -> {
-		randLenVectors(e.id, 3 * 2f, 10 + e.fin() * 5, (x, y) -> {
+		randLenVectors(e.id, 3 * 2, 10 + e.fin() * 5, (x, y) -> {
 			color(Color.valueOf("92C966"), Color.valueOf("73BD36"), e.fin());
 			Fill.rect(e.x + x, e.y + y, e.fout() * 3, e.fout() * 3, 45);
 		});
