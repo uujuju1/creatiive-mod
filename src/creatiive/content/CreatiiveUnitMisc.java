@@ -41,7 +41,10 @@ public class CreatiiveUnitMisc implements ContentList {
 	ACopter, BCopter, CCopter, DCopter, ECopter,
 
 	// misc
-	kermirade;
+	kermirade,
+
+	// jets
+	arcana, monoquone, zelinote, kepsylon, zermite;
 
 	@Override
 	public void load() {
@@ -111,8 +114,6 @@ public class CreatiiveUnitMisc implements ContentList {
 				}}
 			);
 		}};
-
-
 		BCopter = new RotorUnitType("BCopter") {{
 			localizedName = "Blunderbuss";
 			details = "Name by SimpyTav";
@@ -180,8 +181,6 @@ public class CreatiiveUnitMisc implements ContentList {
 				}}
 			);
 		}};
-
-
 		CCopter = new RotorUnitType("CCopter") {{
 			localizedName = "Culverin";
 			details = "Name by SimpyTav";
@@ -250,8 +249,6 @@ public class CreatiiveUnitMisc implements ContentList {
 				}}
 			);
 		}};
-
-
 		DCopter = new RotorUnitType("DCopter") {{
 			localizedName = "Derringer";
 			details = "Name by SimpyTav";
@@ -293,8 +290,6 @@ public class CreatiiveUnitMisc implements ContentList {
 				}}
 			);
 		}};
-
-		
 		ECopter = new RotorUnitType("ECopter") {{
 			localizedName = "Breechloader";
 			details = "Name by SimpyTav";
@@ -309,14 +304,24 @@ public class CreatiiveUnitMisc implements ContentList {
 
 			rotors.add(
 				new DrawRotor(name + "-ARotor") {{
-					x = 0f;
-					y = 18f;
-					rotorSpeed = 14;
+					x = 17.5f;
+					y = 11.5f;
+					rotorSpeed = 20;
 				}},
-				new DrawRotor(name + "-BRotor") {{
-					x = 0f;
-					y = -20f;
-					rotorSpeed = 15;
+				new DrawRotor(name + "-ARotor") {{
+					x = -17.5f;
+					y = 11.5f;
+					rotorSpeed = 20;
+				}},
+				new DrawRotor(name + "-ARotor") {{
+					x = 23f;
+					y = -23f;
+					rotorSpeed = 20;
+				}},
+				new DrawRotor(name + "-ARotor") {{
+					x = -23f;
+					y = -23f;
+					rotorSpeed = 20;
 				}}
 			);
 
@@ -356,5 +361,70 @@ public class CreatiiveUnitMisc implements ContentList {
 				}}
 			);
 		}};
+
+		// jets
+        arcana = new JetUnitType("arcana") {{
+            localizedName = "Arcana";
+            health = 350;
+            speed = 3f;
+            accel = 0.06f;
+            drag = 0.048f;
+            engineX = 2.25f;
+            engineY = -5.5f;
+            range = 136f;
+            rotateSpeed = 3.5f;
+            rotateShooting = false;
+            maxRange = range;
+        }};
+        monoquone = new JetUnitType("monoquone") {{
+            localizedName = "Monoquone";
+            health = 530;
+            speed = 2.8f;
+            accel = 0.07f;
+            drag = 0.056f;
+            engineX = 2.75f;
+            engineY = -8f;
+            range = 184f;
+            rotateShooting = false;
+            rotateSpeed = 3f;
+            maxRange = range;
+        }};
+        zelinote = new JetUnitType("zelinote") {{
+            localizedName = "Zelinote";
+            health = 830;
+            speed = 1.9f;
+            accel = 0.08f;
+            drag = 0.064f;
+            engineX = 5.5f;
+            engineY = -11.5f;
+            range = 232f;
+            maxRange = range;
+            rotateShooting = false;
+            rotateSpeed = 2.5f;
+        }};
+        kepsylon = new JetUnitType("kepsylon") {{
+            localizedName = "Kepsylon";
+            health = 3570;
+            speed = 1.8f;
+            accel = 0.09f;
+            drag = 0.072f;
+            engineX = 12f;
+            engineY = -9f;
+            range = 264f;
+            maxRange = range;
+            rotateShooting = false;
+            rotateSpeed = 2f;
+        }};
+        zermite = new JetUnitType("zermite") {{
+            localizedName = "Zermite";
+            health = 15000;
+            speed = 1.7f;
+            accel = 0.1f;
+            drag = 0.08f;
+            range = 304f;
+            maxRange = range;
+            rotateSpeed = 1.5f;
+            rotateShooting = false;
+        }};
 	}
 }

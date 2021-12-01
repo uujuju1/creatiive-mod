@@ -227,6 +227,10 @@ public class CreatiiveBlocks implements ContentList {
                     Items.silicon, 10
                 ))
             );
+            localizedName = "Rotorized Factory";
+            size = 3;
+            health = 220;
+            consumes.power(1.5f);
         }};
 
         // reconstructors
