@@ -22,18 +22,18 @@ public class DynamicEffect extends Effect {
 
 	public DynamicEffect(float life, float clipScl, float scl, Cons<EffectContainer> renderer) {
 		this.intensity = scl;
-		this.id = all.size;
         this.lifetime = life;
         this.renderer = renderer;
-        this.clip = clipsize;
+        this.clip = clipScl;
         all.add(this);
 	}
-	public DynamicEffect(float life, float scl, Cons<EffectContainere> renderer) {
+	public DynamicEffect(float life, float scl, Cons<EffectContainer> renderer) {
 		this.intensity = scl;
-        this(life, 50f, renderer);
+        this.lifetime = life;
+        this.renderer = renderer;
+        all.add(this);
 	}
 	public DynamicEffect(float scl){
-        this.id = all.size;
         this.intensity = scl;
         all.add(this);
     }
