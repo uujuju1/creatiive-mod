@@ -32,7 +32,7 @@ public class CreatiiveFx {
         Drawf.tri(e.x, e.y, w, 4f * e.fout(), e.rotation + 180f);
 	}),
 	dynamicPlastShards = new DynamicEffect(40f, 3, e -> {
-		randLenVectors(e.id, scl * 2, 10 + e.fin() * 5, (x, y) => {
+		randLenVectors(e.id, scl * 2, 10 + e.fin() * 5, (x, y) -> {
 			color(Color.valueOf("92C966"), Color.valueOf("73BD36"), e.fin());
 			Fill.rect(e.x + x, e.y + y, e.fout() * scl, e.fout() * scl, 45);
 		});
