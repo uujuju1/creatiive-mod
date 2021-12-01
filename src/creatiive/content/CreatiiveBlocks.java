@@ -367,6 +367,7 @@ public class CreatiiveBlocks implements ContentList {
             size = 2;
             health = 160;
             shots = 10;
+            cooldown = 0.016f;
             consumes.items(new ItemStack(CreatiiveItems.dusterite, 10));
             consumes.power(0.1f);
             bullet = new BasicBulletType(4f, 15) {{
@@ -379,6 +380,7 @@ public class CreatiiveBlocks implements ContentList {
             size = 2;
             health = 160;
             shots = 10;
+            cooldown = 0.016f;
             consumes.items(new ItemStack(CreatiiveItems.moisturizedDust, 10));
             consumes.power(0.5f);
             bullet = new LaserBoltBulletType(4f, 10){{
