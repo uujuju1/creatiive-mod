@@ -245,7 +245,7 @@ public class CreatiiveBlocks implements ContentList {
             upgrades.addAll(
                 new UnitType[]{CreatiiveUnitMisc.ACopter, CreatiiveUnitMisc.BCopter},
                 new UnitType[]{CreatiiveUnitDust.silver, CreatiiveUnitDust.gold},
-                new UnitType[]{CreatiiveUnitDust.arcana, CreatiiveUnitDust.monoquone},
+                new UnitType[]{CreatiiveUnitMisc.arcana, CreatiiveUnitMisc.monoquone},
                 new UnitType[]{CreatiiveUnitArc.nilo, CreatiiveUnitArc.mosquerite}
             );
             localizedName = "Carbon Reconstructor(ADDITIVE)";
@@ -274,7 +274,7 @@ public class CreatiiveBlocks implements ContentList {
             upgrades.addAll(
                 new UnitType[]{CreatiiveUnitMisc.BCopter, CreatiiveUnitMisc.CCopter},
                 new UnitType[]{CreatiiveUnitDust.gold, CreatiiveUnitDust.platinum},
-                new UnitType[]{CreatiiveUnitDust.monoquone, CreatiiveUnitDust.zelinote}
+                new UnitType[]{CreatiiveUnitMisc.monoquone, CreatiiveUnitMisc.zelinote}
             );
             localizedName = "Carbon Reconstructor(MULTIPLICATIVE)";
             size = 5;
@@ -305,7 +305,7 @@ public class CreatiiveBlocks implements ContentList {
             upgrades.addAll(
                 new UnitType[]{CreatiiveUnitMisc.CCopter, CreatiiveUnitMisc.DCopter},
                 new UnitType[]{CreatiiveUnitDust.platinum, CreatiiveUnitDust.iridium},
-                new UnitType[]{CreatiiveUnitDust.zelinote, CreatiiveUnitDust.kepsylon}
+                new UnitType[]{CreatiiveUnitMisc.zelinote, CreatiiveUnitMisc.kepsylon}
             );
             localizedName = "Carbon Reconstructor(EXPONENTIAL)";
             size = 7;
@@ -338,7 +338,7 @@ public class CreatiiveBlocks implements ContentList {
             upgrades.addAll(
                 new UnitType[]{CreatiiveUnitMisc.DCopter, CreatiiveUnitMisc.ECopter},
                 new UnitType[]{CreatiiveUnitDust.iridium, CreatiiveUnitDust.tenelite},
-                new UnitType[]{CreatiiveUnitDust.kepsylon, CreatiiveUnitDust.zermite}
+                new UnitType[]{CreatiiveUnitMisc.kepsylon, CreatiiveUnitMisc.zermite}
             );
             localizedName = "Carbon Reconstructor(TETRATIVE)";
             size = 9;
