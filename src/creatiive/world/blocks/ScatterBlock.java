@@ -28,6 +28,7 @@ import mindustry.world.draw.*;
 
 public class ScatterBlock extends Block {
     public BulletType bullet = Bullets.standardCopper;
+    public TextureRegion base, heat;
     
     public int shots = 10;
 
@@ -40,6 +41,13 @@ public class ScatterBlock extends Block {
         flags = EnumSet.of(BlockFlag.turret);
         sync = true;
         itemCapacity = 10;
+    }
+
+    @Override
+    public void load() {
+        super.load();
+        base = Core.atlas.find(name);
+        heat = Core.atlas.find(name + "-heat");
     }
 
     public class ScatterBlockBuild extends Building { 
