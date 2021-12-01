@@ -31,6 +31,7 @@ public class ScatterBlock extends Block {
     public TextureRegion base, heat;
     
     public int shots = 10;
+    public float cooldown = 0.007f;
 
     public ScatterBlock(String name) {
         super(name);
@@ -51,15 +52,31 @@ public class ScatterBlock extends Block {
     }
 
     public class ScatterBlockBuild extends Building { 
+        public float alpha = 0;
+        
         @Override
         public void updateTile() {
             // check consume for shoot
-            if (cons.valid()) {
+            if (cons.valid() && alpha) {
                 for (int i = 0; i <= shots; i++) {
                     bullet.create(this, this.team, x, y, Mathf.random() * 360f);
                 }
             consume();
+            alpha = 1f;
             }
+            if (alpha <= 0.001f) {
+                alpha = 0f;
+            }
+            alpha -= cooldown;
+        }
+
+        @Override
+        public void draw() {
+            Draw.rect(base, x, y, 0);
+            Draw.color(Pal.turretHeat);
+            Draw.alpha(alpha);
+            Draw.rect(heat, x, y, 0);
+            Draw.reset();
         }
     }
 }
