@@ -31,10 +31,10 @@ public class CreatiiveFx {
         Drawf.tri(e.x, e.y, w, 17f * e.fout(), e.rotation);
         Drawf.tri(e.x, e.y, w, 4f * e.fout(), e.rotation + 180f);
 	}),
-	dynamicPlastShards = new DynamicEffect(40f, 3f, e -> {
-		randLenVectors(e.id, e.intensity * 2f, 10 + e.fin() * 5, (x, y) -> {
+	dynamicPlastShards = new Effect(40f, e -> {
+		randLenVectors(e.id, 3 * 2f, 10 + e.fin() * 5, (x, y) -> {
 			color(Color.valueOf("92C966"), Color.valueOf("73BD36"), e.fin());
-			Fill.rect(e.x + x, e.y + y, e.fout() * e.intensity, e.fout() * e.intensity, 45);
+			Fill.rect(e.x + x, e.y + y, e.fout() * 3, e.fout() * 3, 45);
 		});
 	});
 }

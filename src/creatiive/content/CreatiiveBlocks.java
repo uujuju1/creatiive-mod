@@ -25,6 +25,7 @@ import mindustry.world.draw.*;
 
 import creatiive.content.*;
 import creatiive.world.blocks.*;
+import creatiive.graphics.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -155,7 +156,8 @@ public class CreatiiveBlocks implements ContentList {
             itemCapacity = 20;
             craftTime = 90f;
             craftEffect = Fx.smelt;
-            updateEffect = Fx.none;
+            updateEffect = CreatiiveFx.dynamicPlastShards;
+            drawer = new DrawGlow();
             consumes.items(with(
                 Items.titanium, 5,
                 Items.graphite, 3
