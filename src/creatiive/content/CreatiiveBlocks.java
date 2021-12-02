@@ -418,7 +418,7 @@ public class CreatiiveBlocks implements ContentList {
                 CreatiiveItems.zicromnium, 100
             ));
             localizedName = "Mechanincal Compressor";
-            health, 160,
+            health = 160;
             size = 2;
             reloadTime = 30f;
             consumes.item(Items.titanium, 1);
