@@ -52,7 +52,7 @@ public class MechanicalCrafter extends Block {
         stats.add(Stat.productionTime, reloadTime / 60f, StatUnit.seconds);
 
         if(outputItem != null){
-            stats.add(Stat.output, StatValues.items(craftTime, outputItem));
+            stats.add(Stat.output, StatValues.items(reloadTime, outputItem));
         }
 
         if(outputLiquid != null){
@@ -63,7 +63,7 @@ public class MechanicalCrafter extends Block {
 	@Override
 	public void setBars() {
 		super.setBars();
-		bars.add("Cooldown", () -> new Bar("Cooldown", Pal.power, reload/reloadTime));
+		bars.add("Cooldown", e -> new Bar("Cooldown", Pal.power, () -> reload/reloadTime));
 	}
 
 	public class MechanicalCrafterBuild extends Building {
