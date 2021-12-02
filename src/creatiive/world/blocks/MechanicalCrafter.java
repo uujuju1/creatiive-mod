@@ -12,6 +12,7 @@ import arc.util.*;
 import arc.util.io.*;
 import arc.func.*;
 import mindustry.gen.*;
+import mindustry.ui.*;
 import mindustry.graphics.*;
 import mindustry.logic.*;
 import mindustry.type.*;
@@ -71,7 +72,7 @@ public class MechanicalCrafter extends Block {
 		public void buildConfiguration(Table table) {
 			table.button("Craft", () -> {
 				this.checkConsReload();
-			}).size(40).fill().growX();
+			}).size(40).fill(60);
 		}
 
 		public void checkConsReload() {
