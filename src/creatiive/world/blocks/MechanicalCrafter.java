@@ -37,7 +37,7 @@ public class MechanicalCrafter extends Block {
         solid = true;
         destructible = true;
         hideDetails = false;
-        hasItems
+        hasItems = true;
         buildVisibility = BuildVisibility.shown;
 	}
 
