@@ -5,7 +5,7 @@
   "description": "creative stuff",
   "version": "0.3",
   "main": "creatiive.Creatiive",
-  "minGameVersion": "130",
+  "minGameVersion": "135",
   "dependencies": [],
   "hidden": false,
   "java": true
