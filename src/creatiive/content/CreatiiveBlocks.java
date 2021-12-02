@@ -53,6 +53,9 @@ public class CreatiiveBlocks implements ContentList {
 
     arcFactory,
 
+    // test
+    button,
+
     // start
     creatiiveBegginings;
 
@@ -390,6 +393,10 @@ public class CreatiiveBlocks implements ContentList {
                 frontColor = Pal.heal;
                 backColor = Color.white;
             }};
+        }};
+
+        button = new TestButton("button") {{
+            localizedName = "Test Button";
         }};
 
         // ababa
