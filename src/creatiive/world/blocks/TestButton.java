@@ -24,6 +24,11 @@ import mindustry.type.*;
 import mindustry.world.draw.*;
 
 public class TestButton extends Block {
+	public float reloadTime = 60f;
+
+	public ItemStack outputItem;
+	public LiqidStack outputLiquid;
+
 	public TestButton(String name) {
 		super(name);
         configurable = saveConfig = true;
@@ -37,9 +42,36 @@ public class TestButton extends Block {
 	}
 
 	public class TestButtonBuild extends Building {
+		float reload = 0f;
 		@Override
 		public void buildConfiguration(Table table) {
-			table.button("please work", () -> {});
+			table.button("Craft", () -> {this.checkConsReload()});
+		}
+
+		public void checkConsReload() {
+			if (cons.valid()) {
+				if (reload <= 0.001f) {
+					consume();
+					reload = reloadTime;
+
+					if (outputItem != null) {
+						for (int i; i < outputItem.amoutn; i++) {
+							offload(outputItem.item);
+						}
+					}
+
+					if (outputLiquid != null) {
+						handleLiquid(this, outputLiquid.liquid, outputLiquid.amount);
+					}
+				}
+			}
+		}
+
+		@Override
+		public void updateTile() {
+			if (reload >= 0.001f) {
+				reload--;
+			}
 		}
 	}
 }
