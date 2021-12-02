@@ -405,7 +405,7 @@ public class CreatiiveBlocks implements ContentList {
             health = 160;
             size = 2;
             reloadTime = 30f;
-            consumes.items(Items.coal, 1);
+            consumes.item(Items.coal, 1);
             outputItem = new ItemStack(Items.graphite, 1);
         }};
 
