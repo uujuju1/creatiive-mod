@@ -31,7 +31,7 @@ public class TestButton extends Block {
 			table.table(Tex.clear, t -> {
 				t.table().size(40);
 				addConfigButton(t, 1).align(Align.center);
-			})
+			});
 		}
 
 		public Cell<Table> addConfigButton(Table table, int index){
