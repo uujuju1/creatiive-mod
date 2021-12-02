@@ -53,8 +53,8 @@ public class CreatiiveBlocks implements ContentList {
 
     arcFactory,
 
-    // test
-    mechanicalPress,
+    // pressess
+    mechanicalPress, mechanicalCompressor,
 
     // start
     creatiiveBegginings;
@@ -395,6 +395,7 @@ public class CreatiiveBlocks implements ContentList {
             }};
         }};
 
+        // mechanical crafters
         mechanicalPress = new MechanicalCrafter("mechanical-press") {{
             requirements(Category.crafting, with(
                 Items.copper, 75,
@@ -407,6 +408,22 @@ public class CreatiiveBlocks implements ContentList {
             reloadTime = 30f;
             consumes.item(Items.coal, 1);
             outputItem = new ItemStack(Items.graphite, 1);
+        }};
+        mechanicalCompressor = new MechanicalCrafter("mechanical-compressor") {{
+            requirements(Category.crafting, with(
+                Items.silicon, 80,
+                Items.lead, 115,
+                Items.graphite, 60,
+                Items.titanium, 80,
+                CreatiiveItems.zicromnium, 100
+            ));
+            localizedName = "Mechanincal Compressor";
+            health, 160,
+            size = 2;
+            reloadTime = 30f;
+            consumes.item(Items.titanium, 1);
+            consumes.liquid(Liquids.oil, 0.125f);
+            outputItem = new ItemStack(Items.plastanium, 1);
         }};
 
         // ababa

@@ -25,9 +25,12 @@ import mindustry.world.draw.*;
 
 public class MechanicalCrafter extends Block {
 	public float reloadTime = 60f;
+	public float reload = 0f;
 
 	public @Nullable ItemStack outputItem;
 	public @Nullable LiquidStack outputLiquid;
+
+	public Effect craftEffect = Fx.none;
 
 	public MechanicalCrafter(String name) {
 		super(name);
@@ -38,11 +41,32 @@ public class MechanicalCrafter extends Block {
         destructible = true;
         hideDetails = false;
         hasItems = true;
+        sync = true;
         buildVisibility = BuildVisibility.shown;
 	}
 
+	@Override
+	public void setStats() {
+		stats.timePeriod = reloadTime;
+        super.setStats();
+        stats.add(Stat.productionTime, reloadTime / 60f, StatUnit.seconds);
+
+        if(outputItem != null){
+            stats.add(Stat.output, StatValues.items(craftTime, outputItem));
+        }
+
+        if(outputLiquid != null){
+            stats.add(Stat.output, outputLiquid.liquid, outputLiquid.amount * (60f / reloadTime), true);
+        }
+	}
+
+	@Override
+	public void setBars() {
+		super.setBars();
+		bars.add("Cooldown", () -> new Bar("Cooldown", Pal.power, () -> reload/reloadTime));
+	}
+
 	public class MechanicalCrafterBuild extends Building {
-		float reload = 0f;
 		@Override
 		public void buildConfiguration(Table table) {
 			table.button("Craft", () -> {
@@ -55,7 +79,7 @@ public class MechanicalCrafter extends Block {
 				if (reload <= 0.001f) {
 					consume();
 					reload = reloadTime;
-
+					craftEffect.at(x, y);
 					if (outputItem != null) {
 						for (int i = 0; i < outputItem.amount; i++) {
 							offload(outputItem.item);
