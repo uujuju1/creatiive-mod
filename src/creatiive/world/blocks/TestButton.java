@@ -45,7 +45,9 @@ public class TestButton extends Block {
 		float reload = 0f;
 		@Override
 		public void buildConfiguration(Table table) {
-			table.button("Craft", () -> {this.checkConsReload()});
+			table.button("Craft", () -> {
+				this.checkConsReload();
+			});
 		}
 
 		public void checkConsReload() {
