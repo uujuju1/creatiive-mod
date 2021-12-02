@@ -11,6 +11,11 @@ import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
 import mindstry.gen.*;
+import mindustry.graphics.*;
+import mindustry.logic.*;
+import mindustry.type.*;
+import mindustry.world.*;
+import mindustry.world.meta.*;
 
 public class TestButton extends Block {
 	public TestButton(String name) {
