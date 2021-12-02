@@ -54,7 +54,7 @@ public class CreatiiveBlocks implements ContentList {
     arcFactory,
 
     // test
-    button,
+    mechanicalPress,
 
     // start
     creatiiveBegginings;
@@ -395,8 +395,18 @@ public class CreatiiveBlocks implements ContentList {
             }};
         }};
 
-        button = new TestButton("button") {{
-            localizedName = "Test Button";
+        mechanicalPress = new MechanicalCrafter("mechanical-press") {{
+            requirements(Category.crafting, with(
+                Items.copper, 75,
+                Items.lead, 30,
+                CreatiiveItems.zicromnium, 30
+            ));
+            localizedName = "Mechanincal Press";
+            health = 160;
+            size = 2;
+            reloadTime = 30f;
+            consumes.items(Items.coal, 1);
+            outputItem = new ItemStack(Items.graphite, 1);
         }};
 
         // ababa
