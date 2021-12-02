@@ -10,12 +10,18 @@ import arc.scene.ui.layout.*;
 import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
-import mindstry.gen.*;
+import arc.func.*;
+import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.logic.*;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
+import mindustry.content.*;
+import mindustry.entities.*;
+import mindustry.logic.*;
+import mindustry.type.*;
+import mindustry.world.draw.*;
 
 public class TestButton extends Block {
 	public TestButton(String name) {
@@ -33,19 +39,7 @@ public class TestButton extends Block {
 	public class TestButtonBuild extends Building {
 		@Override
 		public void buildConfiguration(Table table) {
-			table.table(Tex.clear, t -> {
-				t.table().size(40);
-				addConfigButton(t, 1).align(Align.center);
-			});
+			table.button(Tex.clear, 20f, t -> {});
 		}
-
-		public Cell<Table> addConfigButton(Table table, int index){
-            return table.table(t -> {
-                TextButton b = t.button("hello", () -> {
-                    configure(index);
-                    print("test");
-                }).size(40f).get();
-            }).size(40f);
-        }
 	}
 }
