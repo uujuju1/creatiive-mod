@@ -39,7 +39,7 @@ public class TestButton extends Block {
 	public class TestButtonBuild extends Building {
 		@Override
 		public void buildConfiguration(Table table) {
-			table.button("please work", t -> {});
+			table.button("please work", () -> {});
 		}
 	}
 }
