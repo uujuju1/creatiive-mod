@@ -57,7 +57,7 @@ public class TestButton extends Block {
 					reload = reloadTime;
 
 					if (outputItem != null) {
-						for (int i; i < outputItem.amount; i++) {
+						for (int i = 0; i < outputItem.amount; i++) {
 							offload(outputItem.item);
 						}
 					}
