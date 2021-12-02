@@ -63,7 +63,7 @@ public class MechanicalCrafter extends Block {
 	@Override
 	public void setBars() {
 		super.setBars();
-		bars.add("Cooldown", () -> new Bar("Cooldown", Pal.power, () -> reload/reloadTime));
+		bars.add("Cooldown", () -> new Bar("Cooldown", Pal.power, reload/reloadTime));
 	}
 
 	public class MechanicalCrafterBuild extends Building {
