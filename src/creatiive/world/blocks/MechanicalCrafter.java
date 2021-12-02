@@ -72,7 +72,7 @@ public class MechanicalCrafter extends Block {
 		public void buildConfiguration(Table table) {
 			table.button("Craft", () -> {
 				this.checkConsReload();
-			}).size(40).fill(60);
+			}).size(60);
 		}
 
 		public void checkConsReload() {
