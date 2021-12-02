@@ -26,8 +26,8 @@ import mindustry.world.draw.*;
 public class TestButton extends Block {
 	public float reloadTime = 60f;
 
-	public ItemStack outputItem;
-	public LiqidStack outputLiquid;
+	public @Nullable ItemStack outputItem;
+	public @Nullable LiquidStack outputLiquid;
 
 	public TestButton(String name) {
 		super(name);
@@ -57,7 +57,7 @@ public class TestButton extends Block {
 					reload = reloadTime;
 
 					if (outputItem != null) {
-						for (int i; i < outputItem.amoutn; i++) {
+						for (int i; i < outputItem.amount; i++) {
 							offload(outputItem.item);
 						}
 					}
