@@ -75,8 +75,16 @@ public class MechanicalCrafter extends Block {
 			}).size(60, 40);
 		}
 
+		@Override
+        public boolean shouldConsume(){
+            if(outputItem != null && items.get(outputItem.item) + outputItem.amount > itemCapacity){
+                return false;
+            }
+            return (outputLiquid == null || !(liquids.get(outputLiquid.liquid) >= liquidCapacity - 0.001f)) && enabled;
+        }
+
 		public void checkConsReload() {
-			if (cons.valid()) {
+			if (cons.valid() && shouldConsume()) {
 				if (reload <= 0.001f) {
 					consume();
 					reload = reloadTime;
@@ -98,7 +106,7 @@ public class MechanicalCrafter extends Block {
 		public void updateTile() {
 			super.updateTile();
 			if (outputItem = !null) {
-				dump(outputItem.item)
+				dump(outputItem.item);
 			}
 			if (reload >= 0.001f) {
 				reload--;
