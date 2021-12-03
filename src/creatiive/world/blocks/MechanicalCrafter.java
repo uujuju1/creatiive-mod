@@ -70,9 +70,9 @@ public class MechanicalCrafter extends Block {
 	public class MechanicalCrafterBuild extends Building {
 		@Override
 		public void buildConfiguration(Table table) {
-			table.button("Craft", () -> {
+			table.button("C", () -> {
 				this.checkConsReload();
-			}).size(60, 40);
+			}).size(40, 40);
 		}
 
 		@Override
