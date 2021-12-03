@@ -96,7 +96,7 @@ public class MechanicalCrafter extends Block {
 
 		@Override
 		public void updateTile() {
-			super.updateTile;
+			super.updateTile();
 			if (reload >= 0.001f) {
 				reload--;
 			}
