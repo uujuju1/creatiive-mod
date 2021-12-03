@@ -72,7 +72,7 @@ public class MechanicalCrafter extends Block {
 		public void buildConfiguration(Table table) {
 			table.button("Craft", () -> {
 				this.checkConsReload();
-			}).size(60);
+			}).size(40, 60);
 		}
 
 		public void checkConsReload() {
@@ -96,6 +96,7 @@ public class MechanicalCrafter extends Block {
 
 		@Override
 		public void updateTile() {
+			super.updateTile;
 			if (reload >= 0.001f) {
 				reload--;
 			}
