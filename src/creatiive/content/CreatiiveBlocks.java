@@ -396,7 +396,7 @@ public class CreatiiveBlocks implements ContentList {
         }};
 
         // mechanical crafters
-        mechanicalPress = new MechanicalCrafter("mechanical-press", Items.graphite) {{
+        mechanicalPress = new MechanicalCrafter("mechanical-press") {{
             requirements(Category.crafting, with(
                 Items.copper, 75,
                 Items.lead, 30,
@@ -409,7 +409,7 @@ public class CreatiiveBlocks implements ContentList {
             consumes.item(Items.coal, 1);
             outputItem = new ItemStack(Items.graphite, 1);
         }};
-        mechanicalCompressor = new MechanicalCrafter("mechanical-compressor", Items.plastanium) {{
+        mechanicalCompressor = new MechanicalCrafter("mechanical-compressor") {{
             requirements(Category.crafting, with(
                 Items.silicon, 80,
                 Items.lead, 115,
