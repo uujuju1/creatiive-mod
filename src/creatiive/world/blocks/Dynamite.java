@@ -31,6 +31,7 @@ public class Dynamite extends Block {
 	public float countdown = 0f;
 
 	public Effect bababooey = Fx.none;
+	public TextureRegion heat;
 	// public Sound bababooeySound = Sounds.explosionBig;
 
 	public Dynamite(String name) {
@@ -54,14 +55,20 @@ public class Dynamite extends Block {
 		bars.add("Charge", e -> new Bar("Charge", Color.red, () -> countdown/charge));
 	}
 
+	@Override
+	public void load() {
+		super.load();
+		heat = Core.atlas.find(name + "-heat");
+	}
+
 	public class DynamiteBuild extends Building {
 		boolean explode = false;
 
 		@Override 
 		public void buildConfiguration(Table table) {
-			table.button("E", () -> {
+			table.button("Explode", () -> {
 				explode = this.explode();
-			}).size(40, 40);
+			}).size(100, 40);
 		}
 
 		// a function that i didnt needed to do probably
@@ -85,6 +92,14 @@ public class Dynamite extends Block {
 				// bababooeySound.at(tile);
 				Damage.damage(x, y, radius * 8, damage);
 			}
+		}
+
+		@Override
+		public void draw() {
+			super.draw();
+			Draw.alpha(countdown/charge);
+			Draw.rect(heat, x, y, 0);
+			Draw.reset();
 		}
 	}
 }
