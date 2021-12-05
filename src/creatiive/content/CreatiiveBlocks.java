@@ -431,7 +431,7 @@ public class CreatiiveBlocks implements ContentList {
 
         // a nuke
         nuke = new Dynamite("thorium-nuke") {{
-            requirements(Category.effect, with(Items.thorium, 48, Items.zicromnium, 16));
+            requirements(Category.effect, with(Items.thorium, 48, CreatiiveItems.zicromnium, 16));
             localizedName = "Anuke";
             health = 400;
             size = 2;
