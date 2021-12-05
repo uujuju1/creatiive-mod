@@ -141,6 +141,13 @@ public class CreatiiveTechTree implements ContentList {
     				});
     			});
 
+                node(rustMoisturizer, Seq.with(new Produce(dusterite)), () -> {
+                    node(carbonizedFurnace, Seq.with(new Produce(titanium)));
+                    node(magnetizer, Seq.with(new Produce(zicromnium)), () -> {
+                        node(lerboniumWeaver, Seq.with(new Produce(erbite)));
+                    });
+                });
+
     			// units
     			node(rotorizedFactory, Seq.with(new Produce(highCarbonSteel), new Research(Blocks.airFactory)), () ->{
     				node(carbonAdditive, Seq.with(new Research(Blocks.additiveReconstructor)), () -> {
@@ -151,15 +158,15 @@ public class CreatiiveTechTree implements ContentList {
     					});	
     				});
 
-    				// node(ACopter, () ->
-    				// 	node(BCopter, Seq.with(new Research(Blocks.additiveReconstructor)), () -> {
-    				// 		node(CCopter, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () -> {
-    				// 			node(DCopter, Seq.with(new Research(Blocks.exponentialReconstructor)), () -> {
-    				// 				node(ECopter, Seq.with(new Research(Blocks.tetrativReconstructor)));
-    				// 			});
-    				// 		});
-    				// 	});
-	    			// });
+    				node(ACopter, Seq.with(new Produce(dusterite)), () -> {
+                        node(BCopter, Seq.with(new Research(Blocks.additiveReconstructor)), () -> {
+                            node(CCopter, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () -> {
+                                node(DCopter, Seq.with(new Research(Blocks.exponentialReconstructor)), () -> {
+                                    node(ECopter, Seq.with(new Research(Blocks.tetrativeReconstructor)));
+                                });
+                            });
+                        });
+                    });
 	    			node(silver, Seq.with(new Produce(dusterite)), () -> {
     					node(gold, Seq.with(new Research(Blocks.additiveReconstructor)), () -> {
     						node(platinum, Seq.with(new Research(Blocks.multiplicativeReconstructor)), () -> {
@@ -172,5 +179,9 @@ public class CreatiiveTechTree implements ContentList {
     			});
     		});
     	});
+
+        ConeccNode(plastaniumCompressor, () -> {
+            node(plastaniumImploder);
+        });
     }
 }
