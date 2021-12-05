@@ -56,6 +56,9 @@ public class CreatiiveBlocks implements ContentList {
     // pressess
     mechanicalPress, mechanicalCompressor,
 
+    // nukes
+    nuke,
+
     // start
     creatiiveBegginings;
 
@@ -424,6 +427,16 @@ public class CreatiiveBlocks implements ContentList {
             consumes.item(Items.titanium, 1);
             consumes.liquid(Liquids.oil, 0.125f);
             outputItem = new ItemStack(Items.plastanium, 1);
+        }};
+
+        // a nuke
+        nuke = new Dynamite("thorium-nuke") {{
+            requirements(Category.effect, with(Items.thorium, 48, Items.zicromnium, 16));
+            localizedName = "Anuke";
+            health = 400;
+            size = 2;
+            radius = 20;
+            charge = 120f;
         }};
 
         // ababa

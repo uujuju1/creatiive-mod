@@ -21,7 +21,9 @@ import mindustry.world.meta.*;
 
 // different from betamindy mynamite this block only deals damage
 public class Dynamite extends Block {
+	// in blocks
 	public int radius = 10;
+	// in seconds * 60
 	public float charge = 80f;
 
 	public int damage = 69420;
