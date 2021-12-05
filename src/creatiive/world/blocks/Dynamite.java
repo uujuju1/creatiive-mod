@@ -6,24 +6,29 @@ import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.math.geom.*;
 import arc.struct.*;
+import arc.scene.ui.*;
+import arc.scene.ui.layout.*;
 import arc.util.*;
 import arc.util.io.*;
 import mindustry.gen.*;
 import mindustry.ui.*;
+import mindustry.content.*;
+import mindustry.entities.*;
 import mindustry.graphics.*;
+import mindustry.world.*;
 import mindustry.world.blocks.*;
 
 // different from betamindy mynamite this block only deals damage
 public class Dynamite extends Block {
-	public int radius = 10f;
+	public int radius = 10;
 	public float charge = 80f;
 
-	public int damage = 69420f;
+	public int damage = 69420;
 	// dont change
 	public float countdown = 0f;
 
 	public Effect bababooey = Fx.none;
-	public Sound bababooeySound = Sounds.explosionBig;
+	// public Sound bababooeySound = Sounds.explosionBig;
 
 	public Dynamite(String name) {
 		super(name);
@@ -69,7 +74,7 @@ public class Dynamite extends Block {
 		public void onDestroyed() {
 			if (explode) {
 				bababooey.at(x, y);
-				bababooeySound.at(tile);
+				// bababooeySound.at(tile);
 				Damage.damage(x, y, radius * 8, damage);
 			}
 		}
