@@ -58,10 +58,13 @@ public class Dynamite extends Block {
 
 		@Override 
 		public void buildConfiguration(Table table) {
-			table.button("Explode", () -> {
-				explode = true;
-			}).size(100, 40);
+			table.button("E", () -> {
+				explode = this.explode();
+			}).size(40, 40);
 		}
+		
+		// a function that i didnt needed to do probably
+		public boolean explode() {return true;}
 
 		@Override
 		public void updateTile() {

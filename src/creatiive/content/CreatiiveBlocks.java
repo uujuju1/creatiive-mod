@@ -437,6 +437,7 @@ public class CreatiiveBlocks implements ContentList {
             size = 2;
             radius = 20;
             charge = 120f;
+            countdown = 60f;
         }};
 
         // ababa
