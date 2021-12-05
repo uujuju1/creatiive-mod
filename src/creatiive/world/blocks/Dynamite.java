@@ -35,6 +35,7 @@ public class Dynamite extends Block {
 
 	public Dynamite(String name) {
 		super(name);
+		configurable = saveConfig = true;
 		sync = true;
 		update = true;
 		solid = true;
@@ -62,7 +63,7 @@ public class Dynamite extends Block {
 				explode = this.explode();
 			}).size(40, 40);
 		}
-		
+
 		// a function that i didnt needed to do probably
 		public boolean explode() {return true;}
 
