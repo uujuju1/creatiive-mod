@@ -43,7 +43,7 @@ public class Dynamite extends Block {
 	@Override
 	public void setStats() {
 		super.setStats();
-		stats.add(Stat.charge, 60f / charge, StatUnit.seconds);
+		stats.add(Stat.charge, charge/60f, StatUnit.seconds);
 		stats.add(Stat.range, radius, StatUnit.blocks);
 	}
 
@@ -55,11 +55,12 @@ public class Dynamite extends Block {
 
 	public class DynamiteBuild extends Building {
 		boolean explode = false;
+
 		@Override 
 		public void buildConfiguration(Table table) {
 			table.button("Explode", () -> {
 				explode = true;
-			}).size(120, 20);
+			}).size(100, 40);
 		}
 
 		@Override
