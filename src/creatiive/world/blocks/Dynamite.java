@@ -17,6 +17,7 @@ import mindustry.entities.*;
 import mindustry.graphics.*;
 import mindustry.world.*;
 import mindustry.world.blocks.*;
+import mindustry.world.meta.*.
 
 // different from betamindy mynamite this block only deals damage
 public class Dynamite extends Block {
@@ -47,7 +48,7 @@ public class Dynamite extends Block {
 	@Override
 	public void setBars() {
 		super.setBars();
-		bars.add("Charge", e -> new Bar("Charge", Color.red, countdown/charge));
+		bars.add("Charge", e -> new Bar("Charge", Color.red, () -> countdown/charge));
 	}
 
 	public class DynamiteBuild extends Building {
