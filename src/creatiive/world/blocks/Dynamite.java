@@ -17,7 +17,7 @@ import mindustry.entities.*;
 import mindustry.graphics.*;
 import mindustry.world.*;
 import mindustry.world.blocks.*;
-import mindustry.world.meta.*.
+import mindustry.world.meta.*;
 
 // different from betamindy mynamite this block only deals damage
 public class Dynamite extends Block {
