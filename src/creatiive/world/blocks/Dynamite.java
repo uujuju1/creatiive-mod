@@ -32,6 +32,7 @@ public class Dynamite extends Block {
 
 	float countdown = 0f;
 
+	public Effect bababooey = CreatiiveFx.bababooey;
 	public TextureRegion heat;
 	// public Sound bababooeySound = Sounds.explosionBig;
 
@@ -83,7 +84,6 @@ public class Dynamite extends Block {
 				countdown++;
 				if (countdown >= charge) {
 					kill();
-					CreatiiveFx.bababooey.at(x, y);
 					countdown = 0f;
 				}
 			}
