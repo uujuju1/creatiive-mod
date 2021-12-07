@@ -19,6 +19,8 @@ import mindustry.world.*;
 import mindustry.world.blocks.*;
 import mindustry.world.meta.*;
 
+import creatiive.graphics.*;
+
 // different from betamindy mynamite this block only deals damage
 public class Dynamite extends Block {
 	// in blocks
@@ -27,10 +29,9 @@ public class Dynamite extends Block {
 	public float charge = 80f;
 
 	public int damage = 69420;
-	// dont change
-	public float countdown = 0f;
 
-	public Effect bababooey = Fx.none;
+	float countdown = 0f;
+
 	public TextureRegion heat;
 	// public Sound bababooeySound = Sounds.explosionBig;
 
@@ -47,6 +48,7 @@ public class Dynamite extends Block {
 		super.setStats();
 		stats.add(Stat.charge, charge/60f, StatUnit.seconds);
 		stats.add(Stat.range, radius, StatUnit.blocks);
+		stats.add(Stat.damage, damage);
 	}
 
 	@Override
@@ -81,6 +83,8 @@ public class Dynamite extends Block {
 				countdown++;
 				if (countdown >= charge) {
 					kill();
+					CreatiiveFx.bababooey.at(x, y);
+					countdown = 0f;
 				}
 			}
 		}

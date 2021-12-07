@@ -34,5 +34,25 @@ public class CreatiiveFx {
 			color(Color.valueOf("92C966"), Color.valueOf("73BD36"), e.fin());
 			Fill.rect(e.x + x, e.y + y, e.fout() * 3, e.fout() * 3, 45);
 		});
+	}),
+	bababooey = new Effect(30f, e -> {
+		e.scaled(7, i -> {
+            stroke(3.1f * i.fout());
+            Lines.circle(e.x, e.y, 3f + i.fin() * 14f);
+        });
+
+        color(Color.gray);
+
+        randLenVectors(e.id, 20, 100f + 19f * e.finpow(), (x, y) -> {
+            Fill.circle(e.x + x, e.y + y, e.fout() * 3f + 0.5f);
+            Fill.circle(e.x + x / 2f, e.y + y / 2f, e.fout());
+        });
+
+        color(Pal.lighterOrange, Pal.lightOrange, Color.gray, e.fin());
+        stroke(1.7f * e.fout());
+
+        randLenVectors(e.id + 1, 20, 100f * e.finpow(), (x, y) -> {
+            lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 1f + e.fout() * 3f);
+        });
 	});
 }
