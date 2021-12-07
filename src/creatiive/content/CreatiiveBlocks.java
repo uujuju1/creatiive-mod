@@ -57,7 +57,7 @@ public class CreatiiveBlocks implements ContentList {
     mechanicalPress, mechanicalCompressor,
 
     // nukes
-    anuke,
+    anuke, tnuke,
 
     // start
     creatiiveBegginings;
