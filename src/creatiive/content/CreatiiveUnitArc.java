@@ -231,10 +231,9 @@ public class CreatiiveUnitArc implements ContentList {
 				new Weapon("creatiive-weapon-arc-salvo") {{
 					x = 8.75f;
 					y = 2.75f;
-					reload = 60f;
+					reload = 20f;
 					mirror = true;
-					shots = 5;
-					burstSpacing = 2f;
+					shots = 1;
 
 					bullet = new ChargedBulletType(6f, 50) {{
 						bullet = new LightningBulletType(){{
