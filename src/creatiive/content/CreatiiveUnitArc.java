@@ -39,7 +39,7 @@ public class CreatiiveUnitArc implements ContentList {
 	
 	public static UnitType
 	// ground
-	nilo, mosquerite, eskerbone;
+	nilo, mosquerite, eskerbone, obletsy;
 
 	@Override
 	public void load() {
@@ -177,6 +177,7 @@ public class CreatiiveUnitArc implements ContentList {
 					rotateSpeed = 6;
 					shootY = 5f;
 					shootSound = Sounds.railgun;
+					mirror = false;
 
 					bullet = new RailBulletType(){{
                 	    shootEffect = Fx.railShoot;
@@ -189,6 +190,69 @@ public class CreatiiveUnitArc implements ContentList {
         	            damage = 530;
     	                pierceDamageFactor = 0.5f;
 	                }};
+				}}
+			);
+		}};
+		obletsy = new UnitType("obletsy") {{
+			localizedName = "Eskerbone";
+			health = 8000;
+			speed = 1f;
+			rotateSpeed = 2f;
+			rotateShooting = true;
+			legCount = 8;
+			legLength = 30f;
+			legExtension = -15f;
+			legBaseOffset = 10f;
+			legTrns = 1f;
+			legMoveSpace = 1.6f;
+			legSplashDamage = 32;
+            legSplashRange = 30;
+			hovering = true;
+			groundLayer = Layer.legUnit + 0.002f;
+			visualElevation = 0.4f;
+			constructor = LegsUnit::create;
+			range = 240f;
+			maxRange = range;
+
+			weapons.add(
+				new Weapon("creatiive-weapon-arc-railgun") {{
+					x = y = 0f;
+					reload = 180f;
+					rotate = true;
+					rotateSpeed = 4f;
+					mirror = false;
+					recoil = 5f;
+					bullet = new LaserBulletType(300) {{
+						lifetime = 30f;
+						length = range;
+						width = 16f;
+					}};
+				}},
+				new Weapon("creatiive-weapon-arc-salvo") {{
+					x = 8.75f;
+					y = 2.75f;
+					reload = 60f;
+					mirror = true;
+					shots = 5;
+					burstSpacing = 2f;
+
+					bullet new ChargedBulletType(6f, 50) {{
+						bullet = new LightningBulletType(){{
+                    		lightningColor = hitColor = Color.valueOf("8AA3F4");
+                    		damage = 15f;
+                    		lightningLength = 8;
+                    		lightningLengthRand = 6;
+                    		shootEffect = CreatiiveFx.shootArc;
+                    	
+                    		lightningType = new BulletType(0.0001f, 0f){{
+                        		lifetime = Fx.lightning.lifetime;
+                        		hitEffect = Fx.hitLancer;
+                        		hittable = false;
+                   			}};
+                		}};
+                		lifetime = 40f;
+                		hitSize = 3f;
+					}}
 				}}
 			);
 		}};
