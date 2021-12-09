@@ -236,7 +236,7 @@ public class CreatiiveUnitArc implements ContentList {
 					shots = 5;
 					burstSpacing = 2f;
 
-					bullet new ChargedBulletType(6f, 50) {{
+					bullet = new ChargedBulletType(6f, 50) {{
 						bullet = new LightningBulletType(){{
                     		lightningColor = hitColor = Color.valueOf("8AA3F4");
                     		damage = 15f;
@@ -252,7 +252,7 @@ public class CreatiiveUnitArc implements ContentList {
                 		}};
                 		lifetime = 40f;
                 		hitSize = 3f;
-					}}
+					}};
 				}}
 			);
 		}};
