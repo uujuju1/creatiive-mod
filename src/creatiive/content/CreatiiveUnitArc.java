@@ -287,7 +287,7 @@ public class CreatiiveUnitArc implements ContentList {
 					bullet = new ContinuousLaserBulletType(){{
                         maxRange = range;
                         damage = 30f;
-                        length = rangef;
+                        length = range;
                         hitEffect = Fx.hitMeltHeal;
                         drawSize = 200f;
                         lifetime = 155f;
@@ -309,7 +309,7 @@ public class CreatiiveUnitArc implements ContentList {
 					bullet = new ContinuousLaserBulletType(){{
                         maxRange = range;
                         damage = 30f;
-                        length = rangef;
+                        length = range;
                         hitEffect = Fx.hitMeltHeal;
                         drawSize = 200f;
                         lifetime = 155f;
