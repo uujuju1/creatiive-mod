@@ -39,7 +39,7 @@ public class CreatiiveUnitArc implements ContentList {
 	
 	public static UnitType
 	// ground
-	nilo, mosquerite, eskerbone, obletsy;
+	nilo, mosquerite, eskerbone, obletsy, telene;
 
 	@Override
 	public void load() {
@@ -194,7 +194,7 @@ public class CreatiiveUnitArc implements ContentList {
 			);
 		}};
 		obletsy = new UnitType("obletsy") {{
-			localizedName = "Eskerbone";
+			localizedName = "Obletsy";
 			health = 8000;
 			speed = 1f;
 			rotateSpeed = 2f;
@@ -252,6 +252,74 @@ public class CreatiiveUnitArc implements ContentList {
                 		lifetime = 40f;
                 		hitSize = 3f;
 					}};
+				}}
+			);
+		}};
+		telene = new UnitType("telene") {{
+			localizedName = "Telene";
+			health = 20000;
+			speed = 0.5f;
+			rotateSpeed = 1.5f;
+			rotateShooting = true;
+			legCount = 10;
+			legLength = 35f;
+			legExtension = -24f;
+			legBaseOffset = 10f;
+			legTrns = 1f;
+			legMoveSpace = 1.6f;
+			legSplashDamage = 40;
+            legSplashRange = 36;
+			hovering = true;
+			groundLayer = Layer.legUnit + 0.003f;
+			visualElevation = 0.5f;
+			constructor = LegsUnit::create;
+			range = 300f;
+			maxRange = range;
+
+			weapons.add(
+				new Weapon("creatiive-weapon-arc-meltdown") {{
+					x = 10f;
+					y = -10f;
+					reload = 120f;
+					rotate = true;
+					rotateSpeed = 4f;
+
+					bullet = new ContinuousLaserBulletType(){{
+                        maxRange = range;
+                        damage = 30f;
+                        length = rangef;
+                        hitEffect = Fx.hitMeltHeal;
+                        drawSize = 200f;
+                        lifetime = 155f;
+                        shake = 1f;
+                        shootEffect = Fx.shootHeal;
+                        smokeEffect = Fx.none;
+                        width = 4f;
+                        largeHit = false;
+                        colors = new Color[]{Pal.lancerLaser.cpy().a(.2f), Pal.lancerLaser.cpy().a(.5f), Pal.lancerLaser.cpy().mul(1.2f), Color.white};
+                    }};
+				}},
+				new Weapon("creatiive-weapon-arc-meltdown") {{
+					x = 10f;
+					y = 6f;
+					reload = 120f;
+					rotate = true;
+					rotateSpeed = 4f;
+
+					bullet = new ContinuousLaserBulletType(){{
+                        maxRange = range;
+                        damage = 30f;
+                        length = rangef;
+                        hitEffect = Fx.hitMeltHeal;
+                        drawSize = 200f;
+                        lifetime = 155f;
+                        shake = 1f;
+                        shootEffect = Fx.shootHeal;
+                        smokeEffect = Fx.none;
+                        width = 4f;
+                        largeHit = false;
+                        colors = new Color[]{Pal.lancerLaser.cpy().a(.2f), Pal.lancerLaser.cpy().a(.5f), Pal.lancerLaser.cpy().mul(1.2f), Color.white};
+                    }};
 				}}
 			);
 		}};
