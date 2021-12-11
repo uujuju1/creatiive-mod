@@ -97,6 +97,7 @@ public class CreatiiveUnitArc implements ContentList {
 			constructor = LegsUnit::create;
 			range = 360f;
 			maxRange = range;
+			hitSize = 10f;
 
 			weapons.add(
 				new Weapon("creatiive-weapon-arc-electra") {{
@@ -168,6 +169,7 @@ public class CreatiiveUnitArc implements ContentList {
 			constructor = LegsUnit::create;
 			range = 180f;
 			maxRange = range;
+			hitSize = 12f;
 
 			weapons.add(
 				new Weapon("creatiive-weapon-arc-point") {{
@@ -213,6 +215,7 @@ public class CreatiiveUnitArc implements ContentList {
 			constructor = LegsUnit::create;
 			range = 240f;
 			maxRange = range;
+			hitSize = 20f;
 
 			weapons.add(
 				new Weapon("creatiive-weapon-arc-railgun") {{
@@ -275,6 +278,7 @@ public class CreatiiveUnitArc implements ContentList {
 			constructor = LegsUnit::create;
 			range = 300f;
 			maxRange = range;
+			hitSize = 30f;
 
 			weapons.add(
 				new Weapon("creatiive-weapon-arc-meltdown") {{
