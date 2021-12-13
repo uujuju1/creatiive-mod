@@ -30,8 +30,6 @@ public class Dynamite extends Block {
 
 	public int damage = 69420;
 
-	public float countdown = 0f;
-
 	public Effect bababooey = CreatiiveFx.bababooey;
 	public TextureRegion heat;
 	// public Sound bababooeySound = Sounds.explosionBig;
@@ -53,12 +51,6 @@ public class Dynamite extends Block {
 	}
 
 	@Override
-	public void setBars() {
-		super.setBars();
-		bars.add("Charge", e -> new Bar("Charge", Color.red, () -> countdown/charge));
-	}
-
-	@Override
 	public void load() {
 		super.load();
 		heat = Core.atlas.find(name + "-heat");
@@ -66,6 +58,7 @@ public class Dynamite extends Block {
 
 	public class DynamiteBuild extends Building {
 		boolean explode = false;
+		float countdown = 0f;
 
 		@Override 
 		public void buildConfiguration(Table table) {
