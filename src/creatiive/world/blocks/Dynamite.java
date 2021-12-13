@@ -30,7 +30,7 @@ public class Dynamite extends Block {
 
 	public int damage = 69420;
 
-	float countdown = 0f;
+	public float countdown = 0f;
 
 	public Effect bababooey = CreatiiveFx.bababooey;
 	public TextureRegion heat;

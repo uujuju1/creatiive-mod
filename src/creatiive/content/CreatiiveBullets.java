@@ -63,28 +63,26 @@ public class CreatiiveBullets implements ContentList {
 		homeI = new MissileBulletType(4f, 15) {{
 			width = 7f;
 			height = 9f;
-    	lifetime = range/speed;
+    	lifetime = 32.5f;
     	frontColor = Color.valueOf("63528A");
     	backColor = Color.valueOf("3D3253");
     }};
-    homeII = new BasicBulletType(4f, 50) {{
+    homeII = new MissileBulletType(4f, 50) {{
     	width = 9f;
     	height = 11f;
-    	lifetime = range/speed;
+    	lifetime = 50f;
     	frontColor = Color.valueOf("63528A");
     	backColor = Color.valueOf("3D3253");
     }};
-    homeIII = new BasicBulletType(6f, 150) {{
+    homeIII = new MissileBulletType(6f, 150) {{
     	width = 11f;
     	height = 13f;
-    	lifetime = range/speed;
+    	lifetime = 41.6f;
     }};
-    homeIV = new BasicBulletType(4f, 350) {{
+    homeIV = new MissileBulletType(4f, 350) {{
     	lifetime = 75f;
     	width = 13f;
     	height = 15f;
-    	pierce = true;
-    	pierceCap = 40;
     	frontColor = Color.valueOf("63528A");
     	backColor = Color.valueOf("3D3253");
     }};

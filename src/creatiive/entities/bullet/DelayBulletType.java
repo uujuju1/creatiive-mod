@@ -33,7 +33,7 @@ public class DelayBulletType extends BulletType {
 	@Override
 	public void update(Bullet b) {
 		if (this.despawnTime <= 0f) {
-			Damage.damage(b.team, b.x, b.y, explodeDamage);
+			Damage.damage(b.team, b.x, b.y, explodeRadius, explodeDamage);
 		}
 		this.despawnTime -= Time.delta;
 	}
