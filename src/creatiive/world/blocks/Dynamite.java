@@ -78,10 +78,10 @@ public class Dynamite extends Block {
 		public void updateTile() {
 			super.updateTile();
 			if (explode) {
-				countdown += Time.delta;
+				this.countdown += Time.delta;
 				if (countdown >= charge) {
 					kill();
-					countdown = 0f;
+					this.countdown = 0f;
 				}
 			}
 		}

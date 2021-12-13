@@ -27,6 +27,7 @@ public class Creatiive extends Mod{
 
     @Override
     public void loadContent(){
+        new CreatiiveBullets().load();
     	new CreatiiveItems().load();
     	new CreatiiveUnitArc().load();
     	new CreatiiveUnitDust().load();
