@@ -205,7 +205,7 @@ public class CreatiiveTurrets implements ContentList {
     	rotateSpeed = 10f;
     	restitution = 0.03f;
     	ammo(
-    		CreatiiveItems.erbite, CreatiiveBullets.homeI
+    		CreatiiveItems.erbite, CreatiiveBullets.homeI,
     		CreatiiveItems.zicromnium, new BasicBulletType(4f, 13) {{
     			lifetime = range/speed;
     		}},
@@ -224,7 +224,7 @@ public class CreatiiveTurrets implements ContentList {
     		CreatiiveItems.erbite, 30,
     		CreatiiveItems.zicromnium, 40,
     		Items.graphite, 35,
-    	Items.titanium, 20
+        Items.titanium, 20
     	));
     	localizedName = "Tameteri";
     	health = 200 * 4;

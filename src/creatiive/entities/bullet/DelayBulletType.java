@@ -22,6 +22,7 @@ import static mindustry.Vars.*;
 public class DelayBulletType extends BulletType {
 	public float explodeTime = 60f, explodeRadius = 40f;
 	public int explodeDamage = 10;
+	float despawnTime = explodeTime;
 
 	public DelayBulletType(float speed, float dmg) {
 		super(speed, dmg);
@@ -31,10 +32,14 @@ public class DelayBulletType extends BulletType {
 
 	@Override
 	public void update(Bullet b) {
-		float this.despawnTime = explodeTime;
 		if (this.despawnTime <= 0f) {
 			Damage.damage(b.team, b.x, b.y, explodeDamage);
 		}
 		this.despawnTime -= Time.delta;
 	}
+
+	// @Override
+	// public void draw(Bullet b) {
+	// 	Fill.circle(b.x, b.y, explodeRadius);
+	// }
 }
