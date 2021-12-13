@@ -21,6 +21,7 @@ import mindustry.world.draw.*;
 
 import creatiive.content.*;
 import creatiive.world.blocks.*;
+import creatiive.entities.bullet.*;
 
 import static mindustry.type.ItemStack.with;
 
