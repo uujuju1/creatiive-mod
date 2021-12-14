@@ -24,10 +24,13 @@ public class DelayBulletType extends BulletType {
 	public int explodeDamage = 10;
 	float despawnTime = explodeTime;
 
+	public Color groundColor = Color.valueOf("A34F5C");
+
 	public DelayBulletType(float speed, float dmg) {
 		super(speed, dmg);
 		collides = collidesAir = collidesGround = false;
 		drag = 0.1f;
+		lifetime = explodeTime + 1f;
 	}
 
 	@Override
@@ -38,8 +41,10 @@ public class DelayBulletType extends BulletType {
 		this.despawnTime -= Time.delta;
 	}
 
-	// @Override
-	// public void draw(Bullet b) {
-	// 	Fill.circle(b.x, b.y, explodeRadius);
-	// }
+	@Override
+	public void draw(Bullet b) {
+		Draw.color(groundColor);
+		Draw.alpha(despawnTime/explodeTime);
+		Fill.circle(b.x, b.y, explodeRadius);
+	}
 }

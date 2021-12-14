@@ -350,10 +350,11 @@ public class CreatiiveTurrets implements ContentList {
 
 		meta = new ItemTurret("meta") {{
 			health = 200;
+			buildVisibility = BuildVisibility.shown;
 			ammo(
 				CreatiiveItems.lerbonium, new BasicBulletType(4f, 1) {{
 					fragBullets = 1;
-					fragBullet = new DelayBulletType(0f, 100) {{hitSize = 12;}};
+					fragBullet = new DelayBulletType(0f, 100) {{hitSize = 12; lifetime 120}};
 				}}
 			);
 		}};
