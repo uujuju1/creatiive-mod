@@ -35,16 +35,17 @@ public class DelayBulletType extends BulletType {
 
 	@Override
 	public void update(Bullet b) {
-		if (this.despawnTime <= 0f) {
+		if (this.despawnTime >= explodeTime) {
 			Damage.damage(b.team, b.x, b.y, explodeRadius, explodeDamage);
 		}
-		this.despawnTime -= Time.delta;
+		this.despawnTime += Time.delta;
 	}
 
 	@Override
 	public void draw(Bullet b) {
 		Draw.color(groundColor);
-		Draw.alpha(despawnTime/explodeTime);
+		Draw.z(Layer.floor + 0.001f)
+		Draw.alpha(this.despawnTime/this.explodeTime);
 		Fill.circle(b.x, b.y, explodeRadius);
 	}
 }
