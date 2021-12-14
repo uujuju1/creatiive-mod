@@ -22,7 +22,7 @@ import static mindustry.Vars.*;
 public class DelayBulletType extends BulletType {
 	public float explodeTime = 60f, explodeRadius = 40f;
 	public int explodeDamage = 10;
-	float despawnTime = explodeTime;
+	float despawnTime = 0f;
 
 	public Color groundColor = Color.valueOf("A34F5C");
 
