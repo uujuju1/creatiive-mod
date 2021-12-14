@@ -44,7 +44,7 @@ public class DelayBulletType extends BulletType {
 	@Override
 	public void draw(Bullet b) {
 		Draw.color(groundColor);
-		Draw.z(Layer.floor + 0.001f)
+		Draw.z(Layer.floor + 0.001f);
 		Draw.alpha(this.despawnTime/this.explodeTime);
 		Fill.circle(b.x, b.y, explodeRadius);
 	}
