@@ -22,7 +22,6 @@ import static mindustry.Vars.*;
 public class DelayBulletType extends BulletType {
 	public float explodeTime = 60f, explodeRadius = 40f;
 	public int explodeDamage = 10;
-	float despawnTime = 0f;
 
 	public Color groundColor = Color.valueOf("A34F5C");
 
@@ -35,17 +34,17 @@ public class DelayBulletType extends BulletType {
 
 	@Override
 	public void update(Bullet b) {
-		if (this.despawnTime >= explodeTime) {
+		if (b.time >= explodeTime) {
 			Damage.damage(b.team, b.x, b.y, explodeRadius, explodeDamage);
 		}
-		this.despawnTime += Time.delta;
+		// this.despawnTime += Time.delta;
 	}
 
 	@Override
 	public void draw(Bullet b) {
 		Draw.color(groundColor);
 		Draw.z(Layer.floor + 0.001f);
-		Draw.alpha(this.despawnTime/this.explodeTime);
+		Draw.alpha(b.time/this.explodeTime);
 		Fill.circle(b.x, b.y, explodeRadius);
 	}
 }
