@@ -22,6 +22,7 @@ import mindustry.world.draw.*;
 import creatiive.content.*;
 import creatiive.world.blocks.*;
 import creatiive.entities.bullet.*;
+import creatiive.graphics.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -349,12 +350,29 @@ public class CreatiiveTurrets implements ContentList {
 		}};
 
 		meta = new ItemTurret("meta") {{
+			requirements(Category.turret, with(
+				Items.silicon, 10,
+				CreatiiveItems.lerbonium, 10,
+				CreatiiveItems.erbite, 15
+			));
+			localizedName = "Meta";
 			health = 200;
+			size = 1;
+			reloadTime = 90f;
+			recoilAmount = 2f;
+			range = 120f;
+			restitution = 0.05f;
 			buildVisibility = BuildVisibility.shown;
 			ammo(
 				CreatiiveItems.lerbonium, new BasicBulletType(4f, 1) {{
+					lifetime = 30f;
+					frontColor = Color.valueOf("BA5A69");
+					backColor = Color.valueOf("A34F5C");
 					fragBullets = 1;
-					fragBullet = new DelayBulletType(0f, 100) {{hitSize = 12; lifetime = 120;}};
+					fragBullet = new DelayBulletType(0f, 100) {{
+						lifetime = 70;
+						despawnEffect = CreatiiveFx.lerboniumExplosion;
+					}};
 				}}
 			);
 		}};

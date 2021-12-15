@@ -23,11 +23,11 @@ public class CreatiiveFx {
 	public static final Effect
 	shootArc = new Effect(20, e -> {
 		color(Pal.lancerLaser);
-        float w = 1f + 5 * e.fout();
-        stroke(e.fout());
-        Lines.circle(e.x, e.y, e.fin() * 8f);
-        Drawf.tri(e.x, e.y, w, 17f * e.fout(), e.rotation);
-        Drawf.tri(e.x, e.y, w, 4f * e.fout(), e.rotation + 180f);
+		float w = 1f + 5 * e.fout();
+		stroke(e.fout());
+		Lines.circle(e.x, e.y, e.fin() * 8f);
+		Drawf.tri(e.x, e.y, w, 17f * e.fout(), e.rotation);
+		Drawf.tri(e.x, e.y, w, 4f * e.fout(), e.rotation + 180f);
 	}),
 	dynamicPlastShards = new Effect(40f, e -> {
 		randLenVectors(e.id, 3 * 2, 10 + e.fin() * 5, (x, y) -> {
@@ -37,22 +37,33 @@ public class CreatiiveFx {
 	}),
 	bababooey = new Effect(30f, e -> {
 		e.scaled(7, i -> {
-            stroke(3.1f * i.fout());
-            Lines.circle(e.x, e.y, 3f + i.fin() * 14f);
-        });
+			stroke(3.1f * i.fout());
+			Lines.circle(e.x, e.y, 3f + i.fin() * 14f);
+		});
 
-        color(Color.gray);
+		color(Color.gray);
 
-        randLenVectors(e.id, 20, 100f + 19f * e.finpow(), (x, y) -> {
-            Fill.circle(e.x + x, e.y + y, e.fout() * 3f + 0.5f);
-            Fill.circle(e.x + x / 2f, e.y + y / 2f, e.fout());
-        });
+		randLenVectors(e.id, 20, 100f + 19f * e.finpow(), (x, y) -> {
+			Fill.circle(e.x + x, e.y + y, e.fout() * 3f + 0.5f);
+			Fill.circle(e.x + x / 2f, e.y + y / 2f, e.fout());
+		});
 
-        color(Pal.lighterOrange, Pal.lightOrange, Color.gray, e.fin());
-        stroke(1.7f * e.fout());
+		color(Pal.lighterOrange, Pal.lightOrange, Color.gray, e.fin());
+		stroke(1.7f * e.fout());
 
-        randLenVectors(e.id + 1, 20, 100f * e.finpow(), (x, y) -> {
-            lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 1f + e.fout() * 3f);
-        });
+		randLenVectors(e.id + 1, 20, 100f * e.finpow(), (x, y) -> {
+			lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 1f + e.fout() * 3f);
+		});
+	}),
+	lerboniumExplosion = new Effect(120f, e -> {
+		color(Color.valueOf("A34F5C"));
+
+		Fill.circle(e.x, e.y, 40f * e.fout());
+
+		color(Color.valueOf("BA5A69"));
+
+		randLenVectors(e.id + 1, 10, 20 + e.fin() * 20, (x, y) -> {
+			Fill.rect(e.x + x, e.y + y, Math.sin(e.fin() * Math.PI) * 10, Math.sin(e.fin() * Math.PI) * 10, 45);
+		});
 	});
 }
