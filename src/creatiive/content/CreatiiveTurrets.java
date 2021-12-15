@@ -33,7 +33,7 @@ public class CreatiiveTurrets implements ContentList {
 	// erbite
 	zetni, tameteri, terskermite, katserume,
 	// lerbonium
-	meta;
+	meta, karma, delta, dauma;
 
 	@Override
 	public void load() {
@@ -364,13 +364,106 @@ public class CreatiiveTurrets implements ContentList {
 			restitution = 0.05f;
 			buildVisibility = BuildVisibility.shown;
 			ammo(
-				CreatiiveItems.lerbonium, new BasicBulletType(4f, 1) {{
+				CreatiiveItems.lerbonium, new BasicBulletType(4f, 0) {{
 					lifetime = 30f;
 					frontColor = Color.valueOf("BA5A69");
 					backColor = Color.valueOf("A34F5C");
 					fragBullets = 1;
-					fragBullet = new DelayBulletType(0f, 100) {{
-						lifetime = 70;
+					fragBullet = new DelayBulletType(0f, 0) {{
+						lifetime = 70f;
+						despawnEffect = CreatiiveFx.lerboniumExplosion;
+					}};
+				}}
+			);
+		}};
+		karma = new ItemTurret("karma") {{
+			requirements(Category.turret, with(
+				Items.titanium, 30,
+				Items.silicon, 40,
+				CreatiiveItems.lerbonium, 20,
+				Items.graphite, 50
+			));
+			localizedName = "Karma";
+			health = 200 * 4;
+			size = 2;
+			recoilAmount = 3f;
+			reloadTime = 120f;
+			shots = 2;
+			inaccuracy = 22.5f;
+			range = 150f;
+			restitution = 0.05f;
+			buildVisibility = BuildVisibility.shown;
+			ammo(
+				CreatiiveItems.lerbonium, new BasicBulletType(4f, 0) {{
+					lifetime = 37.5f;
+					frontColor = Color.valueOf("BA5A69");
+					backColor = Color.valueOf("A34F5C");
+					fragBullets = 1;
+					fragBullet = new DelayBulletType(0f, 0) {{
+						lifetime = 80f;
+						despawnEffect = CreatiiveFx.lerboniumExplosion;
+					}};
+				}}
+			);
+		}};
+		delta = new ItemTurret("delta") {{
+			requirements(Category.turret, with(
+				Items.thorium, 70,
+				Items.silicon, 150,
+				Items.titanium, 100,
+				Items.plastanium, 90,
+				CreatiiveItems.lerbonium, 120
+			));
+			localizedName = "Delta";
+			health = 200 * 9;
+			size = 3;
+			recoilAmount = 5f;
+			reloadTime = 160f;
+			shots = 3;
+			inaccuracy = 30f;
+			range = 170f;
+			restitution = 0.05f;
+			buildVisibility = BuildVisibility.shown;
+			ammo(
+				CreatiiveItems.lerbonium, new BasicBulletType(4f, 0) {{
+					lifetime = 42.5f;
+					frontColor = Color.valueOf("BA5A69");
+					backColor = Color.valueOf("A34F5C");
+					fragBullets = 1;
+					fragBullet = new DelayBulletType(0f, 0) {{
+						lifetime = 90f;
+						despawnEffect = CreatiiveFx.lerboniumExplosion;
+					}};
+				}}
+			);
+		}};
+		dauma = new ItemTurret("dauma") {{
+			requirements(Category.turret, with(
+				Items.surgeAlloy, 50,
+				Items.thorium, 120,
+				Items.silicon, 320,
+				Items.graphite, 450,
+				Items.plastanium, 200,
+				Items.titanium, 400,
+				CreatiiveItems.lerbonium, 350
+			));
+			localizedName = "Dauma";
+			health = 200 * 16;
+			size = 4;
+			reloadTime = 200f;
+			inaccuracy = 45f;
+			shots = 4;
+			range = 200f;
+			restitution = 0.05f;
+			buildVisibility = BuildVisibility.shown;
+			ammo(
+				CreatiiveItems.lerbonium, new BasicBulletType(4f, 0) {{
+					lifetime = 50f;
+					frontColor = Color.valueOf("BA5A69");
+					backColor = Color.valueOf("A34F5C");
+					fragBullets = 1;
+					fragBullet = new DelayBulletType(0f, 0) {{
+						lifetime = 100f;
 						despawnEffect = CreatiiveFx.lerboniumExplosion;
 					}};
 				}}
