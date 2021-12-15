@@ -63,7 +63,7 @@ public class CreatiiveFx {
 		color(Color.valueOf("BA5A69"));
 
 		randLenVectors(e.id + 1, 10, 20f + e.fin() * 20f, (x, y) -> {
-			Fill.rect(e.x + x, e.y + y, Mathf.sin(e.fin() * Math.PI) * 10f, Mathf.sin(e.fin() * Math.PI) * 10f, 45f);
+			Fill.rect(e.x + x, e.y + y, e.fout() * 10, e.fout() * 10f, 45f);
 		});
 	});
 }
