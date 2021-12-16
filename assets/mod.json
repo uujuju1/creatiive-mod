@@ -3,10 +3,10 @@
   "displayName": "[red]cr[orange]ea[yellow]ti[green]iv[cyan]e [white]mod.",
   "author": "Uujuju",
   "description": "creative stuff",
-  "version": "0.3",
+  "version": "0.4",
   "main": "creatiive.Creatiive",
   "minGameVersion": "135",
-  "dependencies": [],
+  "dependencies": ["gas-library-java"],
   "hidden": false,
   "java": true
 }
