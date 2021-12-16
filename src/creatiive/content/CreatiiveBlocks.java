@@ -21,9 +21,7 @@ import mindustry.world.blocks.defense.turrets.*;
 import mindustry.world.blocks.distribution.*;
 import mindustry.world.blocks.units.*;
 import mindustry.world.meta.*;
-import mindustry.world.draw.*;
-
-import gas.world.blocks.sandbox.*;
+import mindustry.world.draw.*
 
 import creatiive.content.*;
 import creatiive.world.blocks.*;
@@ -62,10 +60,7 @@ public class CreatiiveBlocks implements ContentList {
 	anuke, tnuke,
 
 	// start
-	creatiiveBegginings,
-
-	// test
-	gasSource;
+	creatiiveBegginings;
 
 	@Override
 	public void load() {
@@ -454,8 +449,6 @@ public class CreatiiveBlocks implements ContentList {
 			charge = 60f;
 			damage = 1000;
 		}};
-
-		gasSource = new GasSource("gas-source") {{localizedName = "Gas Source";}};
 
 		// ababa
 		creatiiveBegginings = new Block("creatiive-begginings") {{
