@@ -28,11 +28,11 @@ public class CreatiiveWalls implements ContentList {
 	// dustertite
 	dusteriteWall, dusteriteWallLarge, dusteriteWallHuge, dusteriteWallGigantic,
 	// erbite
-    erbiteWall, erbiteWallLarge, erbiteWallHuge, erbiteWallGigantic;
+		erbiteWall, erbiteWallLarge, erbiteWallHuge, erbiteWallGigantic;
 
-    @Override
-    public void load() {
-    	dusteriteWall = new Wall("dusterite-wall") {{
+		@Override
+		public void load() {
+			dusteriteWall = new Wall("dusterite-wall") {{
 			requirements(Category.defense, with(CreatiiveItems.dusterite, 6));
 			localizedName = "Dusterite Wall";
 			health = 350;
@@ -58,29 +58,29 @@ public class CreatiiveWalls implements ContentList {
 			size = 4;
 		}};
 
-        erbiteWall = new Wall("erbite-wall") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite, 6));
-            localizedName = "Erbite Wall";
-            size = 1;
-            health = 460;
-        }};
-        erbiteWallLarge = new Wall("erbite-wall-large") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
-            localizedName = "Large Erbite Wall";
-            size = 2;
-            health = 460 * 4;
-        }};
-        erbiteWallHuge = new Wall("erbite-wall-huge") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
-            localizedName = "Huge Erbite Wall";
-            size = 3;
-            health = 460 * 11;
-        }};
-        erbiteWallGigantic = new Wall("erbite-wall-gigantic") {{
-            requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
-            localizedName = "Gigantic Erbite Wall";
-            size = 4;
-            health = 460 * 17;
-        }};
-    }
+		erbiteWall = new Wall("erbite-wall") {{
+			requirements(Category.defense, with(CreatiiveItems.erbite, 6));
+			localizedName = "Erbite Wall";
+			size = 1;
+			health = 460;
+		}};
+		erbiteWallLarge = new Wall("erbite-wall-large") {{
+			requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
+			localizedName = "Large Erbite Wall";
+			size = 2;
+			health = 460 * 4;
+		}};
+		erbiteWallHuge = new Wall("erbite-wall-huge") {{
+			requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
+			localizedName = "Huge Erbite Wall";
+			size = 3;
+			health = 460 * 11;
+		}};
+		erbiteWallGigantic = new Wall("erbite-wall-gigantic") {{
+			requirements(Category.defense, with(CreatiiveItems.erbite, 6 * size * size));
+			localizedName = "Gigantic Erbite Wall";
+			size = 4;
+			health = 460 * 17;
+		}};
+		}
 }

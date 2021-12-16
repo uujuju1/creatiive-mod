@@ -440,7 +440,7 @@ public class CreatiiveBlocks implements ContentList {
 			damage = 2147483647;
 			buildVisibility = BuildVisibility.sandboxOnly;
 		}};
-		tnuke = new Dynamite("thorium nuke") {{
+		tnuke = new Dynamite("thorium-nuke") {{
 			requirements(Category.effect, with(Items.thorium, 48, CreatiiveItems.zicromnium, 16));
 			localizedName = "Thorium nuke";
 			health = 420;
