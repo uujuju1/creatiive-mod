@@ -12,7 +12,7 @@ public class CreatiiveLiquids implements ContentList {
 		steam = new Liquid("steam", Color.valueOf("C3C3C3")) {{
 			localizedName = "Steam";
 		}};
-		fissileFuel = new Liquid("fissileFuel" Color.valueOf("565E59")) {{
+		fissileFuel = new Liquid("fissileFuel", Color.valueOf("565E59")) {{
 			localizedName = "Fissile Fuel";
 			explosiveness = 1f;
 		}};
