@@ -21,7 +21,7 @@ import mindustry.world.blocks.defense.turrets.*;
 import mindustry.world.blocks.distribution.*;
 import mindustry.world.blocks.units.*;
 import mindustry.world.meta.*;
-import mindustry.world.draw.*
+import mindustry.world.draw.*;
 
 import creatiive.content.*;
 import creatiive.world.blocks.*;
