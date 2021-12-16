@@ -9,7 +9,7 @@ public class CreatiiveItems implements ContentList {
 	// scaler
 	highCarbonSteel, dusterite, moisturizedDust,
 
-	// customplanetthatidonthaveaname
+	// vuintuer
 	erbite, zicromnium, lerbonium;
 
 	@Override
