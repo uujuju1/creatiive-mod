@@ -60,7 +60,10 @@ public class CreatiiveBlocks implements ContentList {
 	anuke, tnuke,
 
 	// start
-	creatiiveBegginings;
+	creatiiveBegginings,
+
+	// test
+	gasSource;
 
 	@Override
 	public void load() {
@@ -449,6 +452,8 @@ public class CreatiiveBlocks implements ContentList {
 			charge = 60f;
 			damage = 1000;
 		}};
+
+		gasSource = new GasSource("gas-source") {{localizedName = "Gas Source";}};
 
 		// ababa
 		creatiiveBegginings = new Block("creatiive-begginings") {{
