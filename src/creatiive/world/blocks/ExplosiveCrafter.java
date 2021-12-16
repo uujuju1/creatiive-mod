@@ -1,4 +1,4 @@
-package creatiive.world.blocks.*;
+package creatiive.world.blocks;
 
 import arc.*;
 import arc.graphics.*;
@@ -19,8 +19,8 @@ public class ExplosiveCrafter extends GenereicCrafter {
 	public float cooldownScl = 1f;
 	public float coolerConsume = 0.1;
 	public float minCoolerCap = 0.5f;
-
-	public TextureRegion heatRegion;
+	public float explodeRadius = 160f;
+	public float explodeDamage = 1000f;
 
 	public ExplosiveCrafter(String name) {
 		super(name);
@@ -43,7 +43,7 @@ public class ExplosiveCrafter extends GenereicCrafter {
 			}
 			if (this.heat >= heatCap) {
 				kill();
-				Damage.damage()
+				Damage.damage(x, y, explodeRadius, explodeDamage);
 			}
 		}
 
