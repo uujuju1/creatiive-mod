@@ -29,6 +29,7 @@ public class Creatiive extends Mod{
     public void loadContent(){
         new CreatiiveBullets().load();
     	new CreatiiveItems().load();
+        new CreatiiveGasses().load();
     	new CreatiiveUnitArc().load();
     	new CreatiiveUnitDust().load();
     	new CreatiiveUnitMisc().load();
