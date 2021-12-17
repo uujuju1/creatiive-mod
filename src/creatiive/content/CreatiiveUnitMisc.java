@@ -38,10 +38,7 @@ import static mindustry.content.Bullets.*;
 public class CreatiiveUnitMisc implements ContentList {
 	public static UnitType
 	// copters
-	ACopter, BCopter, CCopter, DCopter, ECopter,
-
-	// misc
-	kermirade;
+	ACopter, BCopter, CCopter, DCopter, ECopter;
 
 	@Override
 	public void load() {
