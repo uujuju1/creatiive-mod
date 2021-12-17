@@ -31,14 +31,14 @@ public class CreatiivePlanets implements ContentList {
 			alwaysUnlocked = true;
 			orbitRadius = 100f;
 		}};
-		krus = new Planet("krus", Planets.sun, 1, 0.75f) {{
+		krus = new Planet("krus", Planets.sun, 4, 0.75f) {{
 			localizedName = "Krus";
 			generator = new KrusPlanetGenerator();
 			meshLoader = () -> new HexMesh(this, 6);
 			atmosphereColor = Color.valueOf("5FB2C9");
 			atmosphereRadIn = 0.02f;
 			atmosphereRadOut = 0.15f;
-			startSector = 69;
+			startSector = 20;
 			alwaysUnlocked = true;
 		}};
 	}
