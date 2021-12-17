@@ -29,7 +29,7 @@ import creatiive.content.*;
 import static mindustry.Vars.*;
 
 public class KrusPlanetGenerator extends SerpuloPlanetGenerator {
-	public VuintuerPlanetGenerator() {
+	public KrusPlanetGenerator() {
 	}
 
 	public int seed = 47;
