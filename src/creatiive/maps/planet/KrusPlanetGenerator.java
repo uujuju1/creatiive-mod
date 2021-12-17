@@ -28,7 +28,7 @@ import creatiive.content.*;
 
 import static mindustry.Vars.*;
 
-public class VuintuerPlanetGenerator extends SerpuloPlanetGenerator {
+public class KrusPlanetGenerator extends SerpuloPlanetGenerator {
 	public VuintuerPlanetGenerator() {
 	}
 

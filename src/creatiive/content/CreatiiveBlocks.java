@@ -253,7 +253,6 @@ public class CreatiiveBlocks implements ContentList {
 			upgrades.addAll(
 				new UnitType[]{CreatiiveUnitMisc.ACopter, CreatiiveUnitMisc.BCopter},
 				new UnitType[]{CreatiiveUnitDust.silver, CreatiiveUnitDust.gold},
-				new UnitType[]{CreatiiveUnitMisc.arcana, CreatiiveUnitMisc.monoquone},
 				new UnitType[]{CreatiiveUnitArc.nilo, CreatiiveUnitArc.mosquerite}
 			);
 			localizedName = "Carbon Reconstructor(ADDITIVE)";
@@ -282,7 +281,7 @@ public class CreatiiveBlocks implements ContentList {
 			upgrades.addAll(
 				new UnitType[]{CreatiiveUnitMisc.BCopter, CreatiiveUnitMisc.CCopter},
 				new UnitType[]{CreatiiveUnitDust.gold, CreatiiveUnitDust.platinum},
-				new UnitType[]{CreatiiveUnitMisc.monoquone, CreatiiveUnitMisc.zelinote}
+				new UnitType[]{CreatiiveUnitMisc.mosquerite, CreatiiveUnitMisc.eskerbone}
 			);
 			localizedName = "Carbon Reconstructor(MULTIPLICATIVE)";
 			size = 5;
@@ -313,7 +312,7 @@ public class CreatiiveBlocks implements ContentList {
 			upgrades.addAll(
 				new UnitType[]{CreatiiveUnitMisc.CCopter, CreatiiveUnitMisc.DCopter},
 				new UnitType[]{CreatiiveUnitDust.platinum, CreatiiveUnitDust.iridium},
-				new UnitType[]{CreatiiveUnitMisc.zelinote, CreatiiveUnitMisc.kepsylon}
+				new UnitType[]{CreatiiveUnitMisc.eskerbone, CreatiiveUnitMisc.obletsy}
 			);
 			localizedName = "Carbon Reconstructor(EXPONENTIAL)";
 			size = 7;
@@ -346,7 +345,7 @@ public class CreatiiveBlocks implements ContentList {
 			upgrades.addAll(
 				new UnitType[]{CreatiiveUnitMisc.DCopter, CreatiiveUnitMisc.ECopter},
 				new UnitType[]{CreatiiveUnitDust.iridium, CreatiiveUnitDust.tenelite},
-				new UnitType[]{CreatiiveUnitMisc.kepsylon, CreatiiveUnitMisc.zermite}
+				new UnitType[]{CreatiiveUnitMisc.obletsy, CreatiiveUnitMisc.telene}
 			);
 			localizedName = "Carbon Reconstructor(TETRATIVE)";
 			size = 9;
