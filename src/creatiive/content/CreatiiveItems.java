@@ -10,7 +10,10 @@ public class CreatiiveItems implements ContentList {
 	highCarbonSteel, dusterite, moisturizedDust,
 
 	// vuintuer
-	erbite, zicromnium, lerbonium;
+	erbite, zicromnium, lerbonium,
+
+	// krus
+	deltaMatter, pelenium, kotelene;
 
 	@Override
 	public void load(){
@@ -39,6 +42,15 @@ public class CreatiiveItems implements ContentList {
 		lerbonium = new Item("lerbonium", Color.valueOf("5F3037")) {{
 			localizedName = "Lerbonium";
 			cost = 12;
+		}};
+		deltaMatter = new Item("delta-matter", Color.valueOf("242F97")) {{
+			localizedName = "Delta Matter";
+			cost = 3;
+		}};
+		pelenium = new Item("pelenium", color.valueOf("76A8A6")) {{
+			localizedName = "Pelenium";
+			cost = 2;
+			hardness = 2;
 		}};
 	}
 }

@@ -38,18 +38,18 @@ public class KrusPlanetGenerator extends SerpuloPlanetGenerator {
 	float waterOffset = 0.050f;
 
 	Block[][] arr = {
-		{Blocks.water, Blocks.grass, Blocks.mud, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.mud, Blocks.water, Blocks.water, Blocks.water, Blocks.mud, Blocks.grass, Blocks.grass},
-		{Blocks.sandWater, Blocks.grass, Blocks.mud, Blocks.grass, Blocks.mud, Blocks.grass, Blocks.dirt, Blocks.sandWater, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass},
-		{Blocks.sand, Blocks.grass, Blocks.mud, Blocks.mud, Blocks.mud, Blocks.grass, Blocks.dirt, Blocks.sand, Blocks.sand, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass},
-		{Blocks.water, Blocks.sand, Blocks.mud, Blocks.mud, Blocks.mud, Blocks.mud, Blocks.dirt, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass},
-		{Blocks.sandWater, Blocks.sandWater, Blocks.water, Blocks.mud, Blocks.mud, Blocks.grass, Blocks.mud, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass},
-		{Blocks.sand, Blocks.water, Blocks.sand, Blocks.mud, Blocks.mud, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass},
-		{Blocks.water, Blocks.sand, Blocks.sandWater, Blocks.mud, Blocks.grass,Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass},
-		{Blocks.sandWater, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass},
-		{Blocks.sand, Blocks.water, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass},
-		{Blocks.grass, Blocks.sand, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass},
-		{Blocks.grass, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass},
-		{Blocks.grass, Blocks.water, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass}
+		{Blocks.water, Blocks.grass, Blocks.mud, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.mud, Blocks.water, Blocks.water, Blocks.water, Blocks.mud, Blocks.grass, Blocks.ice},
+		{Blocks.sandWater, Blocks.grass, Blocks.mud, Blocks.grass, Blocks.mud, Blocks.grass, Blocks.dirt, Blocks.sandWater, Blocks.sandWater, Blocks.grass,  Blocks.grass, Blocks.grass, Blocks.ice},
+		{Blocks.sand, Blocks.grass, Blocks.mud, Blocks.mud, Blocks.mud, Blocks.grass, Blocks.dirt, Blocks.sand, Blocks.sand, Blocks.grass,                   Blocks.snow, Blocks.grass, Blocks.ice},
+		{Blocks.water, Blocks.sand, Blocks.mud, Blocks.mud, Blocks.mud, Blocks.mud, Blocks.dirt, Blocks.grass, Blocks.grass, Blocks.grass,                   Blocks.iceSnow, Blocks.ice, Blocks.ice},
+		{Blocks.sandWater, Blocks.sandWater, Blocks.water, Blocks.mud, Blocks.mud, Blocks.grass, Blocks.mud, Blocks.grass, Blocks.grass, Blocks.grass,       Blocks.iceSnow, Blocks.snow, Blocks.ice},
+		{Blocks.sand, Blocks.water, Blocks.sand, Blocks.mud, Blocks.mud, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass,               Blocks.snow, Blocks.iceSnow, Blocks.ice},
+		{Blocks.water, Blocks.sand, Blocks.sandWater, Blocks.mud, Blocks.grass,Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass,         Blocks.grass, Blocks.iceSnow, Blocks.ice},
+		{Blocks.sandWater, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.iceSnow, Blocks.ice},
+		{Blocks.sand, Blocks.water, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass,          Blocks.snow, Blocks.snow, Blocks.ice},
+		{Blocks.grass, Blocks.sand, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass,          Blocks.iceSnow, Blocks.ice, Blocks.ice},
+		{Blocks.grass, Blocks.sandWater, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass,     Blocks.iceSnow, Blocks.snow, Blocks.ice},
+		{Blocks.grass, Blocks.water, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass, Blocks.grass,         Blocks.snow, Blocks.ice, Blocks.ice}
 	};
 
 	ObjectMap<Block, Block> dec = ObjectMap.of(
