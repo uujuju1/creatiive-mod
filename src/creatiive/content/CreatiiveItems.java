@@ -47,10 +47,14 @@ public class CreatiiveItems implements ContentList {
 			localizedName = "Delta Matter";
 			cost = 3;
 		}};
-		pelenium = new Item("pelenium", color.valueOf("76A8A6")) {{
+		pelenium = new Item("pelenium", Color.valueOf("76A8A6")) {{
 			localizedName = "Pelenium";
 			cost = 2;
 			hardness = 2;
+		}};
+		kotelene = new Item("kotelene", Color.valueOf("1D8E45")) {{
+			localizedName = "Kotelene";
+			cost = 3;
 		}};
 	}
 }
