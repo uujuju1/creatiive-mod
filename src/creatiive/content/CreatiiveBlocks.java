@@ -45,7 +45,7 @@ public class CreatiiveBlocks implements ContentList {
 	dusteriteBridge,
 
 	// ores
-	oreDusterite, oreZicromnium,
+	oreDusterite, oreZicromnium, orePelenium,
 
 	// unit factories
 	rotorizedFactory,
@@ -189,6 +189,11 @@ public class CreatiiveBlocks implements ContentList {
 			oreScale = 24.428572f;
 		}};
 		oreZicromnium = new OreBlock(CreatiiveItems.zicromnium) {{
+			oreDefault = true;
+			oreThreshold = 0.846f;
+			oreScale = 24.428572f;
+		}};
+		orePelenium = new OreBlock(CreatiiveItems.pelenium) {{
 			oreDefault = true;
 			oreThreshold = 0.846f;
 			oreScale = 24.428572f;

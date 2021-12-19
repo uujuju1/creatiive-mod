@@ -50,7 +50,7 @@ public class CreatiiveItems implements ContentList {
 		pelenium = new Item("pelenium", Color.valueOf("76A8A6")) {{
 			localizedName = "Pelenium";
 			cost = 2;
-			hardness = 2;
+			hardness = 3;
 		}};
 		kotelene = new Item("kotelene", Color.valueOf("1D8E45")) {{
 			localizedName = "Kotelene";
